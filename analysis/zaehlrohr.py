@@ -59,8 +59,14 @@ def test_zaehlrohr_protokoll():
     filepath = os.path.join(os.path.dirname(__file__), "../data/charakter.csv")
     P.load_data(filepath, loadnew=True)
     print(P.data)
+    P.data["dU"] = 0
+    P.data["dz1"] = 0
+    P.data["dz2"] = 0
+    P.data["dz3"] = 0
+    P.print_table(U, z1, z2, z3, name="charakter_raw")
     P.data["z"] = P.data[["z1", "z2", "z3"]].mean(axis=1)
     P.data["dz"] = P.data[["z1", "z2", "z3"]].sem(axis=1)
+    P.print_table(z, name="charakter_z_bar")
 
     P.plot_data(
         ax,
@@ -77,6 +83,11 @@ def test_zaehlrohr_protokoll():
     P.vload()
     filepath = os.path.join(os.path.dirname(__file__), "../data/stat.csv")
     P.load_data(filepath, loadnew=True)
+
+    P.data["dt"] = 0
+    P.data["dn"] = 0
+
+    P.print_table(t, n, name="statistik_raw")
     bins = (int)(n.data.max() - n.data.min()) // 10
     P.histoofseries(n.data, bins=bins, name="statistik")
     bins = (int)(n.data.max() - n.data.min()) // 5
@@ -86,8 +97,13 @@ def test_zaehlrohr_protokoll():
     P.load_data(filepath, loadnew=True)
     # delta l = 0.5cm mit Sr90
     P.data["dl"] = 0.2
+    P.data["dz1"] = 0
+    P.data["dz2"] = 0
+    P.data["dz3"] = 0
+    P.print_table(l, z1, z2, z3, name="abstand_raw")
     P.data["z"] = P.data[["z1", "z2", "z3"]].mean(axis=1)
     P.data["dz"] = P.data[["z1", "z2", "z3"]].sem(axis=1)
+    P.print_table(z, name="abstand_z_bar")
     P.plot_data(
         ax,
         l,
@@ -112,6 +128,7 @@ def test_zaehlrohr_protokoll():
     P.data["dn"] = 4
     P.data["r"] = 0.05
     P.data["dr"] = 0.003
+    P.print_table(B, n, name="magneto_raw")
     m_0 = 0.511  # MeV
     p = 299.792456 * B / 1000 * r  # radius
     E = m_0 * (((p / m_0) ** 2 + 1) ** 0.5 - 1)
@@ -119,6 +136,7 @@ def test_zaehlrohr_protokoll():
     P.resolve(p)
     print(p.data)
     print(E.data)
+    P.print_table(E, p, name="magneto_E_p")
     P.plot_data(
         ax,
         E,
