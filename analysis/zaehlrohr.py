@@ -10,8 +10,9 @@ def test_zaehlrohr_protokoll():
         "zLuft": r"z_{\mathrm{Luft}}",
         "zPapier": r"z_{\mathrm{Papier}}",
         "zKunststoff": r"z_{\mathrm{Kunststoff}}",
+        "zAlu0_4": r"z_{\mathrm{Alu \num{0.4}}}",
         "zAlu0_8": r"z_{\mathrm{Alu \num{0.8}}}",
-        "zAlu1_5": r"z_{\mathrm{Alu \num{1.5}}}",
+        "zAlu4": r"z_{\mathrm{Alu \num{4}}}",
         "z1": r"z_{1}",
         "z2": r"z_{2}",
         "z3": r"z_{3}",
@@ -31,8 +32,9 @@ def test_zaehlrohr_protokoll():
         "zLuft": r"\si{\cps}",
         "zPapier": r"\si{\cps}",
         "zKunststoff": r"\si{\cps}",
+        "zAlu0_4": r"\si{\cps}",
         "zAlu0_8": r"\si{\cps}",
-        "zAlu1_5": r"\si{\cps}",
+        "zAlu4": r"\si{\cps}",
         "z1": r"\si{\cps}",
         "z2": r"\si{\cps}",
         "z3": r"\si{\cps}",
@@ -49,16 +51,32 @@ def test_zaehlrohr_protokoll():
         "I": r"\si{\cm}",
         "E": r"\si{\mega\electronvolt}",
     }
+
     P = Project("Zaehlrohr", global_variables=gv, global_mapping=gm, font=13)
     P.output_dir = "./figures/"
     ax = P.figure.add_subplot()
     # A1 qualitative Absorption Untersuchung mit und ohne Abschirmung
     filepath = os.path.join(os.path.dirname(__file__), "../data/absorbtion.csv")
     P.load_data(filepath, loadnew=True)
+    P.data["dzLuft"] = 0
+    P.data["dzPapier"] = 0
+    P.data["dzKunststoff"] = 0
+    P.data["dzAlu0_4"] = 0
+    P.data["dzAlu0_8"] = 0
+    P.data["dzAlu1_5"] = 0
+    P.data["dzAlu4"] = 0
+    P.print_table(
+        zLuft,
+        zPapier,
+        zKunststoff,
+        zAlu0_4,
+        zAlu0_8,
+        zAlu4,
+        name="absorption_qal_raw",
+    )
     # A2 Daten besorgen Untersuchung der Zählrohrcharakteristik Na22
     filepath = os.path.join(os.path.dirname(__file__), "../data/charakter.csv")
     P.load_data(filepath, loadnew=True)
-    print(P.data)
     P.data["dU"] = 0
     P.data["dz1"] = 0
     P.data["dz2"] = 0

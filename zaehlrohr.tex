@@ -117,18 +117,26 @@ entsprechenden Zählraten notiert, was in folgender \autoref{tab:abschirmung} si
 jeweilige Abschirmung die gesamte Torzeit im Aufbau ist und man damit nicht gegen die Probe oder das Zählrohr stößt.
 
 %tab einfügen (von zettel)
-%\label{tab:abschirmung}
+\begin{table}[H]
+  \caption{Qualitative Untersuchung verschiedenster Abschirmungsmaterialien}
+  \label{tab:abschirmung}
+  \begin{center}
+    \input{./figures/messreihe_absorption_qal_raw.tex}
+  \end{center}
+\end{table}
+
 
 \subsection{Aufnahme der Zählrohrcharakteristik}
 
 Um die Zählrohrcharakteristik zu bestimmen wird der Aufbau aus \autoref{aufbau_Digz} realisiert.
-Als radioaktive Quelle wird erneut \ch{^{22}_{11}Na} in die dafür vorgesehene Halterung gesteckt. Nun wird die Betriebsspannung des
-Netzgerätes so lange gesenkt, bis durch den Digitalzähler kein Geräusch hörbar ist, was anzeigt, dass keine Strahlung auf das 
-Zählrohr gelangt, was bei \SI{316}{\volt} der Fall war. Nun wird die Spannung in kontinuierlich erhöht, bis ein Wert von 
+Als radioaktive Quelle wird erneut \ch{^{22}_{11}Na} in die dafür vorgesehene Halterung gesteckt. 
+Nun wird die Betriebsspannung des Netzgerätes so lange gesenkt, bis durch den Digitalzähler kein
+Geräusch hörbar ist, was anzeigt, dass keine Strahlung auf das Zählrohr gelangt, was bei 
+\SI{316}{\volt} der Fall war. Nun wird die Spannung in kontinuierlich erhöht, bis ein Wert von 
 \SI{600}{\volt} erreicht ist und die entsprechenden Counts
 notiert, was in folgender \autoref{tab:zaelrohrchar} sichtbar ist.
 
-\begin{table}
+\begin{table}[H]
   \caption{Tabelle der Zählrohrcharakteristik}
   \label{tab:zaelrohrchar}
   \begin{center}
@@ -148,7 +156,7 @@ Memory Speicher des Digitalzählers direkt auf den Computer übertragen. Die erh
 
 
 %Daten von Brossman auf Stick
-\begin{table}
+\begin{table}[H]
   \caption{Tabelle der Zählstatistik}
   \label{tab:zahlstatistik}
   \begin{center}
@@ -166,7 +174,7 @@ dass der tatsächliche Abstand zwischen Quelle und Zählrohr vermerkt wird und n
 den Abstand zu erhöhen kann auf die Skala der optischen Bank geachtet werden, da es sich um eine Differenzmessung handelt 
 und so ausgeschlossen werden kann, dass sich die entstehenden Unsicherheiten durch die Messung mittels Lineal gegenläufig auswirken.
 
-\begin{table}
+\begin{table}[H]
   \caption{Tabelle der Abstandsgesetz}
   \label{tab:abstandsgesetz}
   \begin{center}
@@ -203,7 +211,7 @@ und die jeweiligen Zerfälle bei einer Torzeit von \SI{100}{\second} gemeinsam m
 gemessen wird, indem die selbe Messung auch einmal ohne eingelegte radioaktive Quelle durchgeführt wird. Der dabei erhaltenen
 Wert muss dann von den vorherigen Werten abgezogen werden.
 
-\begin{table}
+\begin{table}[H]
   \caption{Tabelle der Magnetspektrometer}
   \label{tab:magnetspektrometer}
   \begin{center}
