@@ -55,33 +55,33 @@ def test_zaehlrohr_protokoll():
     # qualitative Absorption Untersuchung mit und ohne Abschirmung
     filepath = os.path.join(os.path.dirname(__file__), "../data/absorbtion.csv")
     P.load_data(filepath, loadnew=True)
-    # Untersuchung der Zählrohrcharakteristik Na22
-    filepath = os.path.join(os.path.dirname(__file__), "../data/charakter.csv")
-    P.load_data(filepath, loadnew=True)
-    print(P.data)
-    P.data["z"] = P.data[["z1", "z2", "z3"]].mean(axis=1)
-    P.data["dz"] = P.data[["z1", "z2", "z3"]].sem(axis=1)
+    # TODO Daten besorgen Untersuchung der Zählrohrcharakteristik Na22
+    # filepath = os.path.join(os.path.dirname(__file__), "../data/charakter.csv")
+    # P.load_data(filepath, loadnew=True)
+    # print(P.data)
+    # P.data["z"] = P.data[["z1", "z2", "z3"]].mean(axis=1)
+    # P.data["dz"] = P.data[["z1", "z2", "z3"]].sem(axis=1)
 
-    P.plot_data(
-        ax,
-        U,
-        z,
-        label="Gemessene Daten",
-        style="r",
-        errors=True,
-    )
-    ax.set_title(f"Zählrohrcharakteristik mit Na-22")
-    P.ax_legend_all(loc=1)
-    ax = P.savefig(f"charakteristik.pdf")
+    # P.plot_data(
+    #     ax,
+    #     U,
+    #     z,
+    #     label="Gemessene Daten",
+    #     style="r",
+    #     errors=True,
+    # )
+    # ax.set_title(f"Zählrohrcharakteristik mit Na-22")
+    # P.ax_legend_all(loc=1)
+    # ax = P.savefig(f"charakteristik.pdf")
     # Darstellung der Zählstatistik
     filepath = os.path.join(os.path.dirname(__file__), "../data/statistik.csv")
     P.load_data(filepath, loadnew=True)
+    P.histoofseries(n.data, bins=5, name="statistik")
     # Aufnahme des Abstandsgesetz
     filepath = os.path.join(os.path.dirname(__file__), "../data/abstandsgesetzt.csv")
     P.load_data(filepath, loadnew=True)
     # delta l = 0.5cm mit Sr90
     P.data["dl"] = 0.2
-    print(P.data[["z1", "z2", "z3"]].mean(axis=1))
     P.data["z"] = P.data[["z1", "z2", "z3"]].mean(axis=1)
     P.data["dz"] = P.data[["z1", "z2", "z3"]].sem(axis=1)
     P.plot_data(
@@ -135,7 +135,7 @@ def test_zaehlrohr_protokoll():
     P.ax_legend_all(loc=1)
     ax = P.savefig(f"energiespektrum.pdf")
 
-    # A6 Ra226 C137 und Ra226
+    # A6 Ra226 C137 und Ra226 Bilder sind schon vorhanden und im figures folder DONE
     # filepath = os.path.join(os.path.dirname(__file__), "../data/aluminium.csv")
     # P.load_data(filepath)
     # Szintillator
