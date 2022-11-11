@@ -132,6 +132,8 @@ def test_zaehlrohr_protokoll():
     m_0 = 0.511  # MeV
     p = 299.792456 * B / 1000 * r  # radius
     E = m_0 * (((p / m_0) ** 2 + 1) ** 0.5 - 1)
+    n_background = 23  # Hintergrundstrahlung
+    P.data["n"] = n.data - n_background
     P.resolve(E)
     P.resolve(p)
     print(p.data)
