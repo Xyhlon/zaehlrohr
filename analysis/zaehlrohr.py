@@ -52,32 +52,36 @@ def test_zaehlrohr_protokoll():
     P = Project("Zaehlrohr", global_variables=gv, global_mapping=gm, font=13)
     P.output_dir = "./figures/"
     ax = P.figure.add_subplot()
-    # qualitative Absorption Untersuchung mit und ohne Abschirmung
+    # A1 qualitative Absorption Untersuchung mit und ohne Abschirmung
     filepath = os.path.join(os.path.dirname(__file__), "../data/absorbtion.csv")
     P.load_data(filepath, loadnew=True)
-    # TODO Daten besorgen Untersuchung der Zählrohrcharakteristik Na22
-    # filepath = os.path.join(os.path.dirname(__file__), "../data/charakter.csv")
-    # P.load_data(filepath, loadnew=True)
-    # print(P.data)
-    # P.data["z"] = P.data[["z1", "z2", "z3"]].mean(axis=1)
-    # P.data["dz"] = P.data[["z1", "z2", "z3"]].sem(axis=1)
-
-    # P.plot_data(
-    #     ax,
-    #     U,
-    #     z,
-    #     label="Gemessene Daten",
-    #     style="r",
-    #     errors=True,
-    # )
-    # ax.set_title(f"Zählrohrcharakteristik mit Na-22")
-    # P.ax_legend_all(loc=1)
-    # ax = P.savefig(f"charakteristik.pdf")
-    # Darstellung der Zählstatistik
-    filepath = os.path.join(os.path.dirname(__file__), "../data/statistik.csv")
+    # A2 Daten besorgen Untersuchung der Zählrohrcharakteristik Na22
+    filepath = os.path.join(os.path.dirname(__file__), "../data/charakter.csv")
     P.load_data(filepath, loadnew=True)
-    P.histoofseries(n.data, bins=5, name="statistik")
-    # Aufnahme des Abstandsgesetz
+    print(P.data)
+    P.data["z"] = P.data[["z1", "z2", "z3"]].mean(axis=1)
+    P.data["dz"] = P.data[["z1", "z2", "z3"]].sem(axis=1)
+
+    P.plot_data(
+        ax,
+        U,
+        z,
+        label="Gemessene Daten",
+        style="r",
+        errors=True,
+    )
+    ax.set_title(f"Zählrohrcharakteristik mit Na-22")
+    P.ax_legend_all(loc=1)
+    ax = P.savefig(f"charakteristik.pdf")
+    # A3 Darstellung der Zählstatistik
+    P.vload()
+    filepath = os.path.join(os.path.dirname(__file__), "../data/stat.csv")
+    P.load_data(filepath, loadnew=True)
+    bins = (int)(n.data.max() - n.data.min()) // 10
+    P.histoofseries(n.data, bins=bins, name="statistik")
+    bins = (int)(n.data.max() - n.data.min()) // 5
+    P.histoofseries(n.data, bins=bins, name="atistik")
+    # A4 Aufnahme des Abstandsgesetz
     filepath = os.path.join(os.path.dirname(__file__), "../data/abstandsgesetzt.csv")
     P.load_data(filepath, loadnew=True)
     # delta l = 0.5cm mit Sr90
