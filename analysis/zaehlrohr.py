@@ -50,7 +50,7 @@ def test_zaehlrohr_protokoll():
         "E": r"\si{\mega\electronvolt}",
     }
     P = Project("Zaehlrohr", global_variables=gv, global_mapping=gm, font=13)
-    P.output_dir = "./data/"
+    P.output_dir = "./figures/"
     ax = P.figure.add_subplot()
     # qualitative Absorption Untersuchung mit und ohne Abschirmung
     filepath = os.path.join(os.path.dirname(__file__), "../data/absorbtion.csv")
@@ -58,6 +58,7 @@ def test_zaehlrohr_protokoll():
     # Untersuchung der Zählrohrcharakteristik Na22
     filepath = os.path.join(os.path.dirname(__file__), "../data/charakter.csv")
     P.load_data(filepath, loadnew=True)
+    print(P.data)
     P.data["z"] = P.data[["z1", "z2", "z3"]].mean(axis=1)
     P.data["dz"] = P.data[["z1", "z2", "z3"]].sem(axis=1)
 
