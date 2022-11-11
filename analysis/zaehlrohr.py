@@ -1,4 +1,5 @@
 from labtool_ex2 import Project
+from scipy.constants import e
 import os
 
 
@@ -22,6 +23,7 @@ def test_zaehlrohr_protokoll():
         "n": r"n",
         "p": r"p",
         "l": r"l_{\mathrm{Quelle}}",
+        "E": r"E_{\mathrm{kin}}",
     }
     gv = {
         "zLuft": r"\si{\cps}",
@@ -42,8 +44,11 @@ def test_zaehlrohr_protokoll():
         "p": r"\si{\mega\electronvolt}",
         "l": r"\si{\cm}",
         "I": r"\si{\cm}",
+        "E": r"\si{\mega\electronvolt}",
     }
     P = Project("Zaehlrohr", global_variables=gv, global_mapping=gm, font=13)
+    P.output_dir = "./data/"
+    ax = P.figure.add_subplot()
     # qualitative Absorption Untersuchung mit und ohne Abschirmung
     filepath = os.path.join(os.path.dirname(__file__), "../data/absorbtion.csv")
     P.load_data(filepath)
@@ -56,8 +61,28 @@ def test_zaehlrohr_protokoll():
     # Aufnahme des Abstandsgesetz
     filepath = os.path.join(os.path.dirname(__file__), "../data/abstandsgesetzt.csv")
     P.load_data(filepath)
+    # A6 Magnetspektrometer
+    P.vload()
     filepath = os.path.join(os.path.dirname(__file__), "../data/magnetspektro.csv")
     P.load_data(filepath)
+    print(e)
+    m_0 = 0.511  # MeV
+    p = 299.792456 * B * n
+    E = m_0 * (((p / m_0) + 1) ** 0.5 - 1)
+    P.resolve(E)
+    P.resolve(p)
+    P.plot_data(
+        ax,
+        E,
+        n,
+        label="Gemessene Daten",
+        style="r",
+        # errors=True,
+    )
+    ax.set_title(f"Energie Spektrum von Cs-137")
+    P.ax_legend_all(loc=1)
+    ax = P.savefig(f"energiespektrum.pdf")
+
     filepath = os.path.join(os.path.dirname(__file__), "../data/aluminium.csv")
     P.load_data(filepath)
     # Szintillator
