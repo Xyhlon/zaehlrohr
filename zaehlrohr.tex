@@ -128,7 +128,14 @@ Zählrohr gelangt, was bei \SI{316}{\volt} der Fall war. Nun wird die Spannung i
 \SI{600}{\volt} erreicht ist und die entsprechenden Counts
 notiert, was in folgender \autoref{tab:zaelrohrchar} sichtbar ist.
 
-%\label{tab:zaelrohrchar}
+\begin{table}
+  \caption{Tabelle der Zählrohrcharakteristik}
+  \label{tab:zaelrohrchar}
+  \begin{center}
+    \input{./figures/messreihe_charakter_raw.tex}
+  \end{center}
+\end{table}
+
 
 
 \subsection{Aufnahme der Zählstatistik}
@@ -141,7 +148,13 @@ Memory Speicher des Digitalzählers direkt auf den Computer übertragen. Die erh
 
 
 %Daten von Brossman auf Stick
-%\label{tab:zahlstatistik}
+\begin{table}
+  \caption{Tabelle der Zählstatistik}
+  \label{tab:zahlstatistik}
+  \begin{center}
+    \input{./figures/messreihe_statistik_raw.tex}
+  \end{center}
+\end{table}
 
 
 \subsection{Bestätigung des Abstandsgesetzes}
@@ -153,8 +166,14 @@ dass der tatsächliche Abstand zwischen Quelle und Zählrohr vermerkt wird und n
 den Abstand zu erhöhen kann auf die Skala der optischen Bank geachtet werden, da es sich um eine Differenzmessung handelt 
 und so ausgeschlossen werden kann, dass sich die entstehenden Unsicherheiten durch die Messung mittels Lineal gegenläufig auswirken.
 
+\begin{table}
+  \caption{Tabelle der Abstandsgesetz}
+  \label{tab:abstandsgesetz}
+  \begin{center}
+    \input{./figures/messreihe_abstand_raw.tex}
+  \end{center}
+\end{table}
 
-%\label{abstandsgesetz}
 
 \subsection{Bestimmung der Endpunktsenergie über Absorbtion in Aluminium}
 
@@ -164,6 +183,13 @@ Halterung geschoben. Als radioaktive Quelle wird erneut \ch{^{22}_{11}Na}, sowie
 Werte sind in folgender \autoref{tab:alu} festgehalten.
 
 %todo \label{tab:alu}
+% \begin{table}
+%   \caption{Tabelle der Abstandsgesetz}
+%   \label{tab:abstandsgesetz}
+%   \begin{center}
+%     \input{./figures/}
+%   \end{center}
+% \end{table}
 
 \subsection{Aufnahme des Energiespektrums von \texorpdfstring{$\beta$}{beta} Strahlung mit Magnetspektrometer}
 
@@ -177,7 +203,14 @@ und die jeweiligen Zerfälle bei einer Torzeit von \SI{100}{\second} gemeinsam m
 gemessen wird, indem die selbe Messung auch einmal ohne eingelegte radioaktive Quelle durchgeführt wird. Der dabei erhaltenen
 Wert muss dann von den vorherigen Werten abgezogen werden.
 
-%todo \label{tab:magnetspektrometer}
+\begin{table}
+  \caption{Tabelle der Magnetspektrometer}
+  \label{tab:magnetspektrometer}
+  \begin{center}
+    \input{./figures/messreihe_magneto_raw.tex}
+  \end{center}
+\end{table}
+
 
 \subsection{Aufnahme und Kalibrierung des \texorpdfstring{$\gamma$}{gamma} Spektrums}
 
@@ -185,8 +218,9 @@ Um das $\gamma$ Spektrum zu kalibrieren wird der Versuch wie in \autoref{aufbau_
 Referenzspektum aufzunehmen wird eine \ch{^{137}_{55}Cs} Quelle in die Halterung
 eingesetzt. Für die Hochspannung wird dabei ein Wert von \SI{0.73}{\kilo\volt} eingestellt.
 %todo Chemie
-Mithilfe des Chassy-Labs werden die erhaltenen Daten direkt an den Computer gesendet, wodurch die entsprechenden Spektren geplottet
-werden können. Da hier die Werte für die Peaks bekannt sind, kann so eine Kalibrierungskurve erzeugt werden, was in folgender 
+Mithilfe des Chassy-Labs werden die erhaltenen Daten direkt an den Computer gesendet, wodurch 
+die entsprechenden Spektren geplottet werden können. Da hier die Werte für 
+die Peaks bekannt sind, kann so eine Kalibrierungskurve erzeugt werden, was in folgender 
 \autoref{abb:kalibrierung} sichtbar ist.
 
 %todo \label{abb:kalibrierung}
@@ -194,9 +228,10 @@ werden können. Da hier die Werte für die Peaks bekannt sind, kann so eine Kali
 
 \subsection{Aufnahme des komplexen \texorpdfstring{$\gamma$}{gamma} Spektrums und seinen Zerfallsprodukten}
 
-Der Versuch wird die zuvor beschrieben wie in \autoref{aufbau_szinti} aufgebaut, auch wird erneut eine Spannung von \SI{0.73}{\kilo\volt}
-verwendet. Als radioaktive Quelle wird für diesen Teil des Versuchs das zu vermessende \ch{^{226}_{88}Ra} verwendet. auch diese Werte werden 
-auf den Computer übertragen und den zuvor erzeugten Plot bei einer Laufzeit von \SI{2400}{\second} beigefügt. Anhand des zuvor
+Der Versuch wird die zuvor beschrieben wie in \autoref{aufbau_szinti} aufgebaut, auch wird erneut eine 
+Spannung von \SI{0.73}{\kilo\volt} verwendet. Als radioaktive Quelle wird für diesen Teil des Versuchs
+das zu vermessende \ch{^{226}_{88}Ra} verwendet. auch diese Werte werden auf den Computer übertragen und 
+den zuvor erzeugten Plot bei einer Laufzeit von \SI{2400}{\second} beigefügt. Anhand des zuvor
 bestimmten Referenzspektums können nun die Peaks des \ch{^{226}_{88}Ra} Spektrums vermessen werden.
 
 %todo chemie
