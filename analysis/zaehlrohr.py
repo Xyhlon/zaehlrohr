@@ -61,7 +61,9 @@ def test_zaehlrohr_protokoll():
     # Aufnahme des Abstandsgesetz
     filepath = os.path.join(os.path.dirname(__file__), "../data/abstandsgesetzt.csv")
     P.load_data(filepath)
-    # A6 Magnetspektrometer
+    # delta l = 0.5cm mit Sr90
+
+    # A6 Magnetspektrometer C137 und Ra226
     P.vload()
     filepath = os.path.join(os.path.dirname(__file__), "../data/magnetspektro.csv")
     P.load_data(filepath)
