@@ -121,7 +121,8 @@ jeweilige Abschirmung die gesammte Torzeit im Aufbau ist und man damit nicht geg
 Um die Zählrohrcharakteristik zu bestimmen wird der Aufbau aus \autoref{aufbau_Digz} realisiert.
 Als radioaktive Quelle wird erneut NA-22 in die dafür vorgesehene Halterung gesteckt. Nun wird die Betriebsspannung des
 Netzgerätes so lange gesenkt, bis durch den Digitalzähler kein Geräusch hörbar ist, was anzeigt, dass keine Strahlung auf das 
-Zählrohr gelangt, was bei \SI{316}{V} der Fall war. Nun wird die Spannung in kontinuierlich erhöht und die entsprechenden Counts
+Zählrohr gelangt, was bei \SI{316}{V} der Fall war. Nun wird die Spannung in kontinuierlich erhöht, bis ein Wert von 
+\SI{600}{V} erreicht ist und die entsprechenden Counts
 notiert, was in folgender \autoref{tab:zaelrohrchar} sichtbar ist.
 
 %\label{tab:zaelrohrchar}
@@ -129,23 +130,44 @@ notiert, was in folgender \autoref{tab:zaelrohrchar} sichtbar ist.
 
 \subsection{Aufnahme der Zählstatistik}
 
+Um die Zählstatistik durchzuführen wird erneut der Versuchsaufbau aus \autoref{aufbau_Digz} verwirklicht. Auch wird erneut
+NA-22 als radioaktiveQuelle verwendet.
+Die Torzeit beträgt für diesen Teil des Versuchs \SI{1}{s}. Wegen der großen Datenmenge werden die erhaltenen Counts über den
+Memory Speicher des Digitalzählers direkt auf den Computer übertragen. Die erhaltenen Ergebnisse sind in folgender 
+\autoref{tab:zahlstatistik} aufgelistet.
+
+
+%Daten von Brossman auf Stick
+%\label{tab:zahlstatistik}
+
 
 \subsection{Bestätigung des Abstandsgesetzes}
 
+Um das Abstandsgesetz zu Bestätigen wird erneut der Versuchsaufbau aus \autoref{aufbau_Digz} verwendet. Um die verschiedenen 
+Abstände zu ermöglichen, wird die radioaktive Quelle, erneut NA-22, vom Zählrohr entfernt und die entsprechenden Counts bei
+einer Torzeit von \SI{10}{s} in \autoref{tab:abstandsgesetz} vermerkt. Bei der Abstandsbestimmung ist zu beachten,
+dass der tatsächliche Abstand zwischen Quelle und Zählrohr vermerkt wird und nicht jener auf der optischen Bank. Um allerding
+den Abstand zu erhöhen kann auf die Skala der optischen Bank geachtet werden, da es sich um eine Differenzmessung handelt 
+und so ausgeschlossen werden kann, dass sich die entstehenden Unsicherheiten durch die Messung mittels Lineal gegenläufig auswirken.
+
+
+%\label{abstandsgesetz}
 
 \subsection{Bestimmung der Endpunktsenergie über Absorbtion}
 
-Um die Enpunktsenergie zu bestimmen wird der Aufbau aus \autoref{aufbau_Magnetfeldspektrometer} realisiert.
+
+
+\subsection{Aufnahme des Energiespektrums von $\beta$ Strahlung mit Magnetspektrometer}
+
+Um das Energiespektrum der $\beta$ Strahlung zu bestimmen wird der Aufbau aus \autoref{aufbau_Magnetfeldspektrometer} realisiert.
 Als radioaktive Quelle wird erneut NA-22 in die dafür vorgesehene Halterung gesteckt. Nun wird die Betriebsspannung des
 Netzgerätes so lange gesenkt, bis das erzeugte Magnetfeld in etwa \SI{5}{mt} entspricht. Bei den Anschlüssen der Spule ist dabei zu beachten, dass das Magnetfeld richtig gepolt ist, um die Strahlung
 in die richtige Richtung abzulenken. Nun wird die Spannung durch betätigen des entsprechenden Rades kontinuierlich erhöht
 und die jeweiligen Zerfälle bei einer Torzeit von \SI{100}{s} gemeinsam mit dem jeweiligen Wert des Magnetfelds in folgender
-\autoref{tab:endpunktsenergie} aufgelistet.
+\autoref{tab:magnetspektrometer} aufgelistet. Dabei ist auch wichtig, dass die Hintergrundstrahlung im entsprechenden Gebäude
+gemessen wird, indem die selbe Messung auch einmal ohne eingelegte radioaktive Quelle durchgeführt wird.
 
-%\label{tab:endpunktsenergie}
-
-\subsection{Aufnahme des Energiespektrums von $\beta$ Strahlung mit Magnetspektrometer}
-
+%\label{tab:magnetspektrometer}
 
 \subsection{Aufnahme und Kalibrierung des $\gamma$ Spektrums}
 
