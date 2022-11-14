@@ -87,10 +87,45 @@ Aus den Absorptionskoeffizienten kann die Ruheenergie $E_0$ nach folgender Forme
 $\rho$ beschreibt dabei die Dichte der Barriere, dessen Absorptionskoeffizient bestimmt wurde.
 
 
-
-
-
 \subsection{Zählrohr}
+
+Im Versuch wird ein sogenanntes Geiger-Müller-Zählrohr verwendet, dessen schematischer Aufbau in \autoref{fig:zahlrohr} ersichtlich ist.
+Es besteht im wesentlichen aus einem mit Zählgas gefüllten Metallrohr, durch dessen Mitte ein dünner Draht, der als Anode fungiert,
+läuft. Auf diesen Draht wird eine Spannung angelegt. Trifft nun ein zu detektierendes Teilchen auf das Fenster des 
+Zählrohrs, können Atome im Zählgas angeregt werden, welches durch die angelegte Spannung zur Anode hin beschleunigt 
+wird. Durch Stöße im Gas wird ein Lawineneffekt ausgelöst, der schlussendlich als Peak von der Anode verzeichnet werden kann.
+
+\begin{figure}[H]
+  \begin{center}
+  \includegraphics[width=0.5\textwidth]{./figures/zahlrohr.png}
+	\end{center}
+	\caption{schematischer Aufbau des Zählrohrs \cite[]{}}
+	\label{fig:zahlrohr}
+    
+\end{figure}
+
+Der charakteristische Verlauf der Kurve des Zählrohrs ist in \autoref{fig:zchar} ersichtlich.
+Dabei sind die einzelnen Bereiche zu unterscheiden:
+
+%todo Liste vlt in Aufzählung mit röm nummern ändern
+\begin{itemize}
+  \item Hier werden die Elektronen aufgrund der angelegten Spannung zur Anode hin Beschleunigt.
+  \item In diesem Bereich ist eine Sättigung erreicht. Es bewegen sich also nicht alle Atome direkt zur Anode.
+  \item Hier ist die Spannung so hoch, dass die Atome auf den Weg zur Anode mit anderen Atomen zusammenstoßen, wodurch der Lawineneffekt ausgelöst wird.
+  \item In diesem Bereich befindet sich das sogenannte Geiger-Müller-Plateau. Hier ist der Betrieb quasi nicht spannungsabhängig, weshalb dies auch der gewünschte Messbereich ist.
+  \item Eine weitere Erhöhung in diesen Bereich erhöht zwar auch die Zählrate, zerstört aber auf Dauer den Zähler, weshalb dieser Bereich zu meiden ist.
+\end{itemize}
+
+\begin{figure}[H]
+  \begin{center}
+  \includegraphics[width=0.8\textwidth]{./figures/zcharakteristik.png}
+	\end{center}
+	\caption{charakteristische Kurve des Zählrohrs für verschiedene Arten von Strahlung für die 
+  Bereits erklärten Spannungsbereiche \cite[]{}}
+	\label{fig:zahlrohr}
+    
+\end{figure}
+
 
 
 \subsection{Magnetspektrometer}
