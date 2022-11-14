@@ -172,13 +172,18 @@ entsprechenden Counts notiert, was in folgender \autoref{tab:zaelrohrchar}
 sichtbar ist.
 
 \begin{table}[H]
-  \caption{Tabelle der Zählrohrcharakteristik}
+  \caption[Erhaltene Zählraten für die Zählrohrcharakteristik]{Erhaltene Zählraten für die Zählrohrcharakteristik
+   bei einer Torzeit von \SI{10}{\second} und einem 
+  Abstand der radioaktiven Quelle von \SI{15(2)}{\mm}. Die Unsicherheit beträgt dabei für alle Zählraten \SI{}{} \\
+  $ U \dots$ eingestellte Betriebsspannung in V \\
+  $ z_{i} \dots$ erhaltene Zählrate bei der entsprechenden Betriebsspannung}
   \label{tab:zaelrohrchar}
   \begin{center}
     \input{./figures/messreihe_charakter_raw.tex}
   \end{center}
 \end{table}
 
+%todo Einheiten bei Tabelle zb U / V
 
 
 \subsection{Aufnahme der Zählstatistik}
@@ -201,12 +206,13 @@ aufgelistet.
   \end{center}
 \end{table}
 
+%todo Tabelle viel zu lang
 
 \subsection{Bestätigung des Abstandsgesetzes}
 
 Um das Abstandsgesetz zu Bestätigen wird erneut der Versuchsaufbau aus
 \autoref{aufbau_Digz} verwendet. Um die verschiedenen Abstände zu ermöglichen,
-wird die radioaktive Quelle, erneut \ch{^{22}_{11}Na}, vom Zählrohr entfernt
+wird die radioaktive Quelle, \ch{^{90}_{38}Sr}, vom Zählrohr entfernt
 und die entsprechenden Counts bei einer Torzeit von \SI{10}{\second} in
 \autoref{tab:abstandsgesetz} vermerkt. Bei der Abstandsbestimmung ist zu
 beachten, dass der tatsächliche Abstand zwischen Quelle und Zählrohr vermerkt
@@ -217,7 +223,11 @@ entstehenden Unsicherheiten durch die Messung mittels Lineal gegenläufig
 auswirken.
 
 \begin{table}[H]
-  \caption{Tabelle der Abstandsgesetz}
+  \caption[Erhaltene Zählraten bei unterschiedlichen Abständen der Quelle]{Erhaltene Zählraten bei unterschiedlichen Abständen der Quelle
+   bei einer Torzeit von \SI{10}{\second}. Die Unsicherheit beträgt dabei für alle Zählraten \SI{}{} \\
+  $ l_{\mathrm{Quelle}} \dots$ Abstand der radioaktiven Quelle in cm \\
+  $ z_{i} \dots$ erhaltene Zählrate bei entsprechendem Abstand}
+
   \label{tab:abstandsgesetz}
   \begin{center}
     \input{./figures/messreihe_abstand_raw.tex}
@@ -244,6 +254,8 @@ festgehalten.
 %   \end{center}
 % \end{table}
 
+%todo caption anpassen
+
 \subsection{Aufnahme des Energiespektrums von \texorpdfstring{$\beta$}{beta} Strahlung mit Magnetspektrometer}
 
 Um das Energiespektrum der $\beta$ Strahlung zu bestimmen wird der Aufbau aus
@@ -258,11 +270,15 @@ Zerfälle bei einer Torzeit von \SI{100}{\second} gemeinsam mit dem jeweiligen
 Wert des Magnetfelds in folgender \autoref{tab:magnetspektrometer} aufgelistet.
 Dabei ist auch wichtig, dass die Hintergrundstrahlung im entsprechenden Gebäude
 gemessen wird, indem die selbe Messung auch einmal ohne eingelegte radioaktive
-Quelle durchgeführt wird. Der dabei erhaltenen Wert muss dann von den
+Quelle durchgeführt wird, wodurch eine Hintergrundstrahlung von 23 Zerfällen in der entsprechenden Torzeit vermerkt wird.
+Der dabei erhaltenen Wert muss dann von den
 vorherigen Werten abgezogen werden.
 
 \begin{table}[H]
-  \caption{Tabelle der Magnetspektrometer}
+  \caption[Verzeichnete Zerfälle bei entsprechendem Magnetfeld]{Verzeichnete Zerfälle bei entsprechendem Magnetfeld
+  bei einer Torzeit von \SI{100}{\second}. Die Unsicherheit beträgt dabei \SI{}{} \\
+ $ B \dots$ Stärke des Magnetfelds in mT \\
+ $ n \dots$ erhaltene  bei erhaltene Anzahl an Zerfällen bei entsprechendem Magnetfeld}
   \label{tab:magnetspektrometer}
   \begin{center}
     \input{./figures/messreihe_magneto_raw.tex}
