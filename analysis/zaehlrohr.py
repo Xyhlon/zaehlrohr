@@ -21,7 +21,7 @@ def test_zaehlrohr_protokoll():
         "t": r"t",
         "U": r"U",
         "B": r"B",
-        "d": r"d",
+        "D": r"D",
         "n": r"n",
         "p": r"p",
         "r": r"r",
@@ -43,7 +43,7 @@ def test_zaehlrohr_protokoll():
         "t": r"\si{\second}",
         "U": r"\si{\volt}",
         "B": r"\si{\milli\tesla}",
-        "d": r"\si{\micro\meter}",
+        "D": r"\si{\micro\meter}",
         "n": r"1",
         "p": r"\si{\mega\electronvolt}",
         "r": r"\si{\m}",
@@ -85,7 +85,7 @@ def test_zaehlrohr_protokoll():
     P.print_table(U, z1, z2, z3, name="charakter_raw", inline_units=True)
     P.data["z"] = P.data[["z1", "z2", "z3"]].mean(axis=1)
     P.data["dz"] = P.data[["z1", "z2", "z3"]].sem(axis=1)
-    P.print_table(z, name="charakter_z_bar", inline_units=True)
+    P.print_table(z, name="charakter_z_bar", split=True, inline_units=True)
 
     P.plot_data(
         ax,
@@ -106,7 +106,7 @@ def test_zaehlrohr_protokoll():
     P.data["dt"] = 0
     P.data["dn"] = 0
 
-    P.print_table(t, n, name="statistik_raw", split=True, inline_units=True)
+    P.print_table(t, n, name="statistik_raw", inline_units=True)
     bins = (int)(n.data.max() - n.data.min()) // 10
     P.histoofseries(n.data, bins=bins, name="statistik")
     bins = (int)(n.data.max() - n.data.min()) // 5
@@ -178,7 +178,17 @@ def test_zaehlrohr_protokoll():
     P.ax_legend_all(loc=1)
     ax = P.savefig(f"energiespektrum.pdf")
 
-    # A6 Ra226 C137 und Ra226 Bilder sind schon vorhanden und im figures folder DONE
+    # A5 Ra226 Aluminiumabsorbtion
+    filepath = os.path.join(os.path.dirname(__file__), "../data/aluminium.csv")
+    P.vload()
+    P.load_data(filepath)
+    P.data["dD"] = 0
+    P.data["dz1"] = 0
+    P.data["dz2"] = 0
+    P.data["dz3"] = 0
+    P.print_table(D, z1, z2, z3, name="alu_absorbtion", inline_units=True)
+
+    # A5 Ra226 C137 und Ra226 Bilder sind schon vorhanden und im figures folder DONE
     # filepath = os.path.join(os.path.dirname(__file__), "../data/aluminium.csv")
     # P.load_data(filepath)
     # Szintillator
