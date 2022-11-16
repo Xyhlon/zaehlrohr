@@ -1,5 +1,6 @@
 from labtool_ex2 import Project
 from scipy.constants import e
+from sympy import exp
 import numpy as np
 import os
 
@@ -25,6 +26,10 @@ def test_zaehlrohr_protokoll():
         "n": r"n",
         "p": r"p",
         "r": r"r",
+        "A": r"A",
+        "mu": r"\mu",
+        "sig": r"\sigma",
+        "k": r"k",
         "l": r"l_{\mathrm{Quelle}}",
         "E": r"E_{\mathrm{kin}}",
     }
@@ -47,6 +52,10 @@ def test_zaehlrohr_protokoll():
         "n": r"1",
         "p": r"\si{\mega\electronvolt}",
         "r": r"\si{\m}",
+        "A": r"\si{1}",
+        "mu": r"\si{\mega\electronvolt}",
+        "sig": r"\si{\mega\electronvolt}",
+        "k": r"\si{\cm\squared}",
         "l": r"\si{\cm}",
         "I": r"\si{\cm}",
         "E": r"\si{\mega\electronvolt}",
@@ -54,6 +63,7 @@ def test_zaehlrohr_protokoll():
 
     P = Project("Zaehlrohr", global_variables=gv, global_mapping=gm, font=13)
     P.output_dir = "./figures/"
+    P.figure.set_size_inches((8, 6))
     ax = P.figure.add_subplot()
     # A1 qualitative Absorption Untersuchung mit und ohne Abschirmung
     filepath = os.path.join(os.path.dirname(__file__), "../data/absorbtion.csv")
@@ -96,7 +106,7 @@ def test_zaehlrohr_protokoll():
         errors=True,
     )
     ax.set_title(f"Zählrohrcharakteristik mit Na-22")
-    P.ax_legend_all(loc=1)
+    P.ax_legend_all(loc=4)
     ax = P.savefig(f"charakteristik.pdf")
     # A3 Darstellung der Zählstatistik
     P.vload()
@@ -131,6 +141,26 @@ def test_zaehlrohr_protokoll():
         style="r",
         errors=True,
     )
+    P.vload()
+    z = k / l**2
+    P.plot_fit(
+        axes=ax,
+        x=l,
+        y=z,
+        eqn=z,
+        style=r"#1cb2f5",
+        label="Abstandsgesetz",
+        offset=[60, -10],
+        use_all_known=False,
+        guess={"k": 1500},
+        bounds=[
+            {"name": "k", "min": 1000, "max": 2000},
+        ],
+        add_fit_params=True,
+        granularity=10000,
+        # gof=True,
+        # scale_covar=True,
+    )
     ax.set_title(f"Abstandsgesetz mit Sr-90")
     P.ax_legend_all(loc=1)
     ax = P.savefig(f"abstandsgesetz.pdf")
@@ -139,9 +169,6 @@ def test_zaehlrohr_protokoll():
     P.vload()
     filepath = os.path.join(os.path.dirname(__file__), "../data/magnetspektro.csv")
     P.load_data(filepath, loadnew=True)
-    # print(e)
-    # print(B.data)
-    # print(n.data)
 
     P.data["dB"] = 0.1
     P.data["dn"] = 4
@@ -155,8 +182,6 @@ def test_zaehlrohr_protokoll():
     P.data["n"] = n.data - n_background
     P.resolve(E)
     P.resolve(p)
-    print(p.data)
-    print(E.data)
     P.print_table(E, p, name="magneto_E_p", inline_units=True)
     P.plot_data(
         ax,
@@ -173,6 +198,50 @@ def test_zaehlrohr_protokoll():
         label="Gemessene Daten",
         style="b",
         errors=True,
+    )
+    P.vload()
+    n = A * exp(-((E - mu) ** 2) / (2 * sig**2)) / (2 * np.pi * sig**2) ** 0.5
+    P.plot_fit(
+        axes=ax,
+        x=E,
+        y=n,
+        eqn=n,
+        style=r"#9a30f0",
+        label="Normalverteilung",
+        offset=[30, -10],
+        use_all_known=False,
+        guess={"mu": 0.3, "sig": 0.1, "A": 300},
+        bounds=[
+            {"name": "A", "min": 0, "max": 350},
+            {"name": "mu", "min": 0.1, "max": 0.4},
+            {"name": "sig", "min": 0.01, "max": 0.9},
+        ],
+        add_fit_params=True,
+        granularity=10000,
+        # gof=True,
+        scale_covar=True,
+    )
+    P.vload()
+    n = A * exp(-((p - mu) ** 2) / (2 * sig**2)) / (2 * np.pi * sig**2) ** 0.5
+    P.plot_fit(
+        axes=ax,
+        x=p,
+        y=n,
+        eqn=n,
+        style=r"#ca5f46",
+        label="Normalverteilung",
+        offset=[60, -10],
+        use_all_known=False,
+        guess={"mu": 0.5, "sig": 0.5, "A": 350},
+        bounds=[
+            {"name": "A", "min": 100, "max": 700},
+            {"name": "mu", "min": 0.4, "max": 0.6},
+            {"name": "sig", "min": 0.1, "max": 2},
+        ],
+        add_fit_params=True,
+        granularity=10000,
+        # gof=True,
+        scale_covar=True,
     )
     ax.set_title(f"Energie Spektrum von Na-22")
     P.ax_legend_all(loc=1)
