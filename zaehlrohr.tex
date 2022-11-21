@@ -5,9 +5,12 @@
 \input{./protokoll_template/template.latex/input/shared_preamble.tex}
 
     % Kopfzeile
-\ihead{WS22\\11.11.2022}
-\chead{\textsc{Stark} Matthias - 12004907 \\ \textsc{Philipp} Maximilian - 11839611}
-\ohead{FLAB 1 \\ Zählrohr}
+\ihead{WS22\\
+11.11.2022}
+\chead{\textsc{Stark} Matthias - 12004907 \\
+ \textsc{Philipp} Maximilian - 11839611}
+\ohead{FLAB 1 \\
+ Zählrohr}
     % Fußzeile
 
 \begin{document}
@@ -18,96 +21,97 @@
 \section{Aufgabenstellung\label{Auf}}
 
 
-
 \begin{itemize}
-    \item Messung der $\alpha$, $\beta$ und $\gamma$ Strahlung ohne und mit verschiedenen dicken Abschirmungen
+    \item Messung der \(\alpha\), \(\beta\) und \(\gamma\) Strahlung ohne und mit verschiedenen dicken Abschirmungen
     \item Aufnahme der Zählrohrcharakteristik
     \item Aufnahme der Zählstatistik
     \item Bestätigung des Abstandsgesetzes
     \item Bestimmung der Endpunktsenergie über Absorption in Aluminium
-    \item Aufnahme des Energiespektrums von $\beta$ Strahlung mit Magnetspektrometer
-    \item Aufnahme und Kalibrierung des $\gamma$ Spektrums
-    \item Aufnahme des komplexen $\gamma$ Spektrums und seinen Zerfallsprodukten
+    \item Aufnahme des Energiespektrums von \(\beta\) Strahlung mit Magnetspektrometer
+    \item Aufnahme und Kalibrierung des \(\gamma\) Spektrums
+    \item Aufnahme des komplexen \(\gamma\) Spektrums und seinen Zerfallsprodukten
 \end{itemize}
 
 \section{Grundlagen}\label{Grund}
 
 \subsection{Radioaktivität}
-Nicht alle, in der Natur vorkommenden, Isotope sind stabil und zerfallen so mit einer gewissen Halbwertszeit $\tau$.
+Nicht alle, in der Natur vorkommenden, Isotope sind stabil und zerfallen so mit einer gewissen Halbwertszeit \(\tau\).
 Bei diesen Zerfällen kann grundsätzlich zwischen verschiedenen Zerfällen unterschieden werden.
 
-Bei $\alpha$ - Zerfall wird ein Heliumkern ausgestoßen, was sich schließlich auf die Massen und Ordnungszahl auswirkt.
+Bei \(\alpha\) - Zerfall wird ein Heliumkern ausgestoßen, was sich schließlich auf die Massen und Ordnungszahl auswirkt.
 
-Bei $\beta$ - Zerfall muss zwischen $\beta^+$ und $\beta^-$ unterschieden werden.
-$\beta^-$ - Zerfall wird durch die Umwandlung eines Neutrons in ein Proton hervorgerufen, wodurch ein Elektron und ein 
+Bei \(\beta\) - Zerfall muss zwischen \(\beta^+\) und \(\beta^-\) unterschieden werden.
+\(\beta^-\) - Zerfall wird durch die Umwandlung eines Neutrons in ein Proton hervorgerufen, wodurch ein Elektron und ein
 Elektron-Antineutrino ausgestoßen werden, um die Erhaltungssätze nicht zu verletzen.
-$\beta^+$ - Zerfall kommt in der Natur seltener vor, funktioniert aber nach dem gleichen Prinzip, mit dem Unterschied, 
+\(\beta^+\) - Zerfall kommt in der Natur seltener vor, funktioniert aber nach dem gleichen Prinzip, mit dem Unterschied,
 dass hier die Ordnungszahl erhöht wird.
 
-Bei $\gamma$ - Zerfall werden keine Teilchen sondern hochfrequente Wellen abgestrahlt. Diese kommen zustande,
-wenn das Isotop nach $\alpha$ oder $\beta$ - Zerfall noch in einem angeregten Zustand ist, wodurch durch die
-$\gamma$ - Strahlung Spektren entstehen, die signifikant für bestimmte Elemente sind, was im Laufe des Versuchs 
+Bei \(\gamma\) - Zerfall werden keine Teilchen sondern hochfrequente Wellen abgestrahlt. Diese kommen zustande,
+wenn das Isotop nach \(\alpha\) oder \(\beta\) - Zerfall noch in einem angeregten Zustand ist, wodurch durch die
+\(\gamma\) - Strahlung Spektren entstehen, die signifikant für bestimmte Elemente sind, was im Laufe des Versuchs
 genutzt wird.
 
 
-Weil diese Zerfälle immer nach einem bestimmen Schema ablaufen, können sogenannte Zerfallsreihen angeschrieben werden, 
+Weil diese Zerfälle immer nach einem bestimmen Schema ablaufen, können sogenannte Zerfallsreihen angeschrieben werden,
 wie beispielsweise die Zerfallsreihe von \ch{^{226}_{88}Ra} in \autoref{fig:zerfallsreihe}. Daraus kann abgelesen
 werden, welche Zerfälle vorliegen und auch welche Halbwertszeiten diese haben, wie häufig die Zerfälle also auftreten.
 
 \begin{figure}[H]
   \begin{center}
-  \includegraphics[width=0.5\textwidth]{./figures/zerfallsreihe.png}
-	\end{center}
-	\caption{Zerfallsreihe \ch{^{226}_{88}Ra} \cite[]{}}
+  \includegraphics[width = 0.5\textwidth]{./figures/zerfallsreihe.png}
+	
+\end{center}
+	\caption{Zerfallsreihe \ch{^{226}_{88}Ra}~\cite[]{}}
 	\label{fig:zerfallsreihe}
-    
+
 \end{figure}
 
 
-Die Intensität $I$ radioaktiver Strahlung folgt dabei dem Abstandsgesetz, welches folgendermaßen definiert werden kann:
+Die Intensität \(I\) radioaktiver Strahlung folgt dabei dem Abstandsgesetz, welches folgendermaßen definiert werden kann:
 \begin{equation}
   I \propto \frac{1}{l^2}
 \end{equation}
 
-$l$ entspricht dabei dem Abstand zur radioaktivenn Quelle.
+\(l\) entspricht dabei dem Abstand zur radioaktivenn Quelle.
 
 Für die Absorption von radioaktiver Strahlung gilt das Beer-Lambertsche Absorptionsgesetz:
 \begin{equation}
   I = I_0 \exp(-\mu d)
 \end{equation}
 
-$I$ beschreibt dabei die Intensität der Strahlung nach der Barriere, $I_0$ die Anfangsintensität, 
-$\mu$ den Absorptionskoeffizienten der Barriere und $d$ die Dicke der Barriere.
+\(I\) beschreibt dabei die Intensität der Strahlung nach der Barriere, \(I_0\) die Anfangsintensität,
+\(\mu\) den Absorptionskoeffizienten der Barriere und \(d\) die Dicke der Barriere.
 
-Aus den Absorptionskoeffizienten kann die Ruheenergie $E_0$ nach folgender Formel berechnet werden:
+Aus den Absorptionskoeffizienten kann die Ruheenergie \(E_0\) nach folgender Formel berechnet werden:
 \begin{equation}
   \frac{\mu}{\rho} = 17.6 E_0^{-1.39}
 \end{equation}
 
-$\rho$ beschreibt dabei die Dichte der Barriere, dessen Absorptionskoeffizient bestimmt wurde.\cite[]{}
+\(\rho\) beschreibt dabei die Dichte der Barriere, dessen Absorptionskoeffizient bestimmt wurde.\cite[]{}
 
 
 \subsection{Zählrohr}
 
 Im Versuch wird ein sogenanntes Geiger-Müller-Zählrohr verwendet, dessen schematischer Aufbau in \autoref{fig:zahlrohr} ersichtlich ist.
 Es besteht im wesentlichen aus einem mit Zählgas gefüllten Metallrohr, durch dessen Mitte ein dünner Draht, der als Anode fungiert,
-läuft. Auf diesen Draht wird eine Spannung angelegt. Trifft nun ein zu detektierendes Teilchen auf das Fenster des 
-Zählrohrs, können Atome im Zählgas angeregt werden, welches durch die angelegte Spannung zur Anode hin beschleunigt 
+läuft. Auf diesen Draht wird eine Spannung angelegt. Trifft nun ein zu detektierendes Teilchen auf das Fenster des
+Zählrohrs, können Atome im Zählgas angeregt werden, welches durch die angelegte Spannung zur Anode hin beschleunigt
 wird. Durch Stöße im Gas wird ein Lawineneffekt ausgelöst, der schlussendlich als Peak von der Anode verzeichnet werden kann.
 
 \begin{figure}[H]
   \begin{center}
-  \includegraphics[width=0.5\textwidth]{./figures/zahlrohr.png}
-	\end{center}
-	\caption{schematischer Aufbau des Zählrohrs \cite[]{}}
+  \includegraphics[width = 0.5\textwidth]{./figures/zahlrohr.png}
+	
+\end{center}
+	\caption{schematischer Aufbau des Zählrohrs~\cite[]{}}
 	\label{fig:zahlrohr}
-    
+
 \end{figure}
 
 Der charakteristische Verlauf der Kurve des Zählrohrs ist in \autoref{fig:zchar} ersichtlich.
-Dabei sind die einzelnen Bereiche zu unterscheiden \cite[]{} :
+Dabei sind die einzelnen Bereiche zu unterscheiden~\cite[]{}:
 
-\begin{enumerate}[label=\Roman*.]
+\begin{enumerate}[label = \Roman*.]
   \item Hier werden die Elektronen aufgrund der angelegten Spannung zur Anode hin Beschleunigt.
   \item In diesem Bereich ist eine Sättigung erreicht. Es bewegen sich also nicht alle Atome direkt zur Anode.
   \item Hier ist die Spannung so hoch, dass die Atome auf den Weg zur Anode mit anderen Atomen zusammenstoßen, wodurch der Lawineneffekt ausgelöst wird.
@@ -117,48 +121,50 @@ Dabei sind die einzelnen Bereiche zu unterscheiden \cite[]{} :
 
 \begin{figure}[H]
   \begin{center}
-  \includegraphics[width=0.8\textwidth]{./figures/zcharakteristik.png}
-	\end{center}
-	\caption{charakteristische Kurve des Zählrohrs für verschiedene Arten von Strahlung für die 
-  Bereits erklärten Spannungsbereiche \cite[]{}}
+  \includegraphics[width = 0.8\textwidth]{./figures/zcharakteristik.png}
+	
+\end{center}
+	\caption{charakteristische Kurve des Zählrohrs für verschiedene Arten von Strahlung für die
+  Bereits erklärten Spannungsbereiche~\cite[]{}}
 	\label{fig:zchar}
-    
-\end{figure}
 
+\end{figure}
 
 
 \subsection{Magnetspektrometer}
 
-Die Funktionsweise eines Magnetfeldspektrometer basiert auf der Lorentzkraft. So wird $\beta$ - Strahlung, die im Grunde aus 
-Elektronen besteht, in einer Kreisbahn abgelenkt und so von der $\gamma$ - Strahlung getrennt. Der schematische Aufbau eines
+Die Funktionsweise eines Magnetfeldspektrometer basiert auf der Lorentzkraft. So wird \(\beta\) - Strahlung, die im Grunde aus
+Elektronen besteht, in einer Kreisbahn abgelenkt und so von der \(\gamma\) - Strahlung getrennt. Der schematische Aufbau eines
 Magnetfeldspektrometers ist in \autoref{fig:magnetspektrometer} ersichtlich. In der Abbildung ist klar die Kreisförmige
-'Flugbahn' der $\beta$ - Strahlung vom Präparat zum Zählrohr sichtbar.\cite[]{}
+'Flugbahn' der \(\beta\) - Strahlung vom Präparat zum Zählrohr sichtbar.\cite[]{}
 
 
 \begin{figure}[H]
   \begin{center}
-  \includegraphics[width=0.8\textwidth]{./figures/fig5.png}
-	\end{center}
-	\caption{schematischer Aufbau des Magnetfeldspektrometers \cite[]{}}
+  \includegraphics[width = 0.8\textwidth]{./figures/fig5.png}
+	
+\end{center}
+	\caption{schematischer Aufbau des Magnetfeldspektrometers~\cite[]{}}
 	\label{fig:magnetspektrometer}
-    
+
 \end{figure}
 
 
 \subsection{Szintilationszähler}
 
 Der schematische Aufbau eines Szintilationszählers ist ist in \autoref{fig:szintilationszahler} sichtbar.
-Grundsätzlich besteht er aus einem Szintilartor, bei dem durch die Anregung der Strahlen Photonen ausgesendet werden, 
+Grundsätzlich besteht er aus einem Szintilartor, bei dem durch die Anregung der Strahlen Photonen ausgesendet werden,
 die von der Photokathode erfasst werden. Dahinter befindet sich ein Photomultiplier, an dessen Ende schlussendlich
 die vielen Elektronen von der Anode abgegriffen werden, was das erhaltene Signal darstellt.\cite[]{}
 
 \begin{figure}[H]
   \begin{center}
-  \includegraphics[width=0.8\textwidth]{./figures/szintilationszahler.png}
-	\end{center}
-	\caption{schematischer Aufbau und Strahlengang im Szintilationszähler \cite[]{}}
+  \includegraphics[width = 0.8\textwidth]{./figures/szintilationszahler.png}
+	
+\end{center}
+	\caption{schematischer Aufbau und Strahlengang im Szintilationszähler~\cite[]{}}
 	\label{fig:szintilationszahler}
-    
+
 \end{figure}
 
 
@@ -181,21 +187,22 @@ befestigen, wird die entsprechende Halterung auf die optische Bank gesteckt.
 
 \begin{figure}[H]
   \begin{center}
-  \includegraphics[width=0.8\textwidth]{./figures/digz.png}
-	\end{center}
-	\caption[Aufbau des Digitalzähler]{Aufbau des Digitalzähler \\ 
-    1 $\dots$ Halterung für radioaktive Quelle \\ 
-    2 $\dots$ Zählrohr \\
-    3 $\dots$ Halterung um später das Aluminium zu Befestigen \\ 
-    4 $\dots$ Digitalzähler \\ 
-    5 $\dots$ optische Bank um den Abstand zu variieren}
+  \includegraphics[width = 0.8\textwidth]{./figures/digz.png}
+	
+\end{center}
+	\caption[Aufbau des Digitalzähler]{Aufbau des Digitalzähler \\
+    1 \(\dots\) Halterung für radioaktive Quelle \\
+    2 \(\dots\) Zählrohr \\
+    3 \(\dots\) Halterung um später das Aluminium zu Befestigen \\
+    4 \(\dots\) Digitalzähler \\
+    5 \(\dots\) optische Bank um den Abstand zu variieren}
 	\label{fig:digz}
-    
+
 \end{figure}
 
 \subsection{Magnetfeldspektrometer}\label{sec:aufbau_Magnetfeldspektrometer}
 
-Um $\beta$ Strahlung messbar zu machen, wird folgender Aufbau aus
+Um \(\beta\) Strahlung messbar zu machen, wird folgender Aufbau aus
 \autoref{fig:mag} verwendet. Dabei wird das radioaktive Präparat in das dafür
 vorgesehene Loch gesteckt. Durch die Spule wird ein Magnetfelds erzeugt,
 wodurch die Betastrahlung aufgrund von Lorentzkraft abgelenkt wird, weshalb die
@@ -206,18 +213,18 @@ Netzgerät bestimmt.
 
 \begin{figure}[H]
     \begin{center}
-    \includegraphics[width=0.8\textwidth]{./figures/mag_new.png}
+    \includegraphics[width = 0.8\textwidth]{./figures/mag_new.png}
       \end{center}
-      \caption[Aufbau des Magnetfeldspektrometers]{Aufbau des Magnetfeldspektrometers \\ 
-        1 $\dots$ Radioaktive Quelle \\
-        2 $\dots$ Hallsonde (nicht sichtbar im Foto) \\
-        3 $\dots$ Epfänger des Geiger-Müller-Zählers \\
-        4 $\dots$ Anzeige des Geiger-Müller-Zählers \\
-        5 $\dots$ Spule um das Magnetfeld zu erzeugen \\
-        6 $\dots$ Netzgerät für das Magnetfeld (Stecker um die Polung des Magnetfelds zu Ändern) \\
-        7 $\dots$ Teslameter um die Stärke des Magnetfelds zu bestimmen}
+      \caption[Aufbau des Magnetfeldspektrometers]{Aufbau des Magnetfeldspektrometers \\
+        1 \(\dots\) Radioaktive Quelle \\
+        2 \(\dots\) Hallsonde (nicht sichtbar im Foto) \\
+        3 \(\dots\) Epfänger des Geiger-Müller-Zählers \\
+        4 \(\dots\) Anzeige des Geiger-Müller-Zählers \\
+        5 \(\dots\) Spule um das Magnetfeld zu erzeugen \\
+        6 \(\dots\) Netzgerät für das Magnetfeld (Stecker um die Polung des Magnetfelds zu Ändern) \\
+        7 \(\dots\) Teslameter um die Stärke des Magnetfelds zu bestimmen}
       \label{fig:mag}
-      
+
   \end{figure}
 
 
@@ -230,47 +237,62 @@ ein Cassy-Lab als Schnittstelle verwendet.
 
 \begin{figure}[H]
     \begin{center}
-    \includegraphics[width=0.8\textwidth]{./figures/szinti.png}
+    \includegraphics[width = 0.8\textwidth]{./figures/szinti.png}
       \end{center}
-      \caption[Aufbau des Szintilationszählers]{Aufbau des Szintilationszählers \\ 
-        1 $\dots$ Radioaktive Quelle \\ 
-        2 $\dots$ Szintilationszähler \\
-        3 $\dots$ Spannungsgenerator \\ 
-        4 $\dots$ Cassy-Lab um Auswertung am PC zu ermöglichen}
+      \caption[Aufbau des Szintilationszählers]{Aufbau des Szintilationszählers \\
+        1 \(\dots\) Radioaktive Quelle \\
+        2 \(\dots\) Szintilationszähler \\
+        3 \(\dots\) Spannungsgenerator \\
+        4 \(\dots\) Cassy-Lab um Auswertung am PC zu ermöglichen}
       \label{fig:szinti}
-      
+
   \end{figure}
 
 
 \section{Geräteliste}
 
-Die Geräteliste wurde uns freundlicherweise zur Verfügung gestellt und nur um die verwendeten Strahlungsquellen ergänzt. \cite[]{}
+Die Geräteliste wurde uns freundlicherweise zur Verfügung gestellt und nur um die verwendeten Strahlungsquellen ergänzt.~\cite[]{}
 
 \begin{table}[H]
   \caption{verwendete Geräte}
   \begin{tabular}{|l|l|l|l|}
     \hline
-    Gerätetyp              & Hersteller & Typ             & Inventar-Nr \\ \hline
-    Digitalzähler          & Leybold    & 57548           & 161462      \\ \hline
-    Geiger-Müller-Zählrohr & Leybold    & 5240331         &             \\ \hline
-    $\beta$ Spektrometer   & Phywe      &                 &             \\ \hline
-    Netzgerät Universal    & Phywe      & Set Betaspektr. &             \\ \hline
-    Geiger-Müller Zähler   & Phywe      & P2523200        & 79179       \\ \hline
-    Spule mit Eisenkern    & Phywe      &                 &             \\ \hline
-    Teslameter             & Phywe      &                 &             \\ \hline
-    Hochspannungsnetzgerät & Leybold    & 52188           & 161458      \\ \hline
-    Szintilationszähler    & Leybold    & 559901          & 161460      \\ \hline
-    Sensor-Cassy 2         & Leybold    &                 & 161474      \\ \hline
-    VKA Box                & Leybold    & 524058          & 161465      \\ \hline
-    \ch{^{22}_{11}Na}      &            &                 & AG-3518     \\ \hline
-    \ch{^{90}_{38}Sr}      &            &                 & AG-3676     \\ \hline
-    \ch{^{226}_{88}Ra}     &            &                 & 559435      \\ \hline
+    Gerätetyp & Hersteller & Typ & Inventar-Nr \\
+ \hline
+    Digitalzähler & Leybold & 57548 & 161462 \\
+ \hline
+    Geiger-Müller-Zählrohr & Leybold & 5240331 & \\
+ \hline
+    \(\beta\) Spektrometer & Phywe & & \\
+ \hline
+    Netzgerät Universal & Phywe & Set Betaspektr. & \\
+ \hline
+    Geiger-Müller Zähler & Phywe & P2523200 & 79179 \\
+ \hline
+    Spule mit Eisenkern & Phywe & & \\
+ \hline
+    Teslameter & Phywe & & \\
+ \hline
+    Hochspannungsnetzgerät & Leybold & 52188 & 161458 \\
+ \hline
+    Szintilationszähler & Leybold & 559901 & 161460 \\
+ \hline
+    Sensor-Cassy 2 & Leybold & & 161474 \\
+ \hline
+    VKA Box & Leybold & 524058 & 161465 \\
+ \hline
+    \ch{^{22}_{11}Na} & & & AG-3518 \\
+ \hline
+    \ch{^{90}_{38}Sr} & & & AG-3676 \\
+ \hline
+    \ch{^{226}_{88}Ra} & & & 559435 \\
+ \hline
     \end{tabular}
 \end{table}
 
 \section{Versuchsdurchführung \& Messergebnisse}\label{sec:Durchfuhrung}
 
-\subsection{Messung der \texorpdfstring{$\alpha$}{alpha}, \texorpdfstring{$\beta$}{beta} und 
+\subsection{Messung der \texorpdfstring{$\alpha$}{alpha}, \texorpdfstring{$\beta$}{beta} und
 \texorpdfstring{$\gamma$}{gamma} Strahlung ohne und mit verschiedenen dicken Abschirmungen}
 
 Um die Abschirmung Strahlungen zu Messen, wir der Versuchsaufbau, wie in
@@ -290,22 +312,22 @@ gegen die Probe oder das Zählrohr stößt.
 
 %tab einfügen (von zettel)
 \begin{table}[H]
-  \caption[Erhaltene Zählraten bei verschiedenen Abschirmungsmaterialien]{Erhaltene Zählraten bei 
-  verschiedenen Abschirmungsmaterialien bei einer Torzeit von \SI{10}{\second} und einem 
-  Abstand der radioaktiven Quelle von \SI{15(2)}{\mm}. Die Unsicherheit beträgt dabei für alle Zählraten \SI{}{} \\ 
-  $ z_{Luft} \dots$ erhaltene Zählrate ohne Abschirmung \\
-  $ z_{\mathrm{Papier}} \dots$ erhaltene Zählrate mit einem Blatt Papier als Abschirmung \\
-  $ z_{\mathrm{Lineal}} \dots$ erhaltene Zählrate mit einem Lineal als Abschirmung (Dicke = \SI{2.1(0.05)}{\mm})\\
-  $ z_{\mathrm{Kunststoff}} \dots$ erhaltene Zählrate mit einer CD und zugehörigen Soulcase als Abschirmung \\
-  $ z_{\mathrm{Alu \num{0.4}}} \dots$ erhaltene Zählrate mit mit einem Aluminiumblech als Abschirmung, Dicke = \SI{0.4(0.05)}{\mm}\\
-  $ z_{\mathrm{Alu \num{0.8}}} \dots$ erhaltene Zählrate mit mit einem Aluminiumblech als Abschirmung, Dicke = \SI{0.8(0.05)}{\mm}\\
-  $ z_{\mathrm{Alu \num{4}}} \dots$ erhaltene Zählrate mit mit einem Aluminiumblech als Abschirmung, Dicke = \SI{4(0.05)}{\mm}\\}
+  \caption[Erhaltene Zählraten bei verschiedenen Abschirmungsmaterialien]{Erhaltene Zählraten bei
+  verschiedenen Abschirmungsmaterialien bei einer Torzeit von \SI{10}{\second} und einem
+  Abstand der radioaktiven Quelle von \SI{15(2)}{\mm}. Die Unsicherheit beträgt dabei für alle Zählraten \SI{}{} \\
+  \(z_{Luft} \dots\) erhaltene Zählrate ohne Abschirmung \\
+  \(z_{\mathrm{Papier}} \dots\) erhaltene Zählrate mit einem Blatt Papier als Abschirmung \\
+  \(z_{\mathrm{Lineal}} \dots\) erhaltene Zählrate mit einem Lineal als Abschirmung (Dicke = \SI{2.1(0.05)}{\mm})\\
+  \(z_{\mathrm{Kunststoff}} \dots\) erhaltene Zählrate mit einer CD und zugehörigen Soulcase als Abschirmung \\
+  \(z_{\mathrm{Alu \num{0.4}}} \dots\) erhaltene Zählrate mit mit einem Aluminiumblech als Abschirmung, Dicke = \SI{0.4(0.05)}{\mm}\\
+  \(z_{\mathrm{Alu \num{0.8}}} \dots\) erhaltene Zählrate mit mit einem Aluminiumblech als Abschirmung, Dicke = \SI{0.8(0.05)}{\mm}\\
+  \(z_{\mathrm{Alu \num{4}}} \dots\) erhaltene Zählrate mit mit einem Aluminiumblech als Abschirmung, Dicke = \SI{4(0.05)}{\mm}\\
+}
   \label{tab:abschirmung}
   \begin{center}
     \input{./tables/messreihe_absorption_qal_raw.tex}
   \end{center}
 \end{table}
-
 
 
 \subsection{Aufnahme der Zählrohrcharakteristik}
@@ -322,16 +344,15 @@ sichtbar ist.
 
 \begin{table}[H]
   \caption[Erhaltene Zählraten für die Zählrohrcharakteristik]{Erhaltene Zählraten für die Zählrohrcharakteristik
-   bei einer Torzeit von \SI{10}{\second} und einem 
+   bei einer Torzeit von \SI{10}{\second} und einem
   Abstand der radioaktiven Quelle von \SI{15(2)}{\mm}. Die Unsicherheit beträgt dabei für alle Zählraten \SI{}{} \\
-  $ U \dots$ eingestellte Betriebsspannung in V \\
-  $ z_{i} \dots$ erhaltene Zählrate bei der entsprechenden Betriebsspannung}
+  \(U \dots\) eingestellte Betriebsspannung in V \\
+  \(z_{i} \dots\) erhaltene Zählrate bei der entsprechenden Betriebsspannung}
   \label{tab:zaelrohrchar}
   \begin{center}
     \input{./tables/messreihe_charakter_raw.tex}
   \end{center}
 \end{table}
-
 
 
 \subsection{Aufnahme der Zählstatistik}
@@ -373,8 +394,8 @@ auswirken.
 \begin{table}[H]
   \caption[Erhaltene Zählraten bei unterschiedlichen Abständen der Quelle]{Erhaltene Zählraten bei unterschiedlichen Abständen der Quelle
    bei einer Torzeit von \SI{10}{\second}. Die Unsicherheit beträgt dabei für alle Zählraten \SI{}{} \\
-  $ l_{\mathrm{Quelle}} \dots$ Abstand der radioaktiven Quelle in cm \\
-  $ z_{i} \dots$ erhaltene Zählrate bei entsprechendem Abstand}
+  \(l_{\mathrm{Quelle}} \dots\) Abstand der radioaktiven Quelle in cm \\
+  \(z_{i} \dots\) erhaltene Zählrate bei entsprechendem Abstand}
 
   \label{tab:abstandsgesetz}
   \begin{center}
@@ -395,8 +416,8 @@ festgehalten.
 
 \begin{table}[H]
   \caption{Tabelle der Absorption \\
-  $ D \dots$ Abstand der radioaktiven Quelle in cm \\
-  $ z_{i} \dots$ erhaltene Zählrate bei entsprechendem Abstand}
+  \(D \dots\) Abstand der radioaktiven Quelle in cm \\
+  \(z_{i} \dots\) erhaltene Zählrate bei entsprechendem Abstand}
   \label{tab:alu}
   \begin{center}
     \input{./tables/messreihe_alu_absorbtion.tex}
@@ -407,7 +428,7 @@ festgehalten.
 
 \subsection{Aufnahme des Energiespektrums von \texorpdfstring{$\beta$}{beta} Strahlung mit Magnetspektrometer}
 
-Um das Energiespektrum der $\beta$ Strahlung zu bestimmen wird der Aufbau aus
+Um das Energiespektrum der \(\beta\) Strahlung zu bestimmen wird der Aufbau aus
 \autoref{sec:aufbau_Magnetfeldspektrometer} realisiert. Als radioaktive Quelle
 wird erneut \ch{^{22}_{11}Na} in die dafür vorgesehene Halterung gesteckt. Nun
 wird die Betriebsspannung des Netzgerätes so lange gesenkt, bis das erzeugte
@@ -424,11 +445,11 @@ Der dabei erhaltenen Wert muss dann von den
 vorherigen Werten abgezogen werden.
 
 \begin{table}[H]
-  \caption[Verzeichnete Zerfälle bei entsprechendem Magnetfeld]{Verzeichnete Zerfälle bei 
-    entsprechendem Magnetfeld bei einer Torzeit von \SI{100}{\second}. 
+  \caption[Verzeichnete Zerfälle bei entsprechendem Magnetfeld]{Verzeichnete Zerfälle bei
+    entsprechendem Magnetfeld bei einer Torzeit von \SI{100}{\second}.
     Die Unsicherheit beträgt dabei \SI{}{} \\
- $ B \dots$ Stärke des Magnetfelds in mT \\
- $ n \dots$ erhaltene  bei erhaltene Anzahl an Zerfällen bei entsprechendem Magnetfeld}
+ \(B \dots\) Stärke des Magnetfelds in mT \\
+ \(n \dots\) erhaltene bei erhaltene Anzahl an Zerfällen bei entsprechendem Magnetfeld}
   \label{tab:magnetspektrometer}
   \begin{center}
     \input{./tables/messreihe_magneto_raw.tex}
@@ -438,7 +459,7 @@ vorherigen Werten abgezogen werden.
 
 \subsection{Aufnahme und Kalibrierung des \texorpdfstring{$\gamma$}{gamma} Spektrums}
 
-Um das $\gamma$ Spektrum zu kalibrieren wird der Versuch wie in
+Um das \(\gamma\) Spektrum zu kalibrieren wird der Versuch wie in
 \autoref{aufbau_szinti} erklärt aufgebaut. Um das Referenzspektum aufzunehmen
 wird eine \ch{^{137}_{55}Cs} Quelle in die Halterung eingesetzt. Für die
 Hochspannung wird dabei ein Wert von \SI{0.73}{\kilo\volt} eingestellt.
@@ -451,12 +472,11 @@ werden, was in folgender \autoref{fig:kalibrierung} sichtbar ist.
 %TODO caption
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.95\textwidth]{./figures/c137kalibrierung.png}
+    \includegraphics[width = 0.95\textwidth]{./figures/c137kalibrierung.png}
   \end{center}
   \caption[Kalibrierungsmessung]{}
   \label{fig:kalibrierung}
 \end{figure}
-
 
 
 \subsection{Aufnahme des komplexen \texorpdfstring{$\gamma$}{gamma} Spektrums und seinen Zerfallsprodukten}
@@ -470,12 +490,9 @@ Als radioaktive Quelle wird für diesen Teil des Versuchs das zu vermessende
 können nun die Peaks des \ch{^{226}_{88}Ra} Spektrums vermessen werden.
 
 
-
-
-
 \section{Auswertung}\label{sec:Auswertung}
 
-\subsection{Messung der \texorpdfstring{$\alpha$}{alpha}, \texorpdfstring{$\beta$}{beta} und 
+\subsection{Messung der \texorpdfstring{$\alpha$}{alpha}, \texorpdfstring{$\beta$}{beta} und
 \texorpdfstring{$\gamma$}{gamma} Strahlung ohne und mit verschiedenen dicken Abschirmungen}
 
 Keine Auswertung notwendig
@@ -485,13 +502,11 @@ Keine Auswertung notwendig
 
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.95\textwidth]{figures/charakteristik.pdf}
+    \includegraphics[width = 0.95\textwidth]{figures/charakteristik.pdf}
   \end{center}
   \caption{Daten wurden \autoref{tab:zaelrohrchar} entnommen}
   \label{fig:zaelrohrchar}
 \end{figure}
-
-
 
 
 \subsection{Aufnahme der Zählstatistik}
@@ -502,19 +517,18 @@ Normalverteilung und Histogramm machen
 
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.95\textwidth]{figures/abstandsgesetz.pdf}
+    \includegraphics[width = 0.95\textwidth]{figures/abstandsgesetz.pdf}
   \end{center}
   \caption{Daten wurden aus \autoref{tab:abstandsgesetz} entnommen}
   \label{fig:abstandsgesetz}
 \end{figure}
 
 
-
 \subsection{Bestimmung der Endpunktsenergie über Absorption in Aluminium}
 
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.95\textwidth]{figures/aluminiumabsorbtion.png}
+    \includegraphics[width = 0.95\textwidth]{figures/aluminiumabsorbtion.png}
   \end{center}
   \caption{}
   \label{fig:alu_absorption}
@@ -522,7 +536,7 @@ Normalverteilung und Histogramm machen
 
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.95\textwidth]{figures/aluminiumdoppellog.png}
+    \includegraphics[width = 0.95\textwidth]{figures/aluminiumdoppellog.png}
   \end{center}
   \caption{}
   \label{fig:alu_doppellog}
@@ -541,7 +555,7 @@ Energie transformiert und Impuls wurde dann dargestellt
 
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.95\textwidth]{figures/energiespektrum.pdf}
+    \includegraphics[width = 0.95\textwidth]{figures/energiespektrum.pdf}
   \end{center}
   \caption{Daten wurden aus \autoref{tab:magneto_E_p} entnommen}
   \label{fig:magneto_E_p}
@@ -552,15 +566,11 @@ Energie transformiert und Impuls wurde dann dargestellt
 
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.95\textwidth]{figures/Ra226kennlinien.png}
+    \includegraphics[width = 0.95\textwidth]{figures/Ra226kennlinien.png}
   \end{center}
   \caption{}
   \label{fig:}
 \end{figure}
-
-
-
-
 
 
 \section*{Diskussion}\label{sec:diskussion}
@@ -568,23 +578,23 @@ Energie transformiert und Impuls wurde dann dargestellt
 \begin{table}[H]
   \caption{Peaks bei dem \ch{_{88}^{226}Ra} Energiespektrum}
   \centering
-  \begin{tblr}{colspec={S[table-format=3.1]QS}}
-    {{{$E$ / \si{\kilo\electronvolt}}}} & Substanz& {{{$E_{\mathrm{lit}}$ / \si{\kilo\electronvolt}}}}\\
-    19.8  & \ch{^{212}_{82}Pb}                    & 19.6  \\
-    50.1  & \ch{^{214}_{83}Bi}                    & 53  \\
-    83.1  & \ch{^{214}_{84}Po}|\ch{^{214}_{83}Bi} & \numlist{79.3;77.1}  \\
-    190.6 & \ch{^{222}_{86}Rn}                    & 186  \\
-    248.1 & \ch{^{214}_{83}Bi}                    & 242  \\
-    302.0 & \ch{^{214}_{83}Bi}                    & 295  \\
-    360.3 & \ch{^{214}_{83}Bi}                    & 352  \\
-    608.9 & \ch{^{214}_{84}Po}                    & 609  \\
+  \begin{tblr}
+{colspec = {S[table-format = 3.1]QS}}
+    {{{\(E\) / \si{\kilo\electronvolt}}}} & Substanz& {{{\(E_{\mathrm{lit}}\) / \si{\kilo\electronvolt}}}}\\
+    19.8 & \ch{^{212}_{82}Pb} & 19.6 \\
+    50.1 & \ch{^{214}_{83}Bi} & 53 \\
+    83.1 & \ch{^{214}_{84}Po}|\ch{^{214}_{83}Bi} & \numlist{79.3;77.1} \\
+    190.6 & \ch{^{222}_{86}Rn} & 186 \\
+    248.1 & \ch{^{214}_{83}Bi} & 242 \\
+    302.0 & \ch{^{214}_{83}Bi} & 295 \\
+    360.3 & \ch{^{214}_{83}Bi} & 352 \\
+    608.9 & \ch{^{214}_{84}Po} & 609 \\
   \end{tblr}
 \end{table}
 
 %verschieben der Hall sonde bei mag
 
 \section{Zusammenfassung}
-
 
 
 \newpage
