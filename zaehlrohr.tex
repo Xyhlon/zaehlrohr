@@ -449,7 +449,7 @@ die Werte für die Peaks bekannt sind, kann so eine Kalibrierungskurve erzeugt
 werden, was in folgender \autoref{fig:kalibrierung} sichtbar ist.
 
 %TODO caption
-\begin{figure}
+\begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.95\textwidth]{./figures/c137kalibrierung.png}
   \end{center}
@@ -478,29 +478,85 @@ können nun die Peaks des \ch{^{226}_{88}Ra} Spektrums vermessen werden.
 \subsection{Messung der \texorpdfstring{$\alpha$}{alpha}, \texorpdfstring{$\beta$}{beta} und 
 \texorpdfstring{$\gamma$}{gamma} Strahlung ohne und mit verschiedenen dicken Abschirmungen}
 
+Keine Auswertung notwendig
 
 
 \subsection{Aufnahme der Zählrohrcharakteristik}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/charakteristik.pdf}
+  \end{center}
+  \caption{Daten wurden \autoref{tab:zaelrohrchar} entnommen}
+  \label{fig:zaelrohrchar}
+\end{figure}
 
 
 
 
 \subsection{Aufnahme der Zählstatistik}
 
+Normalverteilung und Histogramm machen
 
 \subsection{Bestätigung des Abstandsgesetzes}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/abstandsgesetz.pdf}
+  \end{center}
+  \caption{Daten wurden aus \autoref{tab:abstandsgesetz} entnommen}
+  \label{fig:abstandsgesetz}
+\end{figure}
+
 
 
 \subsection{Bestimmung der Endpunktsenergie über Absorption in Aluminium}
 
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/aluminiumabsorbtion.png}
+  \end{center}
+  \caption{}
+  \label{fig:alu_absorption}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/aluminiumdoppellog.png}
+  \end{center}
+  \caption{}
+  \label{fig:alu_doppellog}
+\end{figure}
+
 
 \subsection{Aufnahme des Energiespektrums von \texorpdfstring{$\beta$}{beta} Strahlung mit Magnetspektrometer}
 
+Energie transformiert und Impuls wurde dann dargestellt
+\begin{table}[H]
+  \caption{Mit daten aus \autoref{tab:magnetspektrometer} und der Energieimpulsbeziehung und Lorentzkraft wurden folgende daten erstellt}
+  \label{tab:magneto_E_p}
+  \centering
+  \include{./tables/messreihe_magneto_E_p.tex}
+\end{table}
 
-\subsection{Aufnahme und Kalibrierung des \texorpdfstring{$\gamma$}{gamma} Spektrums}
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/energiespektrum.pdf}
+  \end{center}
+  \caption{Daten wurden aus \autoref{tab:magneto_E_p} entnommen}
+  \label{fig:magneto_E_p}
+\end{figure}
 
 
 \subsection{Aufnahme des komplexen \texorpdfstring{$\gamma$}{gamma} Spektrums und seinen Zerfallsprodukten}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/Ra226kennlinien.png}
+  \end{center}
+  \caption{}
+  \label{fig:}
+\end{figure}
 
 
 
@@ -509,6 +565,21 @@ können nun die Peaks des \ch{^{226}_{88}Ra} Spektrums vermessen werden.
 
 \section*{Diskussion}\label{sec:diskussion}
 
+\begin{table}[H]
+  \caption{Peaks bei dem \ch{_{88}^{226}Ra} Energiespektrum}
+  \centering
+  \begin{tblr}{colspec={S[table-format=3.1]QS}}
+    {{{$E$ / \si{\kilo\electronvolt}}}} & Substanz& {{{$E_{\mathrm{lit}}$ / \si{\kilo\electronvolt}}}}\\
+    19.8  & \ch{^{212}_{82}Pb}                    & 19.6  \\
+    50.1  & \ch{^{214}_{83}Bi}                    & 53  \\
+    83.1  & \ch{^{214}_{84}Po}|\ch{^{214}_{83}Bi} & \numlist{79.3;77.1}  \\
+    190.6 & \ch{^{222}_{86}Rn}                    & 186  \\
+    248.1 & \ch{^{214}_{83}Bi}                    & 242  \\
+    302.0 & \ch{^{214}_{83}Bi}                    & 295  \\
+    360.3 & \ch{^{214}_{83}Bi}                    & 352  \\
+    608.9 & \ch{^{214}_{84}Po}                    & 609  \\
+  \end{tblr}
+\end{table}
 
 %verschieben der Hall sonde bei mag
 
