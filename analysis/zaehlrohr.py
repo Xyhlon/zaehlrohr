@@ -62,7 +62,7 @@ def test_zaehlrohr_protokoll():
     }
 
     P = Project("Zaehlrohr", global_variables=gv, global_mapping=gm, font=13)
-    P.output_dir = "./figures/"
+    P.output_dir = "./"
     P.figure.set_size_inches((8, 6))
     ax = P.figure.add_subplot()
     # A1 qualitative Absorption Untersuchung mit und ohne Abschirmung
@@ -250,7 +250,7 @@ def test_zaehlrohr_protokoll():
     # A5 Ra226 Aluminiumabsorbtion
     filepath = os.path.join(os.path.dirname(__file__), "../data/aluminium.csv")
     P.vload()
-    P.load_data(filepath)
+    P.load_data(filepath, loadnew=True)
     P.data["dD"] = 0
     P.data["dz1"] = 0
     P.data["dz2"] = 0
@@ -259,7 +259,7 @@ def test_zaehlrohr_protokoll():
 
     # A5 Ra226 C137 und Ra226 Bilder sind schon vorhanden und im figures folder DONE
     # filepath = os.path.join(os.path.dirname(__file__), "../data/aluminium.csv")
-    # P.load_data(filepath)
+    # P.load_data(filepath,loadnew=True)
     # Szintillator
 
 
