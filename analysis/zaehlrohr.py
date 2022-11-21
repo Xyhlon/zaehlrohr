@@ -1,6 +1,5 @@
 from labtool_ex2 import Project
-from scipy.constants import e
-from sympy import exp
+from sympy import exp, pi
 import numpy as np
 import os
 
@@ -30,6 +29,8 @@ def test_zaehlrohr_protokoll():
         "mu": r"\mu",
         "sig": r"\sigma",
         "k": r"k",
+        "m": r"m",
+        "b": r"b",
         "l": r"l_{\mathrm{Quelle}}",
         "E": r"E_{\mathrm{kin}}",
     }
@@ -56,6 +57,8 @@ def test_zaehlrohr_protokoll():
         "mu": r"\si{\mega\electronvolt}",
         "sig": r"\si{\mega\electronvolt}",
         "k": r"\si{\cm\squared}",
+        "m": r"\si{\per\volt}",
+        "b": r"\si{1}",
         "l": r"\si{\cm}",
         "I": r"\si{\cm}",
         "E": r"\si{\mega\electronvolt}",
@@ -105,6 +108,28 @@ def test_zaehlrohr_protokoll():
         style="r",
         errors=True,
     )
+    P.data = P.data[P.data["z"] > 160]
+    z = m * U + b
+    P.print_expr(z)
+    P.plot_fit(
+        axes=ax,
+        x=U,
+        y=z,
+        eqn=z,
+        style=r"#1cb2f5",
+        label="Linear",
+        offset=[40, 10],
+        use_all_known=False,
+        guess={"m": 0.01, "b": 185},
+        bounds=[
+            {"name": "m", "min": 0, "max": 1},
+            {"name": "b", "min": 100, "max": 200},
+        ],
+        add_fit_params=True,
+        granularity=10000,
+        # gof=True,
+        # scale_covar=True,
+    )
     ax.set_title(f"Zählrohrcharakteristik mit Na-22")
     P.ax_legend_all(loc=4)
     ax = P.savefig(f"charakteristik.pdf")
@@ -150,7 +175,7 @@ def test_zaehlrohr_protokoll():
         eqn=z,
         style=r"#1cb2f5",
         label="Abstandsgesetz",
-        offset=[60, -10],
+        offset=[60, 10],
         use_all_known=False,
         guess={"k": 1500},
         bounds=[
@@ -177,7 +202,9 @@ def test_zaehlrohr_protokoll():
     P.print_table(B, n, name="magneto_raw", inline_units=True)
     m_0 = 0.511  # MeV
     p = 299.792456 * B / 1000 * r  # radius
+    P.print_expr(p)
     E = m_0 * (((p / m_0) ** 2 + 1) ** 0.5 - 1)
+    P.print_expr(E)
     n_background = 23  # Hintergrundstrahlung
     P.data["n"] = n.data - n_background
     P.resolve(E)
@@ -200,7 +227,8 @@ def test_zaehlrohr_protokoll():
         errors=True,
     )
     P.vload()
-    n = A * exp(-((E - mu) ** 2) / (2 * sig**2)) / (2 * np.pi * sig**2) ** 0.5
+    n = A * exp(-((E - mu) ** 2) / (2 * sig**2)) / (2 * pi * sig**2) ** 0.5
+    P.print_expr(n)
     P.plot_fit(
         axes=ax,
         x=E,
@@ -222,7 +250,8 @@ def test_zaehlrohr_protokoll():
         scale_covar=True,
     )
     P.vload()
-    n = A * exp(-((p - mu) ** 2) / (2 * sig**2)) / (2 * np.pi * sig**2) ** 0.5
+    n = A * exp(-((p - mu) ** 2) / (2 * sig**2)) / (2 * pi * sig**2) ** 0.5
+    P.print_expr(n)
     P.plot_fit(
         axes=ax,
         x=p,
