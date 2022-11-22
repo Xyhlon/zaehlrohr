@@ -143,9 +143,15 @@ def test_zaehlrohr_protokoll():
 
     P.print_table(t, n, name="statistik_raw", inline_units=True)
     bins = (int)(n.data.max() - n.data.min()) // 10
-    P.histoofseries(n.data, bins=bins, name="statistik")
+    P.plot_histo(axes=ax, x=n, label="Histogramm", bins=bins, offset=(70, 20))
+    ax.set_title(f"Statischtische Verteilung der Zählrate")
+    P.ax_legend_all(loc=1)
+    ax = P.savefig(f"10statistik.pdf")
     bins = (int)(n.data.max() - n.data.min()) // 5
-    P.histoofseries(n.data, bins=bins, name="atistik")
+    P.plot_histo(axes=ax, x=n, label="Histogramm", bins=bins, offset=(70, 20))
+    ax.set_title(f"Statischtische Verteilung der Zählrate")
+    P.ax_legend_all(loc=1)
+    ax = P.savefig(f"5statistik.pdf")
     # A4 Aufnahme des Abstandsgesetz
     filepath = os.path.join(os.path.dirname(__file__), "../data/abstandsgesetzt.csv")
     P.load_data(filepath, loadnew=True)
