@@ -67,28 +67,43 @@ werden, welche Zerfälle vorliegen und auch welche Halbwertszeiten diese haben, 
 \end{figure}
 
 
-Die Intensität \(I\) radioaktiver Strahlung folgt dabei dem Abstandsgesetz, welches folgendermaßen definiert werden kann:
+Die Intensität \(I\) radioaktiver Strahlung folgt dabei dem Abstandsgesetz,
+welches folgendermaßen definiert werden kann:
 \begin{equation}
   I \propto \frac{1}{l^2}
+  \label{eq:abstandsgesetz}
 \end{equation}
 
-\(l\) entspricht dabei dem Abstand zur radioaktivenn Quelle.
+\(l\) entspricht dabei dem Abstand zur radioaktiven Quelle.
 
-Für die Absorption von radioaktiver Strahlung gilt das Beer-Lambertsche Absorptionsgesetz:
+Für die Absorption von radioaktiver Strahlung gilt das Beer-Lambertsche
+Absorptionsgesetz:
 \begin{equation}
   I = I_0 \exp(-\mu d)
 \end{equation}
 
-\(I\) beschreibt dabei die Intensität der Strahlung nach der Barriere, \(I_0\) die Anfangsintensität,
-\(\mu\) den Absorptionskoeffizienten der Barriere und \(d\) die Dicke der Barriere.
+\(I\) beschreibt dabei die Intensität der Strahlung nach der Barriere, \(I_0\)
+die Anfangsintensität, \(\mu\) den Absorptionskoeffizienten der Barriere und
+\(d\) die Dicke der Barriere.
 
-Aus den Absorptionskoeffizienten kann die Ruheenergie \(E_0\) nach folgender Formel berechnet werden:
+Aus den Absorptionskoeffizienten kann die Ruheenergie \(E_0\) nach folgender
+Formel berechnet werden:
 \begin{equation}
   \frac{\mu}{\rho} = 17.6 E_0^{-1.39}
 \end{equation}
 
-\(\rho\) beschreibt dabei die Dichte der Barriere, dessen Absorptionskoeffizient bestimmt wurde.\cite[]{}
+\(\rho\) beschreibt dabei die Dichte der Barriere, dessen
+Absorptionskoeffizient bestimmt wurde.\cite[]{}
 
+\begin{equation}
+  p = 0.299792456 B r
+  \label{eq:lorentzimpuls}
+\end{equation}
+
+\begin{equation}
+  E = 0.511 \left(0.344191071091609 B^{2} r^{2} + 1\right)^{0.5} - 0.511
+  \label{eq:energieimpulsrelation}
+\end{equation}
 
 \subsection{Zählrohr}
 
@@ -256,21 +271,21 @@ Die Geräteliste wurde uns freundlicherweise zur Verfügung gestellt und nur um 
 \begin{table}[H]
   \caption{verwendete Geräte}
   \begin{tblr}{colspec={QQQQ}}
-    Gerätetyp & Hersteller & Typ & Inventar-Nr \\
-    Digitalzähler & Leybold & 57548 & 161462 \\
-    Geiger-Müller-Zählrohr & Leybold & 5240331 & \\
-    \(\beta\) Spektrometer & Phywe & & \\
-    Netzgerät Universal & Phywe & Set Betaspektr. & \\
-    Geiger-Müller Zähler & Phywe & P2523200 & 79179 \\
-    Spule mit Eisenkern & Phywe & & \\
-    Teslameter & Phywe & & \\
-    Hochspannungsnetzgerät & Leybold & 52188 & 161458 \\
-    Szintilationszähler & Leybold & 559901 & 161460 \\
-    Sensor-Cassy 2 & Leybold & & 161474 \\
-    VKA Box & Leybold & 524058 & 161465 \\
-    \ch{^{22}_{11}Na} & & & AG-3518 \\
-    \ch{^{90}_{38}Sr} & & & AG-3676 \\
-    \ch{^{226}_{88}Ra} & & & 559435 \\
+    Gerätetyp              &  Hersteller &  Typ             &  Inventar-Nr \\
+    Digitalzähler          &  Leybold    &  57548           &  161462 \\
+    Geiger-Müller-Zählrohr &  Leybold    &  5240331         &  \\
+    \(\beta\) Spektrometer &  Phywe      &                  &  \\
+    Netzgerät Universal    &  Phywe      &  Set Betaspektr. &  \\
+    Geiger-Müller Zähler   &  Phywe      &  P2523200        &  79179 \\
+    Spule mit Eisenkern    &  Phywe      &                  &  \\
+    Teslameter             &  Phywe      &                  &  \\
+    Hochspannungsnetzgerät &  Leybold    &  52188           &  161458 \\
+    Szintilationszähler    &  Leybold    &  559901          &  161460 \\
+    Sensor-Cassy 2         &  Leybold    &                  &  161474 \\
+    VKA Box                &  Leybold    &  524058          &  161465 \\
+    \ch{^{22}_{11}Na}      &             &                  &  AG-3518 \\
+    \ch{^{90}_{38}Sr}      &             &                  &  AG-3676 \\
+    \ch{^{226}_{88}Ra}     &             &                  &  559435 \\
     \end{tblr}
 \end{table}
 
@@ -479,12 +494,13 @@ können nun die Peaks des \ch{^{226}_{88}Ra} Spektrums vermessen werden.
 \subsection{Messung der \texorpdfstring{$\alpha$}{alpha}, \texorpdfstring{$\beta$}{beta} und
 \texorpdfstring{$\gamma$}{gamma} Strahlung ohne und mit verschiedenen dicken Abschirmungen}
 
+% todo erklaerung
 Keine Auswertung notwendig
 
 
 \subsection{Aufnahme der Zählrohrcharakteristik}
 
-Die Daten der Zählraten aus \autoref{tab:zaelrohrchar} werden gemittelt und
+Die Daten der Zählraten $z_i$ aus \autoref{tab:zaelrohrchar} werden gemittelt und
 dessen Standarderror berechnet. Die durch diese Operation erhaltenen Zählraten
 werden über den Spannungen aus derselben \autoref{tab:zaelrohrchar}
 aufgetragen, das Resultat ist in \autoref{fig:zaelrohrchar} ersichtlich. Zudem
@@ -496,7 +512,8 @@ nicht teil des Plateau sind.
   \begin{center}
     \includegraphics[width = 0.95\textwidth]{figures/charakteristik.pdf}
   \end{center}
-  \caption{Daten wurden \autoref{tab:zaelrohrchar} entnommen}
+  \caption{Daten wurden \autoref{tab:zaelrohrchar} entnommen 
+  $m$ ist die Steigung der Geraden und $b$ entspricht dem Schnitt der Ordinate}
   \label{fig:zaelrohrchar}
 \end{figure}
 
@@ -504,8 +521,23 @@ nicht teil des Plateau sind.
 
 \subsection{Aufnahme der Zählstatistik}
 
-Normalverteilung und Histogramm machen
-\begin{figure}
+Die gesamte aufgenommene Messreihe der Zählraten aus
+\autoref{tab:zahlstatistik} wurde nun in Klassen mit einer konstanten 5er und
+10er Breite $h$ unterteilt und dann als Histogramme dargestellt. Das Histogramm
+mit der konstanten 5er Breite ist in \autoref{fig:5statistik} ersichtlich und
+die mit der 10er Breite ist in \autoref{fig:10statistik} zu finden.
+
+Des Weiteren wurden mittels der Standardabweichung und dem Mittelwert der
+Klassen eine Normalverteilung aufgestellt und diese wird über den
+Verteilungsraum der Messwerte geplottet.
+
+Damit der Vergleich zwischen der Normalverteilung und dem Histogrammen 
+klar ersichtlich sind werden die Histogramme auf 1 normiert. Um auf die
+Absolute Häufigkeit zu kommen muss die Relative Häufigkeit $p$ mit dem
+Stichprobenumfang $N$ und der Breite der $h$ multipliziert werden. Alle
+relevanten Größen für diese Umrechnung sind in den jeweiligen Bildern
+ersichtlich.
+\begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.95\textwidth]{./figures/5statistik.pdf}
   \end{center}
@@ -513,7 +545,7 @@ Normalverteilung und Histogramm machen
   \label{fig:5statistik}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.95\textwidth]{./figures/10statistik.pdf}
   \end{center}
@@ -523,6 +555,14 @@ Normalverteilung und Histogramm machen
 
 
 \subsection{Bestätigung des Abstandsgesetzes}
+
+Um die Daten aus \autoref{tab:abstandsgesetz} mit dem Abstandsgesetz, siehe
+\autoref{eq:abstandsgesetz}, vergleichen zu können werden zunächst die
+Zählraten $z_i$ gemittelt und dessen Standarderror berechnet. Nun wird die
+gemittelte Zählrate $z$ gegen den Abstand der Quelle $l_{\mathrm{Quelle}}$
+aufgetragen. Damit das Verhalten der Daten einfacher Analysiert werden kann
+wird auch ein Fit des Abstandsgesetz gemacht wo $k$ die
+Proportionalitätskonstante des Abstandsgesetz ist.
 
 \begin{figure}[H]
   \begin{center}
@@ -552,15 +592,28 @@ Normalverteilung und Histogramm machen
 \end{figure}
 
 
-\subsection{Aufnahme des Energiespektrums von \texorpdfstring{$\beta$}{beta} Strahlung mit Magnetspektrometer}
+\subsection{Aufnahme des Energiespektrums von \texorpdfstring{$\beta$}{beta}
+Strahlung mit Magnetspektrometer}
+
+Um eine Energiespektrum darstellen zu können müssen die Werte aus
+\autoref{tab:magnetspektrometer} mittels \autoref{eq:lorentzimpuls} zur
+Impulsen $p$ oder mittels \autoref{eq:energieimpulsrelation} zur Energien $E$
+transformiert werden. Die erhaltenen Werte für $p$ und $E$ sind in
+\autoref{tab:magneto_E_p} zu finden.
 
 Energie transformiert und Impuls wurde dann dargestellt
 \begin{table}[H]
-  \caption{Mit daten aus \autoref{tab:magnetspektrometer} und der Energieimpulsbeziehung und Lorentzkraft wurden folgende daten erstellt}
+  \caption{Mit Daten aus \autoref{tab:magnetspektrometer} und der
+  Energieimpulsbeziehung und Lorentzkraft wurden folgende daten erstellt}
   \label{tab:magneto_E_p}
   \centering
   \include{./tables/messreihe_magneto_E_p.tex}
 \end{table}
+
+Mit den Werten aus \autoref{tab:magneto_E_p} und
+\autoref{tab:magnetspektrometer} lässt sich durch Auftragen der Anzahl an
+Zerfällen $n$ über den Impulsen $p$ und Energien $E$ ein Energiespektrogram
+erstellen.
 
 \begin{figure}[H]
   \begin{center}
@@ -571,7 +624,8 @@ Energie transformiert und Impuls wurde dann dargestellt
 \end{figure}
 
 
-\subsection{Aufnahme des komplexen \texorpdfstring{$\gamma$}{gamma} Spektrums und seinen Zerfallsprodukten}
+\subsection{Aufnahme des komplexen \texorpdfstring{$\gamma$}{gamma} Spektrums
+und seinen Zerfallsprodukten}
 
 \begin{figure}[H]
   \begin{center}
@@ -589,14 +643,14 @@ Energie transformiert und Impuls wurde dann dargestellt
   \centering
   \begin{tblr}{colspec = {S[table-format = 3.1]QS}}
     {{{\(E\) / \si{\kilo\electronvolt}}}} & Substanz& {{{\(E_{\mathrm{lit}}\) / \si{\kilo\electronvolt}}}}\\
-    19.8 & \ch{^{212}_{82}Pb} & 19.6 \\
-    50.1 & \ch{^{214}_{83}Bi} & 53 \\
-    83.1 & \ch{^{214}_{84}Po}|\ch{^{214}_{83}Bi} & \numlist{79.3;77.1} \\
-    190.6 & \ch{^{222}_{86}Rn} & 186 \\
-    248.1 & \ch{^{214}_{83}Bi} & 242 \\
-    302.0 & \ch{^{214}_{83}Bi} & 295 \\
-    360.3 & \ch{^{214}_{83}Bi} & 352 \\
-    608.9 & \ch{^{214}_{84}Po} & 609 \\
+    19.8  &  \ch{^{212}_{82}Pb}                    &  19.6 \\
+    50.1  &  \ch{^{214}_{83}Bi}                    &  53 \\
+    83.1  &  \ch{^{214}_{84}Po}|\ch{^{214}_{83}Bi} &  \numlist{79.3;77.1} \\
+    190.6 &  \ch{^{222}_{86}Rn}                    &  186 \\
+    248.1 &  \ch{^{214}_{83}Bi}                    &  242 \\
+    302.0 &  \ch{^{214}_{83}Bi}                    &  295 \\
+    360.3 &  \ch{^{214}_{83}Bi}                    &  352 \\
+    608.9 &  \ch{^{214}_{84}Po}                    &  609 \\
   \end{tblr}
 \end{table}
 
