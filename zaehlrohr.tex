@@ -12,6 +12,7 @@
 \ohead{FLAB 1 \\
  Zählrohr}
     % Fußzeile
+\addbibresource{zaehlrohr.bib}
 
 \begin{document}
 %\includepdf{}
@@ -266,7 +267,8 @@ ein Cassy-Lab als Schnittstelle verwendet.
 
 \section{Geräteliste}
 
-Die Geräteliste wurde uns freundlicherweise zur Verfügung gestellt und nur um die verwendeten Strahlungsquellen ergänzt.~\cite[]{}
+Die Geräteliste wurde uns freundlicherweise zur Verfügung gestellt und nur um
+die verwendeten Strahlungsquellen ergänzt.~\cite[]{}
 
 \begin{table}[H]
   \caption{verwendete Geräte}
@@ -457,6 +459,7 @@ vorherigen Werten abgezogen werden.
 
 
 \subsection{Aufnahme und Kalibrierung des \texorpdfstring{$\gamma$}{gamma} Spektrums}
+\label{sec:aufname_kalibrierungsspektrum}
 
 Um das \(\gamma\) Spektrum zu kalibrieren wird der Versuch wie in
 \autoref{aufbau_szinti} erklärt aufgebaut. Um das Referenzspektum aufzunehmen
@@ -479,6 +482,7 @@ werden, was in folgender \autoref{fig:kalibrierung} sichtbar ist.
 
 
 \subsection{Aufnahme des komplexen \texorpdfstring{$\gamma$}{gamma} Spektrums und seinen Zerfallsprodukten}
+\label{sec:aufname_Ra_zerfallsreihe}
 
 Der Versuch wird, wie zuvor beschrieben, wie in \autoref{aufbau_szinti}
 aufgebaut, auch wird erneut eine Spannung von \SI{0.73}{\kilo\volt} verwendet.
@@ -490,6 +494,14 @@ können nun die Peaks des \ch{^{226}_{88}Ra} Spektrums vermessen werden.
 
 
 \section{Auswertung}\label{sec:Auswertung}
+
+Um zu sehen wie sich die Unsicherheit der Messungen bis in die
+Ergebnisse fortplanzt, ist erweiterte Gauss-Methode verwendet
+worden. Die Grundlagen dieser Methode stammen von den Powerpointfolien von
+GUM \cite{WolfgangKessel2004}. Für die Auswertung ist die Progammiersprache Python
+im speziellen die Pakete \verb#labtool-ex2#, \verb#pandas#, \verb#sympy#, zur
+Hilfe genommen worden. Um höchstmögliche Genauigkeit zu garantieren wird
+erst bei der Darstellung der Wert in Tabellen gerundet.
 
 \subsection{Messung der \texorpdfstring{$\alpha$}{alpha}, \texorpdfstring{$\beta$}{beta} und
 \texorpdfstring{$\gamma$}{gamma} Strahlung ohne und mit verschiedenen dicken Abschirmungen}
@@ -601,7 +613,6 @@ Impulsen $p$ oder mittels \autoref{eq:energieimpulsrelation} zur Energien $E$
 transformiert werden. Die erhaltenen Werte für $p$ und $E$ sind in
 \autoref{tab:magneto_E_p} zu finden.
 
-Energie transformiert und Impuls wurde dann dargestellt
 \begin{table}[H]
   \caption{Mit Daten aus \autoref{tab:magnetspektrometer} und der
   Energieimpulsbeziehung und Lorentzkraft wurden folgende daten erstellt}
@@ -627,9 +638,10 @@ erstellen.
 \subsection{Aufnahme des komplexen \texorpdfstring{$\gamma$}{gamma} Spektrums
 und seinen Zerfallsprodukten}
 
-Nach der Kalibrierung in \autoref{sec:} und der Aufnahme des \(\gamma\)-Spektrum der
-\ch{^{226}_{88}Ra} Zerfallsreihe \autoref{sec:}, wurden die erhaltenen Daten
-in \autoref{fig:Ra226zerfallsreihe} dargestellt. Zudem wurde die Peaks per Hand
+Nach der Kalibrierung in \autoref{sec:aufname_Ra_zerfallsreihe} und der
+Aufnahme des \(\gamma\)-Spektrum der \ch{^{226}_{88}Ra} Zerfallsreihe
+\autoref{sec:aufbau_Magnetfeldspektrometer}, wurden die erhaltenen Daten in
+\autoref{fig:Ra226zerfallsreihe} dargestellt. Zudem wurde die Peaks per Hand
 ausgewertet und in der Graphik eingezeichnet.
 
 \begin{figure}[H]
