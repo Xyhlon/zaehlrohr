@@ -563,7 +563,8 @@ ersichtlich.
     \autoref{tab:zahlstatistik}. Hier entspricht $N$ dem Stichprobenumfang und
     $h$ der Breite der Klassen des Histogramms. Darüber hinaus wurde eine
   Normalverteilung angelegt unter Verwendung des Mittelwert $\mu$ \& der
-Standardabweichung $\sigma$ vom Messreihensatz.}
+Standardabweichung $\sigma$ vom Messreihensatz. Alle hier in der Box
+angeführten Variablen haben Einheit 1}
   \label{fig:5statistik}
 \end{figure}
 
@@ -576,7 +577,8 @@ Standardabweichung $\sigma$ vom Messreihensatz.}
     \autoref{tab:zahlstatistik}. Hier entspricht $N$ dem Stichprobenumfang und
     $h$ der Breite der Klassen des Histogramms. Darüber hinaus wurde eine
     Normalverteilung angelegt unter Verwendung des Mittelwert $\mu$ \& der
-Standardabweichung $\sigma$ vom Messreihensatz.}
+  Standardabweichung $\sigma$ vom Messreihensatz. Alle hier in der Box
+angeführten Variablen haben Einheit 1}
   \label{fig:10statistik}
 \end{figure}
 
@@ -618,7 +620,7 @@ Fit bestimmt werden.
   \begin{center}
     \includegraphics[width = 0.95\textwidth]{figures/aluminiumabsorbtion.png}
   \end{center}
-  \caption{}
+  \caption[Absorptionskurve von \ch{Al} bei $\beta$-Strahlung]{}
   \label{fig:alu_absorption}
 \end{figure}
 
@@ -626,7 +628,7 @@ Fit bestimmt werden.
   \begin{center}
     \includegraphics[width = 0.95\textwidth]{figures/aluminiumdoppellog.png}
   \end{center}
-  \caption{}
+  \caption[Doppelt-logarithmsche Darstellung der Absorptionskurve von \ch{Al} bei $beta$-Strahlung]{}
   \label{fig:alu_doppellog}
 \end{figure}
 
@@ -641,13 +643,15 @@ transformiert werden. Die erhaltenen Werte für $p$ und $E$ sind in
 \autoref{tab:magneto_E_p} zu finden.
 
 \begin{table}[H]
-  \caption{Dies sind die errechneten Energien $E$ und des Impulse $p$ beim
-    Magnetspektrometer. Mit Daten aus \autoref{tab:magnetspektrometer} und der
+  \caption[Energie- und Impulswerte der $\beta$-Strahlung einer \ch{^{22}_{11}Na} Probe]{Dies sind
+    die errechneten Energien $E$ und des Impulse $p$ der $\beta$-Strahlung einer
+    \ch{^{22}_{11}Na} Probe vom Magnetspektrometer. Mit Daten aus
+    \autoref{tab:magnetspektrometer} und der
     \hyperref[eq:energieimpulsrelation]{Energieimpulsbeziehung} und
     \hyperref[eq:lorentzimpuls]{Lorentzkraft} wurden die folgenden Daten
     erstellt:\\
-    $E \dots$ ist die Energie $beta$-Strahlung\\
-    $p \dots$ ist der Impuls $beta$-Strahlung\\
+    $E \dots$ ist die Energie $\beta$-Strahlung einer \ch{^{22}_{11}Na} Probe\\
+    $p \dots$ ist der Impuls $\beta$-Strahlung einer \ch{^{22}_{11}Na} Probe\\
 }
   \label{tab:magneto_E_p}
   \centering
@@ -656,14 +660,23 @@ transformiert werden. Die erhaltenen Werte für $p$ und $E$ sind in
 
 Mit den Werten aus \autoref{tab:magneto_E_p} und
 \autoref{tab:magnetspektrometer} lässt sich durch Auftragen der Anzahl an
-Zerfällen $n$ über den Impulsen $p$ und Energien $E$ ein Energiespektrogramm
-erstellen.
+Zerfällen $n$ über den Impulsen $p$ und Energien $E$ ein Energiespektrum
+erstellen. Um den Peak numerisch zu bestimmen wurden die Daten mit einer
+Gaussverteilung, welche einen zusätzlichen Amplitudenparameter $A$ hat,
+gefittet.
 
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width = 0.95\textwidth]{figures/energiespektrum.pdf}
   \end{center}
-  \caption{Daten wurden aus \autoref{tab:magneto_E_p} entnommen}
+  \caption[Energie- und Impulsspektrogram der $\beta$-Strahlung einer
+  \ch{^{22}_{11}Na} Probe]{Hier ist das Energiespektrum (violette) und
+  Impulsspektrum (braun) der $\beta$-Strahlung einer \ch{^{22}_{11}Na} Probe
+ersichtlich. Mittels der Energien $E$ und Impuls $p$, aus
+\autoref{tab:magneto_E_p}, und der Anzahl der Zerfälle $n$ aus
+\autoref{tab:magnetspektrometer} wurden Spektren erstellt und mit einer
+Gaussverteilung, welche einen zusätzlichen Amplitudenparameter $A$ hat,
+gefittet}
   \label{fig:magneto_E_p}
 \end{figure}
 
@@ -682,11 +695,15 @@ ausgewertet und in der Graphik eingezeichnet. Für diese Operationen wurde die
   \begin{center}
     \includegraphics[width = 0.95\textwidth]{figures/Ra226kennlinien.png}
   \end{center}
-  \caption{}
+  \caption[Energiespektrum der $\gamma$-Strahlung einer \ch{^{226}_{88}Ra} Probe]{
+    In dieser Graphik ist das Gammaspektrum der \ch{^{226}_{88}Ra} und dessen
+    Zerfallsprodukte ersichtlich. Zusätzlich sind die Energiepeaks ausgemessen
+    und markiert worden.
+  }
   \label{fig:Ra226zerfallsreihe}
 \end{figure}
 
-Die eingezeichneten Werten werden nun hier nochmals übersichtlich in der
+Die eingezeichneten Spitzenwerte werden nun hier nochmals übersichtlich in der
 \autoref{tab:raw_peaks} nochmals angeführt.
 
 \begin{table}[H]
