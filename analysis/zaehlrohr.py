@@ -169,7 +169,7 @@ def test_zaehlrohr_protokoll():
         l,
         z,
         label="Gemessene Daten",
-        style="r",
+        style="#1cb2f5",
         errors=True,
     )
     P.vload()
@@ -221,7 +221,7 @@ def test_zaehlrohr_protokoll():
         E,
         n,
         label="Gemessene Daten",
-        style="r",
+        style="#9a30f0",
         errors=True,
     )
     P.plot_data(
@@ -229,7 +229,7 @@ def test_zaehlrohr_protokoll():
         p,
         n,
         label="Gemessene Daten",
-        style="b",
+        style="#ca5f46",
         errors=True,
     )
     P.vload()
