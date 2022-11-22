@@ -81,6 +81,7 @@ Für die Absorption von radioaktiver Strahlung gilt das Beer-Lambertsche
 Absorptionsgesetz:
 \begin{equation}
   I = I_0 \exp(-\mu d)
+  \label{eq:beerschesgesetzt}
 \end{equation}
 
 \(I\) beschreibt dabei die Intensität der Strahlung nach der Barriere, \(I_0\)
@@ -91,6 +92,7 @@ Aus den Absorptionskoeffizienten kann die Ruheenergie \(E_0\) nach folgender
 Formel berechnet werden:
 \begin{equation}
   \frac{\mu}{\rho} = 17.6 E_0^{-1.39}
+  \label{eq:Endpunktsenergie}
 \end{equation}
 
 \(\rho\) beschreibt dabei die Dichte der Barriere, dessen
@@ -393,11 +395,12 @@ entstehenden Unsicherheiten durch die Messung mittels Lineal gegenläufig
 auswirken.
 
 \begin{table}[H]
-  \caption[Erhaltene Zählraten bei unterschiedlichen Abständen der Quelle]{Erhaltene Zählraten bei unterschiedlichen Abständen der Quelle
-   bei einer Torzeit von \SI{10}{\second}. Die Unsicherheit beträgt dabei für alle Zählraten \SI{}{} \\
-  \(l_{\mathrm{Quelle}} \dots\) Abstand der radioaktiven Quelle in cm \\
-  \(z_{i} \dots\) erhaltene Zählrate bei entsprechendem Abstand}
-
+  \caption[Erhaltene Zählraten bei unterschiedlichen Abständen der
+  Quelle]{Erhaltene Zählraten bei unterschiedlichen Abständen der Quelle bei
+    einer Torzeit von \SI{10}{\second}. Die Unsicherheit beträgt dabei für alle
+    Zählraten \SI{}{} \\ 
+    \(l_{\mathrm{Quelle}} \dots\) Abstand der radioaktiven Quelle in cm \\ 
+    \(z_{i} \dots\) erhaltene Zählrate bei entsprechendem Abstand}
   \label{tab:abstandsgesetz}
   \begin{center}
     \input{./tables/messreihe_abstand_raw.tex}
@@ -524,8 +527,9 @@ nicht teil des Plateau sind.
   \begin{center}
     \includegraphics[width = 0.95\textwidth]{figures/charakteristik.pdf}
   \end{center}
-  \caption{Daten wurden \autoref{tab:zaelrohrchar} entnommen 
-  $m$ ist die Steigung der Geraden und $b$ entspricht dem Schnitt der Ordinate}
+  \caption[Aufnahme der Zählrohrcharakteristik bei \ch{^{22}_{11}Na} Probe mit
+  linearem Fit]{Daten wurden \autoref{tab:zaelrohrchar} entnommen $m$ ist die
+  Steigung der Geraden und $b$ entspricht dem Schnitt der Ordinate}
   \label{fig:zaelrohrchar}
 \end{figure}
 
@@ -549,11 +553,17 @@ Absolute Häufigkeit zu kommen muss die Relative Häufigkeit $p$ mit dem
 Stichprobenumfang $N$ und der Breite der $h$ multipliziert werden. Alle
 relevanten Größen für diese Umrechnung sind in den jeweiligen Bildern
 ersichtlich.
+
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width=0.95\textwidth]{./figures/5statistik.pdf}
   \end{center}
-  \caption{}
+  \caption[Histogramm der Zählstatistik mit Klassen der Größe 5]{Diese Graphik
+    beinhaltet das normierte Histogramm der Messreihe aus
+    \autoref{tab:zahlstatistik}. Hier entspricht $N$ dem Stichprobenumfang und
+    $h$ der Breite der Klassen des Histogramms. Darüber hinaus wurde eine
+  Normalverteilung angelegt unter Verwendung des Mittelwert $\mu$ \& der
+Standardabweichung $\sigma$ vom Messreihensatz.}
   \label{fig:5statistik}
 \end{figure}
 
@@ -561,7 +571,12 @@ ersichtlich.
   \begin{center}
     \includegraphics[width=0.95\textwidth]{./figures/10statistik.pdf}
   \end{center}
-  \caption{}
+  \caption[Histogramm der Zählstatistik mit Klassen der Größe 10]{Diese Graphik
+    beinhaltet das normierte Histogramm der Messreihe aus
+    \autoref{tab:zahlstatistik}. Hier entspricht $N$ dem Stichprobenumfang und
+    $h$ der Breite der Klassen des Histogramms. Darüber hinaus wurde eine
+    Normalverteilung angelegt unter Verwendung des Mittelwert $\mu$ \& der
+Standardabweichung $\sigma$ vom Messreihensatz.}
   \label{fig:10statistik}
 \end{figure}
 
@@ -580,12 +595,24 @@ Proportionalitätskonstante des Abstandsgesetz ist.
   \begin{center}
     \includegraphics[width = 0.95\textwidth]{figures/abstandsgesetz.pdf}
   \end{center}
-  \caption{Daten wurden aus \autoref{tab:abstandsgesetz} entnommen}
+  \caption[Abstandsgesetz einer \ch{_{38}^{90}Sr} Probe]{In dieser Graphik ist
+    das Abstandsgesetz bei einer \ch{_{38}^{90}Sr} Probe graphisch dargestellt,
+    durch das Auftragen der Zählrate $z$ über dem Quellenabstand
+    $l_{\mathrm{Quelle}}$. Dabei wurden die Daten aus
+  \autoref{tab:abstandsgesetz} entnommen. Zudem wurde das Abstandsgesetz, siehe
+\autoref{eq:abstandsgesetz}, mit diesen Datenpunkten gefittet (blaue Kurve),
+dabei ist $k$ die Proportionalitätskonstante.}
   \label{fig:abstandsgesetz}
 \end{figure}
 
 
 \subsection{Bestimmung der Endpunktsenergie über Absorption in Aluminium}
+
+Um mit \autoref{eq:Endpunktsenergie} die Endpunktsenergien bestimmen zu können
+muss aus den Daten die Absorptionskoeffizienten der verschiedenen
+$\beta$-Emittern durch eine Überlagerung mehrerer Exponentialfunktionen, nach
+dem Beer-Lambertschen Gesetzt, siehe \autoref{eq:beerschesgesetzt}, durch einen
+Fit bestimmt werden. 
 
 \begin{figure}[H]
   \begin{center}
@@ -614,8 +641,14 @@ transformiert werden. Die erhaltenen Werte für $p$ und $E$ sind in
 \autoref{tab:magneto_E_p} zu finden.
 
 \begin{table}[H]
-  \caption{Mit Daten aus \autoref{tab:magnetspektrometer} und der
-  Energieimpulsbeziehung und Lorentzkraft wurden folgende daten erstellt}
+  \caption{Dies sind die errechneten Energien $E$ und des Impulse $p$ beim
+    Magnetspektrometer. Mit Daten aus \autoref{tab:magnetspektrometer} und der
+    \hyperref[eq:energieimpulsrelation]{Energieimpulsbeziehung} und
+    \hyperref[eq:lorentzimpuls]{Lorentzkraft} wurden die folgenden Daten
+    erstellt:\\
+    $E \dots$ ist die Energie $beta$-Strahlung\\
+    $p \dots$ ist der Impuls $beta$-Strahlung\\
+}
   \label{tab:magneto_E_p}
   \centering
   \include{./tables/messreihe_magneto_E_p.tex}
@@ -623,7 +656,7 @@ transformiert werden. Die erhaltenen Werte für $p$ und $E$ sind in
 
 Mit den Werten aus \autoref{tab:magneto_E_p} und
 \autoref{tab:magnetspektrometer} lässt sich durch Auftragen der Anzahl an
-Zerfällen $n$ über den Impulsen $p$ und Energien $E$ ein Energiespektrogram
+Zerfällen $n$ über den Impulsen $p$ und Energien $E$ ein Energiespektrogramm
 erstellen.
 
 \begin{figure}[H]
@@ -642,7 +675,8 @@ Nach der Kalibrierung in \autoref{sec:aufname_Ra_zerfallsreihe} und der
 Aufnahme des \(\gamma\)-Spektrum der \ch{^{226}_{88}Ra} Zerfallsreihe
 \autoref{sec:aufbau_Magnetfeldspektrometer}, wurden die erhaltenen Daten in
 \autoref{fig:Ra226zerfallsreihe} dargestellt. Zudem wurde die Peaks per Hand
-ausgewertet und in der Graphik eingezeichnet.
+ausgewertet und in der Graphik eingezeichnet. Für diese Operationen wurde die
+``\emph{Leybold Cassy-Lab 2}`` Software genutzt.
 
 \begin{figure}[H]
   \begin{center}
@@ -652,6 +686,25 @@ ausgewertet und in der Graphik eingezeichnet.
   \label{fig:Ra226zerfallsreihe}
 \end{figure}
 
+Die eingezeichneten Werten werden nun hier nochmals übersichtlich in der
+\autoref{tab:raw_peaks} nochmals angeführt.
+
+\begin{table}[H]
+  \caption{Peaks bei dem \ch{_{88}^{226}Ra} Energiespektrum}
+  \label{tab:raw_peaks}
+  \centering
+  \begin{tblr}{colspec = {S[table-format = 3.1]}}
+    {{{{ $E$ / \si{\kilo\electronvolt}}}}} \\
+    19.8   \\
+    50.1   \\
+    83.1  \\
+    190.6  \\
+    248.1  \\
+    302.0  \\
+    360.3  \\
+    608.9  \\
+  \end{tblr}
+\end{table}
 
 \section*{Diskussion}\label{sec:diskussion}
 
