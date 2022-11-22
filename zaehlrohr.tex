@@ -616,6 +616,11 @@ $\beta$-Emittern durch eine Überlagerung mehrerer Exponentialfunktionen, nach
 dem Beer-Lambertschen Gesetzt, siehe \autoref{eq:beerschesgesetzt}, durch einen
 Fit bestimmt werden. 
 
+
+Da jedoch dies Gleichung exponentiell von der Eingangsgröße der Dicke $D$ abhängt bietet
+es sich an bei dieser Gleichung den Logarithmus zu nehmen und diese Gleichungen
+zu linearisieren.
+
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width = 0.95\textwidth]{figures/aluminiumabsorbtion.png}
@@ -707,7 +712,9 @@ Die eingezeichneten Spitzenwerte werden nun hier nochmals übersichtlich in der
 \autoref{tab:raw_peaks} nochmals angeführt.
 
 \begin{table}[H]
-  \caption{Peaks bei dem \ch{_{88}^{226}Ra} Energiespektrum}
+  \caption{Peaks bei dem \ch{_{88}^{226}Ra} Energiespektrum\\
+    $E \dots$ ist die Energie der Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe
+  }
   \label{tab:raw_peaks}
   \centering
   \begin{tblr}{colspec = {S[table-format = 3.1]}}
@@ -726,7 +733,10 @@ Die eingezeichneten Spitzenwerte werden nun hier nochmals übersichtlich in der
 \section*{Diskussion}\label{sec:diskussion}
 
 \begin{table}[H]
-  \caption{Peaks bei dem \ch{_{88}^{226}Ra} Energiespektrum}
+  \caption{Peaks bei dem \ch{_{88}^{226}Ra} Energiespektrum\\
+    $E \dots$ sind die Energien der gemessen Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe\\
+    $E_{\mathrm{lit}} \dots$ sind die Literaturwerte der Energien der Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe
+  }
   \centering
   \begin{tblr}{colspec = {S[table-format = 3.1]QS}}
     {{{\(E\) / \si{\kilo\electronvolt}}}} & Substanz& {{{\(E_{\mathrm{lit}}\) / \si{\kilo\electronvolt}}}}\\
