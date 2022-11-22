@@ -255,39 +255,23 @@ Die Geräteliste wurde uns freundlicherweise zur Verfügung gestellt und nur um 
 
 \begin{table}[H]
   \caption{verwendete Geräte}
-  \begin{tabular}{|l|l|l|l|}
-    \hline
+  \begin{tblr}{colspec={QQQQ}}
     Gerätetyp & Hersteller & Typ & Inventar-Nr \\
- \hline
     Digitalzähler & Leybold & 57548 & 161462 \\
- \hline
     Geiger-Müller-Zählrohr & Leybold & 5240331 & \\
- \hline
     \(\beta\) Spektrometer & Phywe & & \\
- \hline
     Netzgerät Universal & Phywe & Set Betaspektr. & \\
- \hline
     Geiger-Müller Zähler & Phywe & P2523200 & 79179 \\
- \hline
     Spule mit Eisenkern & Phywe & & \\
- \hline
     Teslameter & Phywe & & \\
- \hline
     Hochspannungsnetzgerät & Leybold & 52188 & 161458 \\
- \hline
     Szintilationszähler & Leybold & 559901 & 161460 \\
- \hline
     Sensor-Cassy 2 & Leybold & & 161474 \\
- \hline
     VKA Box & Leybold & 524058 & 161465 \\
- \hline
     \ch{^{22}_{11}Na} & & & AG-3518 \\
- \hline
     \ch{^{90}_{38}Sr} & & & AG-3676 \\
- \hline
     \ch{^{226}_{88}Ra} & & & 559435 \\
- \hline
-    \end{tabular}
+    \end{tblr}
 \end{table}
 
 \section{Versuchsdurchführung \& Messergebnisse}\label{sec:Durchfuhrung}
@@ -500,6 +484,14 @@ Keine Auswertung notwendig
 
 \subsection{Aufnahme der Zählrohrcharakteristik}
 
+Die Daten der Zählraten aus \autoref{tab:zaelrohrchar} werden gemittelt und
+dessen Standarderror berechnet. Die durch diese Operation erhaltenen Zählraten
+werden über den Spannungen aus derselben \autoref{tab:zaelrohrchar}
+aufgetragen, das Resultat ist in \autoref{fig:zaelrohrchar} ersichtlich. Zudem
+wurde ein Linearer Fit bei dem, für das Zählrohr charakteristische Plateau gemacht.
+Dafür wurden alle Datenpunkte unter dem \SI{160}{\volt} Grenze ignoriert, da diese
+nicht teil des Plateau sind.
+
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width = 0.95\textwidth]{figures/charakteristik.pdf}
@@ -508,10 +500,27 @@ Keine Auswertung notwendig
   \label{fig:zaelrohrchar}
 \end{figure}
 
+% todo Tabelle der gemittelten daten?
 
 \subsection{Aufnahme der Zählstatistik}
 
 Normalverteilung und Histogramm machen
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{./figures/5statistik.pdf}
+  \end{center}
+  \caption{}
+  \label{fig:5statistik}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{./figures/10statistik.pdf}
+  \end{center}
+  \caption{}
+  \label{fig:10statistik}
+\end{figure}
+
 
 \subsection{Bestätigung des Abstandsgesetzes}
 
@@ -578,8 +587,7 @@ Energie transformiert und Impuls wurde dann dargestellt
 \begin{table}[H]
   \caption{Peaks bei dem \ch{_{88}^{226}Ra} Energiespektrum}
   \centering
-  \begin{tblr}
-{colspec = {S[table-format = 3.1]QS}}
+  \begin{tblr}{colspec = {S[table-format = 3.1]QS}}
     {{{\(E\) / \si{\kilo\electronvolt}}}} & Substanz& {{{\(E_{\mathrm{lit}}\) / \si{\kilo\electronvolt}}}}\\
     19.8 & \ch{^{212}_{82}Pb} & 19.6 \\
     50.1 & \ch{^{214}_{83}Bi} & 53 \\
