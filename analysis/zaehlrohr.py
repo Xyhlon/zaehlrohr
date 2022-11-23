@@ -105,7 +105,7 @@ def test_zaehlrohr_protokoll():
         U,
         z,
         label="Gemessene Daten",
-        style="r",
+        style="#1cb2f5",
         errors=True,
     )
     P.data = P.data[P.data["z"] > 160]
