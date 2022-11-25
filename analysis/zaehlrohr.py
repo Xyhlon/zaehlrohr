@@ -210,7 +210,7 @@ def test_zaehlrohr_protokoll():
     P.load_data(filepath, loadnew=True)
 
     P.data["dB"] = 0.2
-    P.data["dn"] = 0
+    P.data["dn"] = 0.01
     P.data["r"] = 0.05
     P.data["dr"] = 0.003
     P.print_table(B, n, name="magneto_raw", inline_units=True)
