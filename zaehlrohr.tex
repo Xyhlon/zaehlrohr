@@ -1,7 +1,6 @@
 %! TeX program = lualatex
 %---------------------------ALLGEMEINE IMPORTS-------------------------------------
 \documentclass[12pt,english,ngerman]{scrartcl}
-
 \input{./protokoll_template/template.latex/input/shared_preamble.tex}
 
 % Kopfzeile
@@ -65,11 +64,8 @@ Halbwertszeiten diese haben, wie häufig die Zerfälle also auftreten.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width = 0.5\textwidth]{./figures/zerfallsreihe.png}
-
 	\end{center}
-	\caption{Zerfallsreihe \ch{^{226}_{88}Ra}~\cite[]{}}
-	\label{fig:zerfallsreihe}
-
+	\caption{Zerfallsreihe \ch{^{226}_{88}Ra}~\cite{zerfallsreihera226}}\label{fig:zerfallsreihe}
 \end{figure}
 
 Die Intensität \(I\) radioaktiver Strahlung folgt dabei dem Abstandsgesetz,
@@ -98,12 +94,12 @@ Formel berechnet werden:
 	\frac{\mu}{\rho} = 17.6 \ E_0^{-1.39}
 	\label{eq:Endpunktsenergie}
 \end{equation}
-% todo cite
 \(\rho\) beschreibt dabei die Dichte der Barriere, dessen
-Absorptionskoeffizient bestimmt wurde.~\cite[]{}
+Absorptionskoeffizient bestimmt wurde.~\cite{kuchling}
 
 Hier wird die für dieses Experiment verwendete Gleichung für Lorentzkraft in
 natürlichen Einheiten angeführt.
+
 \begin{equation}
 	\frac{p}{[\si{\mega\electronvolt}]} =  \frac{Br}{[\si{\tesla}][\si{\meter}]}
 	\label{eq:lorentzimpuls}
@@ -136,15 +132,13 @@ werden kann.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width = 0.5\textwidth]{./figures/zahlrohr.png}
-
 	\end{center}
-	\caption{schematischer Aufbau des Zählrohrs~\cite[]{}}
-	\label{fig:zahlrohr}
+	\caption{schematischer Aufbau des Zählrohrs~\cite[]{zaehlrohrvorbereitung}}\label{fig:zahlrohr}
 \end{figure}
 
 Der charakteristische Verlauf der Kurve des Zählrohrs ist in
 \autoref{fig:zchar} ersichtlich. Dabei sind die einzelnen Bereiche zu
-unterscheiden~\cite[]{}:
+unterscheiden~\cite[]{gerthsen}:
 
 \begin{enumerate}[label = \Roman*.]
 	\item Hier werden die Elektronen aufgrund der angelegten Spannung zur Anode hin
@@ -161,14 +155,11 @@ unterscheiden~\cite[]{}:
 \end{enumerate}
 
 \begin{figure}[H]
-	\begin{center}
-		\includegraphics[width = 0.8\textwidth]{./figures/zcharakteristik.png}
-
-	\end{center}
-	\caption{charakteristische Kurve des Zählrohrs für verschiedene Arten von Strahlung für die
-		Bereits erklärten Spannungsbereiche~\cite[]{}}
-	\label{fig:zchar}
-
+	\centering
+	\includegraphics[width = 0.8\textwidth]{./figures/zcharakteristik.png}
+	\caption{charakteristische Kurve des Zählrohrs
+		für verschiedene Arten von Strahlung für die
+		Bereits erklärten Spannungsbereiche~\cite[]{zaehlrohrvorbereitung}}\label{fig:zchar}
 \end{figure}
 
 \subsection{Magnetspektrometer}
@@ -179,16 +170,14 @@ Kreisbahn abgelenkt und so von der \(\gamma\) - Strahlung getrennt. Der
 schematische Aufbau eines Magnetfeldspektrometers ist in
 \autoref{fig:magnetspektrometer} ersichtlich. In der Abbildung ist klar die
 Kreisförmige 'Flugbahn' der \(\beta\) - Strahlung vom Präparat zum Zählrohr
-sichtbar.\cite[]{}
+sichtbar.\cite[]{demex2}
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width = 0.8\textwidth]{./figures/fig5.png}
-
 	\end{center}
-	\caption{schematischer Aufbau des Magnetfeldspektrometers~\cite[]{}}
-	\label{fig:magnetspektrometer}
-
+	\caption{schematischer Aufbau des
+		Magnetfeldspektrometers~\cite[]{zaehlrohrvorbereitung}}\label{fig:magnetspektrometer}
 \end{figure}
 
 \subsection{Szintilationszähler}
@@ -198,16 +187,14 @@ Der schematische Aufbau eines Szintilationszählers ist ist in
 Szintilartor, bei dem durch die Anregung der Strahlen Photonen ausgesendet
 werden, die von der Photokathode erfasst werden. Dahinter befindet sich ein
 Photomultiplier, an dessen Ende schlussendlich die vielen Elektronen von der
-Anode abgegriffen werden, was das erhaltene Signal darstellt.\cite[]{}
+Anode abgegriffen werden, was das erhaltene Signal darstellt.\cite{gerthsen}
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width = 0.8\textwidth]{./figures/szintilationszahler.png}
-
 	\end{center}
-	\caption{schematischer Aufbau und Strahlengang im Szintilationszähler~\cite[]{}}
-	\label{fig:szintilationszahler}
-
+	\caption{schematischer Aufbau und
+		Strahlengang im Szintillationszähler.~\cite[]{zaehlrohrvorbereitung}}\label{fig:szintilationszahler}
 \end{figure}
 
 \section{Versuchsanordnung}\label{sec:Versuchsanordnung}
@@ -292,7 +279,7 @@ ein Cassy-Lab als Schnittstelle verwendet.
 \section{Geräteliste}
 
 Die Geräteliste wurde uns freundlicherweise zur Verfügung gestellt und nur um
-die verwendeten Strahlungsquellen ergänzt.~\cite[]{}
+die verwendeten Strahlungsquellen ergänzt.~\cite{zaehlrohrvorbereitung}
 
 \begin{table}[H]
 	\caption{verwendete Geräte}
@@ -752,14 +739,15 @@ Die eingezeichneten Spitzenwerte werden nun übersichtlich in
 
 \section*{Diskussion}\label{sec:diskussion}
 
-Die qualitative Analyse der Zählraten bei unterschiedlichen Abschirmungsmaterialien entspricht den Erwartungen.
-Es wird klar ersichtlich, dass eine dickere Probe des selben Materials die Abschirmung erhöht. Auch wird deutlich,
-dass Aluminium, als dichteres Medium eine bessere Abschirmung bietet, als eine Probe mit vergleichbarer Dicke aus Plastik.
-
-
+Die qualitative Analyse der Zählraten bei unterschiedlichen
+Abschirmungsmaterialien entspricht den Erwartungen. Es wird klar ersichtlich,
+dass eine dickere Probe des selben Materials die Abschirmung erhöht. Auch wird
+deutlich, dass Aluminium, als dichteres Medium eine bessere Abschirmung bietet,
+als eine Probe mit vergleichbarer Dicke aus Plastik.
 
 \begin{table}[H]
-	\caption{Vergleich der erhaltenen Peaks beim \ch{_{88}^{226}Ra}  mit den entsprechenden Literaturwerten \cite[]{}
+	\caption{Vergleich der erhaltenen Peaks beim \ch{_{88}^{226}Ra}
+		mit den entsprechenden Literaturwerten~\cite{Radium}
 		\\
 		$E \dots$ sind die Energien der gemessen Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe \\
 		mit einer Unsicherheit von \SI{5}{\kilo\electronvolt}\\
