@@ -9,7 +9,8 @@ def test_zaehlrohr_protokoll():
     gm = {
         "zLuft": r"z_{\mathrm{Luft}}",
         "zPapier": r"z_{\mathrm{Papier}}",
-        "zKunststoff": r"z_{\mathrm{Kunststoff}}",
+        "zCd": r"z_{\mathrm{CD}}",
+        "zKunststoff": r"z_{\mathrm{Lineal}}",
         "zAlu0_4": r"z_{\mathrm{Alu \num{0.4}}}",
         "zAlu0_8": r"z_{\mathrm{Alu \num{0.8}}}",
         "zAlu4": r"z_{\mathrm{Alu \num{4}}}",
@@ -37,6 +38,7 @@ def test_zaehlrohr_protokoll():
     gv = {
         "zLuft": r"\si{\cps}",
         "zPapier": r"\si{\cps}",
+        "zCd": r"\si{\cps}",
         "zKunststoff": r"\si{\cps}",
         "zAlu0_4": r"\si{\cps}",
         "zAlu0_8": r"\si{\cps}",
@@ -75,6 +77,7 @@ def test_zaehlrohr_protokoll():
     P.data["dzLuft"] = 0
     P.data["dzPapier"] = 0
     P.data["dzKunststoff"] = 0
+    P.data["dzCd"] = 0
     P.data["dzAlu0_4"] = 0
     P.data["dzAlu0_8"] = 0
     P.data["dzAlu1_5"] = 0
@@ -82,6 +85,7 @@ def test_zaehlrohr_protokoll():
     P.print_table(
         zLuft,
         zPapier,
+        zCd,
         zKunststoff,
         zAlu0_4,
         zAlu0_8,
@@ -205,8 +209,8 @@ def test_zaehlrohr_protokoll():
     filepath = os.path.join(os.path.dirname(__file__), "../data/magnetspektro.csv")
     P.load_data(filepath, loadnew=True)
 
-    P.data["dB"] = 0.1
-    P.data["dn"] = 4
+    P.data["dB"] = 0.2
+    P.data["dn"] = 0
     P.data["r"] = 0.05
     P.data["dr"] = 0.003
     P.print_table(B, n, name="magneto_raw", inline_units=True)
