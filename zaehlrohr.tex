@@ -22,21 +22,23 @@
 \section{Aufgabenstellung\label{Auf}}
 
 \begin{itemize}
-    \item Messung der \(\alpha\), \(\beta\) und \(\gamma\) Strahlung ohne und mit verschieden dicken Abschirmungen
-    \item Aufnahme der Zählrohrcharakteristik
-    \item Aufnahme der Zählstatistik
-    \item Bestätigung des Abstandsgesetzes
-    \item Bestimmung der Endpunktenergie über Absorption in Aluminium
-    \item Aufnahme des Energiespektrums von \(\beta\) Strahlung mit Magnetspektrometer
-    \item Aufnahme und Kalibrierung des \(\gamma\) Spektrums
-    \item Aufnahme des komplexen \(\gamma\) Spektrums und seinen Zerfallsprodukten
+	\item Messung der \(\alpha\), \(\beta\) und \(\gamma\) Strahlung ohne und mit
+	      verschieden dicken Abschirmungen
+	\item Aufnahme der Zählrohrcharakteristik
+	\item Aufnahme der Zählstatistik
+	\item Bestätigung des Abstandsgesetzes
+	\item Bestimmung der Endpunktenergie über Absorption in Aluminium
+	\item Aufnahme des Energiespektrums von \(\beta\) Strahlung mit Magnetspektrometer
+	\item Aufnahme und Kalibrierung des \(\gamma\) Spektrums
+	\item Aufnahme des komplexen \(\gamma\) Spektrums und seinen Zerfallsprodukten
 \end{itemize}
 
 \section{Grundlagen}\label{Grund}
 
 \subsection{Radioaktivität}
-Nicht alle, in der Natur vorkommenden, Isotope sind stabil und zerfallen so mit einer gewissen Halbwertszeit \(\tau\).
-Bei diesen Zerfällen kann grundsätzlich zwischen verschiedenen Arten der Zerfällen unterschieden werden.
+Nicht alle, in der Natur vorkommenden, Isotope sind stabil und zerfallen so mit
+einer gewissen Halbwertszeit \(\tau\). Bei diesen Zerfällen kann grundsätzlich
+zwischen verschiedenen Arten der Zerfällen unterschieden werden.
 
 Bei \(\alpha\) - Zerfall wird ein Heliumkern ausgestoßen, was sich schließlich
 auf die Massen und Ordnungszahl auswirkt.
@@ -48,10 +50,11 @@ ausgestoßen werden, um die Erhaltungssätze nicht zu verletzen. \(\beta^+\) -
 Zerfall kommt in der Natur seltener vor, funktioniert aber nach dem gleichen
 Prinzip, mit dem Unterschied, dass hier die Ordnungszahl erhöht wird.
 
-Bei \(\gamma\) - Zerfall werden keine Teilchen sondern hochfrequente Wellen abgestrahlt. Diese kommen zustande,
-wenn das Isotop nach \(\alpha\) oder \(\beta\) - Zerfall noch in einem angeregten Zustand ist, wodurch durch die
-\(\gamma\) - Strahlung - Spektren entstehen, die signifikant für bestimmte Elemente sind, was im Laufe des Versuchs
-genutzt wird.
+Bei \(\gamma\) - Zerfall werden keine Teilchen sondern hochfrequente Wellen
+abgestrahlt. Diese kommen zustande, wenn das Isotop nach \(\alpha\) oder
+\(\beta\) - Zerfall noch in einem angeregten Zustand ist, wodurch durch die
+\(\gamma\) - Strahlung - Spektren entstehen, die signifikant für bestimmte
+Elemente sind, was im Laufe des Versuchs genutzt wird.
 
 Weil diese Zerfälle immer nach einem bestimmen Schema ablaufen, können
 sogenannte Zerfallsreihen angeschrieben werden, wie beispielsweise die
@@ -92,24 +95,31 @@ die Anfangsintensität, \(\mu\) den Absorptionskoeffizienten der Barriere und
 Aus den Absorptionskoeffizienten kann die Ruheenergie \(E_0\) nach folgender
 Formel berechnet werden:
 \begin{equation}
-  \frac{\mu}{\rho} = 17.6 \ E_0^{-1.39}
-  \label{eq:Endpunktsenergie}
+	\frac{\mu}{\rho} = 17.6 \ E_0^{-1.39}\label{eq:Endpunktsenergie}
 \end{equation}
 
+% todo cite
 \(\rho\) beschreibt dabei die Dichte der Barriere, dessen
-Absorptionskoeffizient bestimmt wurde.\cite[]{}
+Absorptionskoeffizient bestimmt wurde.~\cite[]{}
 
+Hier wird die für dieses Experiment verwendete Gleichung für Lorentzkraft in
+natürlichen Einheiten angeführt.
 \begin{equation}
-  p = 0.299792456 \ B \ r
-  \label{eq:lorentzimpuls}
+	\frac{p}{[\si{\mega\electronvolt}]} =  \frac{Br}{[\si{\tesla}][\si{\meter}]}
+	\label{eq:lorentzimpuls}
 \end{equation}
 
-%todo erklärung von B r E
+Wobei $B$ die Magnetische Flussdichte im Magnetospektrometer, $p$ der Impuls
+des Teilchens und $r$ der aufbau-spezifische approximierter Lorentzradius ist.
+
+Weiters wurde die Energieimpulsbeziehung in natürlichen Einheiten angeführt:
 
 \begin{equation}
-	E = 0.511 \left(0.344191071091609 B^{2} r^{2} + 1\right)^{0.5} - 0.511
+	E = m_0 c^2 \left(\sqrt{\frac{ B^{2} r^{2}}{m_0 c^2} + 1} - 1 \right)
 	\label{eq:energieimpulsrelation}
 \end{equation}
+
+Wobei $E$ die Energie und $m_0 c^2$ die Ruheenergie des Elektrons ist.
 
 \subsection{Zählrohr}
 
@@ -245,20 +255,18 @@ Gammastrahlung gemessen wird. Die Stärke des Magnetfelds wird durch das
 Netzgerät bestimmt.
 
 \begin{figure}[H]
-    \begin{center}
-    \includegraphics[width = 0.8\textwidth]{./figures/mag_new.png}
-      \end{center}
-      \caption[Aufbau des Magnetfeldspektrometers]{Aufbau des Magnetfeldspektrometers \\
-        1 \(\dots\) Radioaktive Quelle \\
-        2 \(\dots\) Hallsonde (nicht sichtbar im Foto) \\
-        3 \(\dots\) Empfänger des Geiger-Müller-Zählers \\
-        4 \(\dots\) Anzeige des Geiger-Müller-Zählers \\
-        5 \(\dots\) Spule um das Magnetfeld zu erzeugen \\
-        6 \(\dots\) Netzgerät für das Magnetfeld (Stecker um die Polung des Magnetfelds zu Ändern) \\
-        7 \(\dots\) Teslameter um die Stärke des Magnetfelds zu bestimmen}
-      \label{fig:mag}
-
-  \end{figure}
+	\begin{center}
+		\includegraphics[width = 0.8\textwidth]{./figures/mag_new.png}
+	\end{center}
+	\caption[Aufbau des Magnetfeldspektrometers]{Aufbau des Magnetfeldspektrometers \\
+		1 \(\dots\) Radioaktive Quelle \\
+		2 \(\dots\) Hallsonde (nicht sichtbar im Foto) \\
+		3 \(\dots\) Empfänger des Geiger-Müller-Zählers \\
+		4 \(\dots\) Anzeige des Geiger-Müller-Zählers \\
+		5 \(\dots\) Spule um das Magnetfeld zu erzeugen \\
+		6 \(\dots\) Netzgerät für das Magnetfeld (Stecker um die Polung des Magnetfelds zu Ändern) \\
+		7 \(\dots\) Teslameter um die Stärke des Magnetfelds zu bestimmen}
+	\label{fig:mag}
 
 \end{figure}
 
@@ -310,6 +318,11 @@ die verwendeten Strahlungsquellen ergänzt.~\cite[]{}
 
 \section{Versuchsdurchführung \& Messergebnisse}\label{sec:Durchfuhrung}
 
+Da in diesen Versuchen oftmals Zählraten oder Counts gemessen werden, gibt es
+für diese Werte keine Unsicherheit da sie exakt sind. Aus diesem Grund wurden
+mehrere Messungen aufgezeichnet und diese Messungen als normalverteilt
+Angenommen, um diesen Werten eine Unsicherheit zuordenen zu können.
+
 \subsection{Messung der \texorpdfstring{$\alpha$}{alpha}, \texorpdfstring{$\beta$}{beta} und
 	\texorpdfstring{$\gamma$}{gamma} Strahlung ohne und mit verschiedenen dicken Abschirmungen}
 
@@ -334,11 +347,11 @@ gegen die Probe oder das Zählrohr stößt.
 \begin{table}[H]
 	\caption[Erhaltene Zählraten bei verschiedenen Abschirmungsmaterialien]{Erhaltene Zählraten bei
 		verschiedenen Abschirmungsmaterialien bei einer Torzeit von \SI{10}{\second} und einem
-		Abstand der radioaktiven Quelle von \SI{15(2)}{\mm}. Die Unsicherheit beträgt dabei für alle Zählraten \SI{}{} \\
+		Abstand der radioaktiven Quelle von \SI{15(2)}{\mm}. Zählraten sind exakt.\\
 		\(z_{Luft} \dots\) erhaltene Zählrate ohne Abschirmung \\
 		\(z_{\mathrm{Papier}} \dots\) erhaltene Zählrate mit einem Blatt Papier als Abschirmung \\
 		\(z_{\mathrm{Lineal}} \dots\) erhaltene Zählrate mit einem Lineal als Abschirmung (Dicke = \SI{2.1(0.05)}{\mm})\\
-		\(z_{\mathrm{Kunststoff}} \dots\) erhaltene Zählrate mit einer CD und zugehörigen Soulcase als Abschirmung \\
+		\(z_{\mathrm{CD}} \dots\) erhaltene Zählrate mit einer CD und zugehörigen Soulcase als Abschirmung \\
 		\(z_{\mathrm{Alu \num{0.4}}} \dots\) erhaltene Zählrate mit mit einem Aluminiumblech als Abschirmung, Dicke = \SI{0.4(0.05)}{\mm}\\
 		\(z_{\mathrm{Alu \num{0.8}}} \dots\) erhaltene Zählrate mit mit einem Aluminiumblech als Abschirmung, Dicke = \SI{0.8(0.05)}{\mm}\\
 		\(z_{\mathrm{Alu \num{4}}} \dots\) erhaltene Zählrate mit mit einem Aluminiumblech als Abschirmung, Dicke = \SI{4(0.05)}{\mm}\\
@@ -363,9 +376,10 @@ sichtbar ist.
 
 %todo Unsicherheit
 \begin{table}[H]
-	\caption[Erhaltene Zählraten für die Zählrohrcharakteristik]{Erhaltene Zählraten für die Zählrohrcharakteristik
+	\caption[Erhaltene Zählraten für die Zählrohrcharakteristik]{
+		Erhaltene Zählraten für die Zählrohrcharakteristik
 		bei einer Torzeit von \SI{10}{\second} und einem
-		Abstand der radioaktiven Quelle von \SI{15(2)}{\mm}. Die Unsicherheit beträgt dabei für alle Zählraten \SI{}{} \\
+		Abstand der radioaktiven Quelle von \SI{15(2)}{\mm}. Zählraten sind exakt. \\
 		\(U \dots\) eingestellte Betriebsspannung in V \\
 		\(z_{i} \dots\) erhaltene Zählrate bei der entsprechenden Betriebsspannung}
 	\label{tab:zaelrohrchar}
@@ -387,14 +401,13 @@ aufgelistet.
 %todo Unsicherheit
 
 \begin{table}[H]
-  \caption{Tabelle in der, der Besseren Übersicht halber, ein Ausschnitt der erhaltenen Counts für die Zählstatistik
-  für eine Torzeit von \SI{1}{\second} aufgelistet sind. Die Unsicherheit für die Counts beträgt dabei \\
-  \(t \dots\) entsprechende Zeit, die den Memory Speicher übergeben wird, in s \\
-  \(n \dots\) verzeichnete Anzahl an Counts (einheitenlos)}
-  \label{tab:zahlstatistik}
-  \begin{center}
-    \input{./tables/messreihe_statistik_truncated.tex}
-  \end{center}
+	\caption{Tabelle in der, der Besseren Übersicht halber, ein Ausschnitt der erhaltenen Counts für die Zählstatistik
+		für eine Torzeit von \SI{1}{\second} aufgelistet sind. Dabei sind die Counts sind exakt. \\
+		\(t \dots\) entsprechende Zeit, die den Memory Speicher übergeben wird, in s \\
+		\(n \dots\) verzeichnete Anzahl an Counts (einheitenlos)}\label{tab:zahlstatistik}
+	\begin{center}
+		\input{./tables/messreihe_statistik_truncated.tex}
+	\end{center}
 \end{table}
 
 \subsection{Bestätigung des Abstandsgesetzes}
@@ -414,16 +427,14 @@ auswirken.
 %todo Unsicherheiten
 
 \begin{table}[H]
-  \caption[Erhaltene Zählraten bei unterschiedlichen Abständen der
-  Quelle]{Erhaltene Zählraten bei unterschiedlichen Abständen der Quelle bei
-    einer Torzeit von \SI{10}{\second}. Die Unsicherheit beträgt dabei für alle
-    Zählraten \SI{}{} \\ 
-    \(l_{\mathrm{Quelle}} \dots\) Abstand der radioaktiven Quelle in cm mit einer Unsicherheit von \\ 
-    \(z_{i} \dots\) erhaltene Zählrate bei entsprechendem Abstand}
-  \label{tab:abstandsgesetz}
-  \begin{center}
-    \input{./tables/messreihe_abstand_raw.tex}
-  \end{center}
+	\caption[Erhaltene Zählraten bei unterschiedlichen Abständen der
+		Quelle]{Erhaltene Zählraten bei unterschiedlichen Abständen der Quelle bei
+		einer Torzeit von \SI{10}{\second}.Dabei sind die Zählraten exakt\\
+		\(l_{\mathrm{Quelle}} \dots\) Abstand der radioaktiven Quelle in cm mit einer Unsicherheit von \SI{0.2}{\cm}\\
+		\(z_{i} \dots\) erhaltene Zählrate bei entsprechendem Abstand} \label{tab:abstandsgesetz}
+	\begin{center}
+		\input{./tables/messreihe_abstand_raw.tex}
+	\end{center}
 \end{table}
 
 \subsection{Bestimmung der Endpunktsenergie über Absorption in Aluminium}
@@ -439,16 +450,15 @@ festgehalten.
 %todo Unsicherheiten
 
 \begin{table}[H]
-  \caption{Tabelle der Zählraten bei $\beta$-Strahlung bei verschiedenen Dicken
-    einer Aluminiumplatte bei
-    einer Torzeit von \SI{10}{\second}. Die Unsicherheit beträgt dabei für alle
-    Zählraten \SI{}{} \\
-  \(D \dots\) Dicke der Aluminiumabschirmung in $\mu$m mit einer Unsicherheit von\\
-  \(z_{i} \dots\) erhaltene Zählrate bei entsprechendem Abstand}
-  \label{tab:alu}
-  \begin{center}
-    \input{./tables/messreihe_alu_absorbtion.tex}
-  \end{center}
+	\caption{Tabelle der Zählraten bei $\beta$-Strahlung bei verschiedenen Dicken
+		einer Aluminiumplatte bei
+		einer Torzeit von \SI{10}{\second}. Dabei sind die Zählraten exakte Werte. \\
+		\(D \dots\) Dicke der Aluminiumabschirmung in $\mu$m mit einer Unsicherheit von\\
+		\(z_{i} \dots\) erhaltene Zählrate bei entsprechendem Abstand}
+	\label{tab:alu}
+	\begin{center}
+		\input{./tables/messreihe_alu_absorbtion.tex}
+	\end{center}
 \end{table}
 
 \subsection{Aufnahme des Energiespektrums von \texorpdfstring{$\beta$}{beta} Strahlung mit Magnetspektrometer}
@@ -469,22 +479,22 @@ Quelle durchgeführt wird, wodurch eine Hintergrundstrahlung von 23 Zerfällen i
 der entsprechenden Torzeit vermerkt wird. Der dabei erhaltenen Wert muss dann
 von den vorherigen Werten abgezogen werden.
 
-%todo Unsicherheit
-
 \begin{table}[H]
-  \caption[Verzeichnete Zerfälle bei entsprechendem Magnetfeld]{Verzeichnete Zerfälle bei
-    entsprechendem Magnetfeld bei einer Torzeit von \SI{100}{\second}.
-    Die Unsicherheit der Counts beträgt dabei \SI{}{} \\
- \(B \dots\) Stärke des Magnetfelds in mT mit einer Unsicherheit von\\
- \(n \dots\) erhaltene bei erhaltene Anzahl an Zerfällen bei entsprechendem Magnetfeld}
-  \label{tab:magnetspektrometer}
-  \begin{center}
-    \input{./tables/messreihe_magneto_raw.tex}
-  \end{center}
+	\caption[Verzeichnete Zerfälle bei entsprechendem Magnetfeld]{
+		Verzeichnete Zerfälle bei
+		entsprechendem Magnetfeld bei einer Torzeit von \SI{100}{\second}.
+		Dabei sind die Counts exakte Werte. \\
+		\(B \dots\) Stärke des Magnetfelds in \si{\milli\tesla} mit einer
+		Unsicherheit von \SI{0.2}{\milli\tesla}\\
+		\(n \dots\) erhaltene bei erhaltene Anzahl an
+		Zerfällen bei entsprechendem Magnetfeld}\label{tab:magnetspektrometer}
+	\begin{center}
+		\input{./tables/messreihe_magneto_raw.tex}
+	\end{center}
 \end{table}
 
-\subsection{Aufnahme und Kalibrierung des \texorpdfstring{$\gamma$}{gamma} Spektrums}
-\label{sec:aufname_kalibrierungsspektrum}
+\subsection{Aufnahme und Kalibrierung des \texorpdfstring{$\gamma$}{gamma}
+	Spektrums}\label{sec:aufname_kalibrierungsspektrum}
 
 Um das \(\gamma\) Spektrum zu kalibrieren wird der Versuch wie in
 \autoref{aufbau_szinti} erklärt aufgebaut. Um das Referenzspektum aufzunehmen
@@ -496,7 +506,6 @@ gesendet, wodurch die entsprechenden Spektren geplottet werden können. Da hier
 die Werte für die Peaks bekannt sind, kann so eine Kalibrierungskurve erzeugt
 werden, was in folgender \autoref{fig:kalibrierung} sichtbar ist.
 
-%TODO caption
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width = 0.95\textwidth]{./figures/c137kalibrierung.png}
@@ -504,83 +513,80 @@ werden, was in folgender \autoref{fig:kalibrierung} sichtbar ist.
 	\caption[Kalibrierungsmessung einer \ch{^{137}_{55}Cs}]{Diese Graphik
 		beinhaltet, das zur Kalibrierung verwendete Referenzspektrum einer
 		\ch{^{137}_{55}Cs} Probe. Zudem wurden die charakteristischen Energiepeaks
-		dieser Probe markiert.}
-	\label{fig:kalibrierung}
+		dieser Probe markiert.}\label{fig:kalibrierung}
 \end{figure}
 
-\subsection{Aufnahme des komplexen \texorpdfstring{$\gamma$}{gamma} Spektrums und seinen Zerfallsprodukten}
-\label{sec:aufname_Ra_zerfallsreihe}
+\subsection{Aufnahme des komplexen \texorpdfstring{$\gamma$}{gamma}
+	Spektrums und seinen Zerfallsprodukten}\label{sec:aufname_Ra_zerfallsreihe}
 
 Der Versuch wird, wie zuvor beschrieben, wie in \autoref{aufbau_szinti}
 aufgebaut, auch wird erneut eine Spannung von \SI{0.73}{\kilo\volt} verwendet.
 Als radioaktive Quelle wird für diesen Teil des Versuchs das zu vermessende
-\ch{^{226}_{88}Ra} verwendet. auch diese Werte werden auf den Computer
+\ch{^{226}_{88}Ra} verwendet. Auch diese Werte werden auf den Computer
 übertragen und den zuvor erzeugten Plot bei einer Laufzeit von
-\SI{2400}{\second} beigefügt. Anhand des zuvor bestimmten Referenzspektums
+\SI{2400}{\second} beigefügt. Anhand des zuvor bestimmten Referenzspektrums
 können nun die Peaks des \ch{^{226}_{88}Ra} Spektrums vermessen werden.
 
 \section{Auswertung}\label{sec:Auswertung}
 
 Um zu sehen wie sich die Unsicherheit der Messungen bis in die Ergebnisse
 fortplanzt, ist erweiterte Gauss-Methode verwendet worden. Die Grundlagen
-dieser Methode stammen von den Powerpointfolien von GUM
-\cite{WolfgangKessel2004}. Für die Auswertung ist die Progammiersprache Python
-im speziellen die Pakete \verb#labtool-ex2#, \verb#pandas#, \verb#sympy#, zur
-Hilfe genommen worden. Um höchstmögliche Genauigkeit zu garantieren wird erst
-bei der Darstellung der Wert in Tabellen gerundet.
+dieser Methode stammen von den Powerpointfolien von
+GUM~\cite{WolfgangKessel2004}. Für die Auswertung ist die Progammiersprache
+Python im speziellen die Pakete \verb#labtool-ex2#, \verb#pandas#,
+\verb#sympy#, zur Hilfe genommen worden. Um höchstmögliche Genauigkeit zu
+garantieren wird erst bei der Darstellung der Wert in Tabellen gerundet.
 
 \subsection{Messung der \texorpdfstring{$\alpha$}{alpha}, \texorpdfstring{$\beta$}{beta} und
 	\texorpdfstring{$\gamma$}{gamma} Strahlung ohne und mit verschiedenen dicken Abschirmungen}
 
-Da es sich bei diesem Teil des Versuchs um eine rein qualitative Aussage handelt,
-wird keine explizite Auswertung durchgeführt und die erhaltenen Messwerte in \autoref{sec:diskussion} analysiert.
-
+Da es sich bei diesem Teil des Versuchs um eine rein qualitative Aussage
+handelt, wird keine explizite Auswertung durchgeführt und die erhaltenen
+Messwerte in \autoref{sec:diskussion} analysiert.
 
 \subsection{Aufnahme der Zählrohrcharakteristik}
 
-Die Daten der Zählraten $z_i$ aus \autoref{tab:zaelrohrchar} werden zunächst gemittelt und
-dessen Standarderror berechnet. Die durch diese Operation erhaltenen Zählraten
-werden über den Spannungen aus derselben \autoref{tab:zaelrohrchar}
-aufgetragen, das Resultat ist in \autoref{fig:zaelrohrchar} ersichtlich. Zudem
-wird ein Linearer Fit, bei dem, für das Zählrohr charakteristische Plateau, gemacht.
-Dafür wurden alle Datenpunkte unter der \SI{160}{\volt} Grenze ignoriert, da diese
-nicht Teil des Plateaus sind.
+Die Daten der Zählraten $z_i$ aus \autoref{tab:zaelrohrchar} werden zunächst
+gemittelt und dessen Standarderror berechnet. Die durch diese Operation
+erhaltenen Zählraten werden über den Spannungen aus derselben
+\autoref{tab:zaelrohrchar} aufgetragen, das Resultat ist in
+\autoref{fig:zaelrohrchar} ersichtlich. Zudem wird ein Linearer Fit, bei dem,
+für das Zählrohr charakteristische Plateau, gemacht. Dafür wurden alle
+Datenpunkte unter der \SI{160}{1} Zählratengrenze ignoriert, da diese nicht
+Teil des Plateaus sind.
 %todo wirklich 160? weil abb
 
 \begin{figure}[H]
-  \begin{center}
-    \includegraphics[width = 0.95\textwidth]{figures/charakteristik.pdf}
-  \end{center}
-  \caption[Aufnahme der Zählrohrcharakteristik bei \ch{^{22}_{11}Na} Probe mit
-  linearem Fit]{In dieser Graphik ist die Zählrohrcharakteristik dargestellt
-    worden, indem die Zählrate $z$ (einheitenlos) über die Spannung $U$ 
-    in Volt aufgetragen wurde. Die
-    Daten wurden \autoref{tab:zaelrohrchar} entnommen. Weiters wurde das
-    charakteristische Plateau des Zählrohr linear gefittet. Hier ist $m$ die
-    Steigung der Geraden in $\frac{1}{Volt}$ und $b$ entspricht dem Schnitt der Ordinate (einheitenlos)} 
-  \label{fig:zaelrohrchar}
+	\begin{center}
+		\includegraphics[width = 0.95\textwidth]{figures/charakteristik.pdf}
+	\end{center}
+	\caption[Aufnahme der Zählrohrcharakteristik bei \ch{^{22}_{11}Na} Probe mit
+		linearem Fit]{In dieser Graphik ist die Zählrohrcharakteristik dargestellt
+		worden, indem die Zählrate $z$ (einheitenlos) über die Spannung $U$
+		in Volt aufgetragen wurde. Die
+		Daten wurden \autoref{tab:zaelrohrchar} entnommen. Weiters wurde das
+		charakteristische Plateau des Zählrohr linear gefittet. Hier ist $m$ die
+		Steigung der Geraden in $\si{\per\volt}$
+		und $b$ entspricht dem Schnitt der Ordinate (einheitenlos)}\label{fig:zaelrohrchar}
 \end{figure}
-
-% todo Tabelle der gemittelten daten?
 
 \subsection{Aufnahme der Zählstatistik}
 
 Die gesamte aufgenommene Messreihe der Zählraten aus
 \autoref{tab:zahlstatistik} wurde nun in Klassen mit einer konstanten 5er und
 10er Breite $h$ unterteilt und dann als Histogramme dargestellt. Das Histogramm
-mit der konstanten 5er Breite ist in \autoref{fig:5statistik} ersichtlich, jenes
-mit der 10er Breite ist in \autoref{fig:10statistik} zu finden.
+mit der konstanten 5er Breite ist in \autoref{fig:5statistik} ersichtlich,
+jenes mit der 10er Breite ist in \autoref{fig:10statistik} zu finden.
 
 Des Weiteren wurden mittels der Standardabweichung und dem Mittelwert der
-Klassen eine Normalverteilung aufgestellt und diese über den
-Verteilungsraum der Messwerte geplottet.
+Klassen eine Normalverteilung aufgestellt und diese über den Verteilungsraum
+der Messwerte geplottet.
 
-Damit der Vergleich zwischen der Normalverteilung und dem Histogrammen 
-klar ersichtlich ist, werden die Histogramme auf 1 normiert. Um auf die
-Absolute Häufigkeit zu kommen muss die Relative Häufigkeit $p$ mit dem
-Stichprobenumfang $N$ und der Breite der $h$ multipliziert werden. Alle
-relevanten Größen für diese Umrechnung sind in den jeweiligen Bildern
-ersichtlich.
+Damit der Vergleich zwischen der Normalverteilung und dem Histogrammen klar
+ersichtlich ist, werden die Histogramme auf 1 normiert. Um auf die Absolute
+Häufigkeit zu kommen muss die Relative Häufigkeit $p$ mit dem Stichprobenumfang
+$N$ und der Breite der $h$ multipliziert werden. Alle relevanten Größen für
+diese Umrechnung sind in den jeweiligen Bildern ersichtlich.
 
 \begin{figure}[H]
 	\begin{center}
@@ -592,8 +598,7 @@ ersichtlich.
 		$h$ der Breite der Klassen des Histogramms. Darüber hinaus wurde eine
 		Normalverteilung angelegt unter Verwendung des Mittelwert $\mu$ \& der
 		Standardabweichung $\sigma$ vom Messreihensatz. Alle hier in der Box
-		angeführten Variablen haben Einheit 1}
-	\label{fig:5statistik}
+		angeführten Variablen haben Einheit 1}\label{fig:5statistik}
 \end{figure}
 
 \begin{figure}[H]
@@ -606,8 +611,7 @@ ersichtlich.
 		$h$ der Breite der Klassen des Histogramms. Darüber hinaus wurde eine
 		Normalverteilung angelegt unter Verwendung des Mittelwert $\mu$ \& der
 		Standardabweichung $\sigma$ vom Messreihensatz. Alle hier in der Box
-		angeführten Variablen haben Einheit 1}
-	\label{fig:10statistik}
+		angeführten Variablen haben Einheit 1}\label{fig:10statistik}
 \end{figure}
 
 \subsection{Bestätigung des Abstandsgesetzes}
@@ -630,8 +634,7 @@ Proportionalitätskonstanten des Abstandsgesetz entspricht.
 		$l_{\mathrm{Quelle}}$. Dabei wurden die Daten aus
 		\autoref{tab:abstandsgesetz} entnommen. Zudem wurde das Abstandsgesetz, siehe
 		\autoref{eq:abstandsgesetz}, mit diesen Datenpunkten gefittet (blaue Kurve),
-		dabei ist $k$ die Proportionalitätskonstante.}
-	\label{fig:abstandsgesetz}
+		dabei ist $k$ die Proportionalitätskonstante.}\label{fig:abstandsgesetz}
 \end{figure}
 
 \subsection{Bestimmung der Endpunktsenergie über Absorption in Aluminium}
@@ -642,10 +645,9 @@ $\beta$-Emittern durch eine Überlagerung mehrerer Exponentialfunktionen, nach
 dem Beer-Lambertschen Gesetzt, siehe \autoref{eq:beerschesgesetzt}, durch einen
 Fit bestimmt werden.
 
-
-Da jedoch diese Gleichung exponentiell von der Eingangsgröße der Dicke $D$ abhängt bietet
-es sich an, bei dieser Gleichung den Logarithmus zu verwenden und diese Gleichungen
-zu linearisieren.
+Da jedoch diese Gleichung exponentiell von der Eingangsgröße der Dicke $D$
+abhängt bietet es sich an, bei dieser Gleichung den Logarithmus zu verwenden
+und diese Gleichungen zu linearisieren.
 
 \begin{figure}[H]
 	\begin{center}
@@ -656,8 +658,7 @@ zu linearisieren.
 		$\beta$-Strahlung in einfach logarithmischer Darstellung.
 		In diesem Diagramm ist $D$ der Aluminiumplatte und
 		$z$ ist die Zählrate der durchdrungenen Teilchen.
-	}
-	\label{fig:alu_absorption}
+	}\label{fig:alu_absorption}
 \end{figure}
 
 %todo d,z cite?
@@ -671,32 +672,30 @@ zu linearisieren.
 		Diese Kurve ist doppelt-logarithmische Darstellung der Absorptionskurve von
 		\ch{Al} bei $\beta$-Strahlung. In diesem Diagramm ist $D$ der
 		Aluminiumplatte und $z$ ist die Zählrate der durchdrungenen Teilchen.
-	}
-	\label{fig:alu_doppellog}
+	}\label{fig:alu_doppellog}
 \end{figure}
 
 \subsection{Aufnahme des Energiespektrums von \texorpdfstring{$\beta$}{beta}
 	Strahlung mit Magnetspektrometer}
 
 Um eine Energiespektrum darstellen zu können müssen die Werte aus
-\autoref{tab:magnetspektrometer} mittels \autoref{eq:lorentzimpuls} zu
-Impulsen $p$ oder mittels \autoref{eq:energieimpulsrelation} zur Energien $E$
+\autoref{tab:magnetspektrometer} mittels \autoref{eq:lorentzimpuls} zu Impulsen
+$p$ oder mittels \autoref{eq:energieimpulsrelation} zur Energien $E$
 transformiert werden. Die erhaltenen Werte für $p$ und $E$ sind in
 \autoref{tab:magneto_E_p} zu finden.
 
 \begin{table}[H]
-  \caption[Energie- und Impulswerte der $\beta$-Strahlung einer \ch{^{22}_{11}Na} Probe]{
-    Errechneten Energien $E$ und Impulse $p$ der $\beta$-Strahlung einer
-    \ch{^{22}_{11}Na} Probe vom Magnetspektrometer, mit Daten aus
-    \autoref{tab:magnetspektrometer} und der Anwendung der
-    \hyperref[eq:energieimpulsrelation]{Energieimpulsbeziehung} sowie
-    \hyperref[eq:lorentzimpuls]{Lorentzkraft} \\
-    $E \dots$ Energie der $\beta$-Strahlung einer \ch{^{22}_{11}Na} Probe\\
-    $p \dots$ Impuls der $\beta$-Strahlung einer \ch{^{22}_{11}Na} Probe\\
-}
-  \label{tab:magneto_E_p}
-  \centering
-  \include{./tables/messreihe_magneto_E_p.tex}
+	\caption[Energie- und Impulswerte der $\beta$-Strahlung einer \ch{^{22}_{11}Na} Probe]{
+		Errechneten Energien $E$ und Impulse $p$ der $\beta$-Strahlung einer
+		\ch{^{22}_{11}Na} Probe vom Magnetspektrometer, mit Daten aus
+		\autoref{tab:magnetspektrometer} und der Anwendung der
+		\hyperref[eq:energieimpulsrelation]{Energieimpulsbeziehung} sowie
+		\hyperref[eq:lorentzimpuls]{Lorentzkraft} \\
+		$E \dots$ Energie der $\beta$-Strahlung einer \ch{^{22}_{11}Na} Probe\\
+		$p \dots$ Impuls der $\beta$-Strahlung einer \ch{^{22}_{11}Na} Probe\\
+	}\label{tab:magneto_E_p}
+	\centering
+	\include{./tables/messreihe_magneto_E_p.tex}
 \end{table}
 
 Mit den Werten aus \autoref{tab:magneto_E_p} und
@@ -707,18 +706,17 @@ Gaussverteilung, welche einen zusätzlichen Amplitudenparameter $A$ hat,
 gefittet, wie in folgender \autoref{fig:magneto_E_p} ersichtlich.
 
 \begin{figure}[H]
-  \begin{center}
-    \includegraphics[width = 0.95\textwidth]{figures/energiespektrum.pdf}
-  \end{center}
-  \caption[Energie- und Impulsspektogram der $\beta$-Strahlung einer
-  \ch{^{22}_{11}Na} Probe]{Erhaltenes Energiespektrum (violette) und
-  Impulsspektrum (braun) der $\beta$-Strahlung einer \ch{^{22}_{11}Na} Probe.
-  Mithilfe der Energien $E$, den Impulsen $p$, aus
-\autoref{tab:magneto_E_p}, und der Anzahl der Zerfälle $n$, aus
-\autoref{tab:magnetspektrometer}, wurden Spektren erstellt und mit einer
-Gaussverteilung, welche einen zusätzlichen Amplitudenparameter $A$ hat,
-gefittet}
-  \label{fig:magneto_E_p}
+	\begin{center}
+		\includegraphics[width = 0.95\textwidth]{figures/energiespektrum.pdf}
+	\end{center}
+	\caption[Energie- und Impulsspektogram der $\beta$-Strahlung einer
+		\ch{^{22}_{11}Na} Probe]{Erhaltenes Energiespektrum (violette) und
+		Impulsspektrum (braun) der $\beta$-Strahlung einer \ch{^{22}_{11}Na} Probe.
+		Mithilfe der Energien $E$, den Impulsen $p$, aus
+		\autoref{tab:magneto_E_p}, und der Anzahl der Zerfälle $n$, aus
+		\autoref{tab:magnetspektrometer}, wurden Spektren erstellt und mit einer
+		Gaussverteilung, welche einen zusätzlichen Amplitudenparameter $A$ hat,
+		gefittet}\label{fig:magneto_E_p}
 \end{figure}
 
 \subsection{Aufnahme des komplexen \texorpdfstring{$\gamma$}{gamma} Spektrums
@@ -728,65 +726,63 @@ Nach der Kalibrierung in \autoref{sec:aufname_Ra_zerfallsreihe} und der
 Aufnahme des \(\gamma\)-Spektrum der \ch{^{226}_{88}Ra} Zerfallsreihe
 \autoref{sec:aufbau_Magnetfeldspektrometer}, wurden die erhaltenen Daten in
 \autoref{fig:Ra226zerfallsreihe} dargestellt. Zudem wurde die Peaks per Hand
-ausgewertet und in der Graphik eingezeichnet. Für diese Operationen wurde die
-``\emph{Leybold Cassy-Lab 2}`` Software genutzt.
+ausgewertet und in der Graphik eingezeichnet, daher wurden die Unsicherheiten
+großzügig angenommen. Für diese Operationen wurde die ``\emph{Leybold Cassy-Lab
+	2}`` Software genutzt.
 
 \begin{figure}[H]
-  \begin{center}
-    \includegraphics[width = 0.95\textwidth]{figures/Ra226kennlinien.png}
-  \end{center}
-  \caption[Energiespektrum der $\gamma$-Strahlung einer \ch{^{226}_{88}Ra} Probe]{
-    Aufgezeichnetes Gammaspektrum der \ch{^{226}_{88}Ra} Quelle und dessen
-    Zerfallsprodukten, mit ausgemessen
-    und markierten Energiepeaks.
-  }
-  \label{fig:Ra226zerfallsreihe}
+	\begin{center}
+		\includegraphics[width = 0.95\textwidth]{figures/Ra226kennlinien.png}
+	\end{center}
+	\caption[Energiespektrum der $\gamma$-Strahlung einer \ch{^{226}_{88}Ra} Probe]{
+		Aufgezeichnetes Gammaspektrum der \ch{^{226}_{88}Ra} Quelle und dessen
+		Zerfallsprodukten, mit ausgemessen
+		und markierten Energiepeaks.}\label{fig:Ra226zerfallsreihe}
 \end{figure}
 
 Die eingezeichneten Spitzenwerte werden nun übersichtlich in
 \autoref{tab:raw_peaks} nochmals angeführt.
 
-%todo Unsicherheit
-
 \begin{table}[H]
-  \caption{erhaltene Peaks bei \ch{_{88}^{226}Ra} Energiespektrum\\
-    $E \dots$ ist die Energie der Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe mit einer Unsicherheit von
-  }
-  \label{tab:raw_peaks}
-  \centering
-  \begin{tblr}{colspec = {S[table-format = 3.1]}}
-    {{{{ $E$ / \si{\kilo\electronvolt}}}}} \\
-    19.8   \\
-    50.1   \\
-    83.1  \\
-    190.6  \\
-    248.1  \\
-    302.0  \\
-    360.3  \\
-    608.9  \\
-  \end{tblr}
+	\caption{erhaltene Peaks bei \ch{_{88}^{226}Ra} Energiespektrum\\
+		$E \dots$ ist die Energie der Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe
+		mit einer Unsicherheit von \SI{5}{\kilo\electronvolt}
+	}\label{tab:raw_peaks}
+	\centering
+	\begin{tblr}{colspec = {S[table-format = 3.1]}}
+		{{{{ $E$ / \si{\kilo\electronvolt}}}}} \\
+		20                                     \\
+		50                                     \\
+		83                                     \\
+		191                                    \\
+		248                                    \\
+		302                                    \\
+		360                                    \\
+		609                                    \\
+	\end{tblr}
 \end{table}
 
 \section*{Diskussion}\label{sec:diskussion}
 
 \begin{table}[H]
-  \caption{Vergleich der erhaltenen Peaks beim \ch{_{88}^{226}Ra}  mit den entsprechenden Literaturwerten \cite[]{}
-  \\
-    $E \dots$ sind die Energien der gemessen Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe\\
-    $E_{\mathrm{lit}} \dots$ sind die Literaturwerte der Energien der Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe
-  }
-  \centering
-  \begin{tblr}{colspec = {S[table-format = 3.1]QS}}
-    {{{\(E\) / \si{\kilo\electronvolt}}}} & Substanz& {{{\(E_{\mathrm{lit}}\) / \si{\kilo\electronvolt}}}}\\
-    19.8  &  \ch{^{212}_{82}Pb}                    &  19.6 \\
-    50.1  &  \ch{^{214}_{83}Bi}                    &  53 \\
-    83.1  &  \ch{^{214}_{84}Po}|\ch{^{214}_{83}Bi} &  \numlist{79.3;77.1} \\
-    190.6 &  \ch{^{222}_{86}Rn}                    &  186 \\
-    248.1 &  \ch{^{214}_{83}Bi}                    &  242 \\
-    302.0 &  \ch{^{214}_{83}Bi}                    &  295 \\
-    360.3 &  \ch{^{214}_{83}Bi}                    &  352 \\
-    608.9 &  \ch{^{214}_{84}Po}                    &  609 \\
-  \end{tblr}
+	\caption{Vergleich der erhaltenen Peaks beim \ch{_{88}^{226}Ra}  mit den entsprechenden Literaturwerten \cite[]{}
+		\\
+		$E \dots$ sind die Energien der gemessen Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe \\
+		mit einer Unsicherheit von \SI{5}{\kilo\electronvolt}\\
+		$E_{\mathrm{lit}} \dots$ sind die Literaturwerte der Energien der Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe
+	}
+	\centering
+	\begin{tblr}{colspec = {S[table-format = 3.1]QS}}
+		{{{\(E\) / \si{\kilo\electronvolt}}}} & Substanz                              & {{{\(E_{\mathrm{lit}}\) / \si{\kilo\electronvolt}}}} \\
+		20                                    & \ch{^{212}_{82}Pb}                    & 19.6                                                 \\
+		50                                    & \ch{^{214}_{83}Bi}                    & 53                                                   \\
+		83                                    & \ch{^{214}_{84}Po}|\ch{^{214}_{83}Bi} & \numlist{79.3;77.1}                                  \\
+		191                                   & \ch{^{222}_{86}Rn}                    & 186                                                  \\
+		248                                   & \ch{^{214}_{83}Bi}                    & 242                                                  \\
+		302                                   & \ch{^{214}_{83}Bi}                    & 295                                                  \\
+		360                                   & \ch{^{214}_{83}Bi}                    & 352                                                  \\
+		609                                   & \ch{^{214}_{84}Po}                    & 609                                                  \\
+	\end{tblr}
 \end{table}
 
 %verschieben der Hall sonde bei mag
