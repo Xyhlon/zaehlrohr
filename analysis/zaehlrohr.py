@@ -68,6 +68,7 @@ def test_zaehlrohr_protokoll():
     P.output_dir = "./"
     P.figure.set_size_inches((8, 6))
     ax = P.figure.add_subplot()
+
     # A1 qualitative Absorption Untersuchung mit und ohne Abschirmung
     filepath = os.path.join(os.path.dirname(__file__), "../data/absorbtion.csv")
     P.load_data(filepath, loadnew=True)
@@ -88,6 +89,7 @@ def test_zaehlrohr_protokoll():
         name="absorption_qal_raw",
         inline_units=True,
     )
+
     # A2 Daten besorgen Untersuchung der Zählrohrcharakteristik Na22
     filepath = os.path.join(os.path.dirname(__file__), "../data/charakter.csv")
     P.load_data(filepath, loadnew=True)
@@ -133,6 +135,7 @@ def test_zaehlrohr_protokoll():
     ax.set_title(f"Zählrohrcharakteristik mit Na-22")
     P.ax_legend_all(loc=4)
     ax = P.savefig(f"charakteristik.pdf")
+
     # A3 Darstellung der Zählstatistik
     P.vload()
     filepath = os.path.join(os.path.dirname(__file__), "../data/stat.csv")
@@ -152,6 +155,7 @@ def test_zaehlrohr_protokoll():
     ax.set_title(f"Statischtische Verteilung der Zählrate")
     P.ax_legend_all(loc=1)
     ax = P.savefig(f"5statistik.pdf")
+
     # A4 Aufnahme des Abstandsgesetz
     filepath = os.path.join(os.path.dirname(__file__), "../data/abstandsgesetzt.csv")
     P.load_data(filepath, loadnew=True)
