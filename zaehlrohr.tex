@@ -45,9 +45,9 @@ auf die Massen und Ordnungszahl auswirkt.
 Bei \(\beta\)-Zerfall muss zwischen \(\beta^+\) und \(\beta^-\) unterschieden
 werden. \(\beta^-\)-Zerfall wird durch die Umwandlung eines Neutrons in ein
 Proton hervorgerufen, wodurch ein Elektron und ein Elektron-Antineutrino
-ausgestoßen werden, um die Erhaltungssätze nicht zu verletzen. \(\beta^+\)-Zerfall
-kommt in der Natur seltener vor, funktioniert aber nach dem gleichen
-Prinzip, mit dem Unterschied, dass hier die Ordnungszahl erhöht wird.
+ausgestoßen werden, um die Erhaltungssätze nicht zu verletzen.
+\(\beta^+\)-Zerfall kommt in der Natur seltener vor, funktioniert aber nach dem
+gleichen Prinzip, mit dem Unterschied, dass hier die Ordnungszahl erhöht wird.
 
 Bei \(\gamma\)-Zerfall werden keine Teilchen sondern hochfrequente Wellen
 abgestrahlt. Diese kommen zustande, wenn das Isotop nach \(\alpha\)- oder
@@ -58,8 +58,8 @@ Elemente sind, was im Laufe des Versuchs genutzt wird.
 Weil diese Zerfälle immer nach einem bestimmen Schema ablaufen, können
 sogenannte Zerfallsreihen angeschrieben werden, wie beispielsweise die
 Zerfallsreihe von \ch{^{226}_{88}Ra} in \autoref{fig:zerfallsreihe}. Daraus
-kann abgelesen werden, welche Zerfälle vorliegen und welche
-Halbwertszeiten diese haben, wie häufig die Zerfälle also auftreten.
+kann abgelesen werden, welche Zerfälle vorliegen und welche Halbwertszeiten
+diese haben, wie häufig die Zerfälle also auftreten.
 
 \begin{figure}[H]
 	\begin{center}
@@ -105,8 +105,8 @@ natürlichen Einheiten angeführt.
 	\label{eq:lorentzimpuls}
 \end{equation}
 
-Wobei $B$ die Magnetische Flussdichte im Magnetspektrometer, $p$ der Impuls
-des Teilchens und $r$ der aufbau-spezifische, approximierter Lorentzradius ist.
+Wobei $B$ die Magnetische Flussdichte im Magnetspektrometer, $p$ der Impuls des
+Teilchens und $r$ der aufbau-spezifische, approximierter Lorentzradius ist.
 
 Weiters wurde die Energieimpulsbeziehung in natürlichen Einheiten angeführt:
 
@@ -115,8 +115,8 @@ Weiters wurde die Energieimpulsbeziehung in natürlichen Einheiten angeführt:
 	\label{eq:energieimpulsrelation}
 \end{equation}
 
-Wobei $E$ die Energie und $m_0 c^2$ die Ruheenergie des Elektrons ist.
-%todo cite
+Wobei $E$ die Energie und $m_0 c^2$ die Ruheenergie des Elektrons
+ist.\cite{kuchling}
 
 \subsection{Zählrohr}
 
@@ -126,9 +126,9 @@ wesentlichen aus einem mit Zählgas gefüllten Metallrohr, durch dessen Mitte ei
 dünner Draht, der als Anode fungiert, läuft. Auf diesen Draht wird eine
 Spannung angelegt. Trifft nun ein zu detektierendes Teilchen auf das Fenster
 des Zählrohrs, können Atome im Zählgas angeregt werden, welches durch die
-angelegte Spannung zur Anode hin beschleunigt werden. Durch Stöße im Gas wird ein
-Lawineneffekt ausgelöst, der schlussendlich als Peak von der Anode verzeichnet
-werden kann.
+angelegte Spannung zur Anode hin beschleunigt werden. Durch Stöße im Gas wird
+ein Lawineneffekt ausgelöst, der schlussendlich als Peak von der Anode
+verzeichnet werden kann.
 
 \begin{figure}[H]
 	\begin{center}
@@ -328,9 +328,6 @@ und die entsprechenden Zählraten notiert, was in folgender
 jeweilige Abschirmung die gesamte Torzeit im Aufbau ist und man damit nicht
 gegen die Probe oder das Zählrohr stößt.
 
-
-%todo werte vertauscht
-
 \begin{table}[H]
 	\caption[Erhaltene Zählraten bei verschiedenen Abschirmungsmaterialien]{Erhaltene Zählraten bei
 		verschiedenen Abschirmungsmaterialien bei einer Torzeit von \SI{10}{\second} und einem
@@ -361,14 +358,12 @@ kontinuierlich erhöht, bis ein Wert von \SI{600}{\volt} erreicht ist und die
 entsprechenden Counts notiert, was in folgender \autoref{tab:zaelrohrchar}
 sichtbar ist.
 
-%todo unsicherheit spannung
-
 \begin{table}[H]
 	\caption[Erhaltene Zählraten für die Zählrohrcharakteristik]{
 		Erhaltene Zählraten für die Zählrohrcharakteristik
 		bei einer Torzeit von \SI{10}{\second} und einem
 		Abstand der radioaktiven Quelle von \SI{15(2)}{\mm}. Zählraten sind exakt. \\
-		\(U \dots\) eingestellte Betriebsspannung in V \\
+		\(U \dots\) eingestellte Betriebsspannung in \si{\volt} mit einer Unsicherheit von \SI{2}{\volt} \\
 		\(z_{i} \dots\) erhaltene Zählrate bei der entsprechenden Betriebsspannung}
 	\label{tab:zaelrohrchar}
 	\begin{center}
@@ -386,12 +381,14 @@ den Memory Speicher des Digitalzählers direkt auf den Computer übertragen. Ein
 Teil der erhaltenen Ergebnisse ist in folgender \autoref{tab:zahlstatistik}
 aufgelistet.
 
-%todo unsicherheit von t
-
 \begin{table}[H]
 	\caption[Erhaltene Counts für die Zählstatistik]{Tabelle in der, der Besseren Übersicht halber, ein Ausschnitt der erhaltenen Counts für die Zählstatistik
 		für eine Torzeit von \SI{1}{\second} aufgelistet sind. Dabei sind die Counts sind exakt. \\
-		\(t \dots\) entsprechende Zeit, die den Memory Speicher übergeben wird, in s \\
+		\(t \dots\) entsprechende Zeit, die den Memory Speicher übergeben wird,
+		in s, dabei werden die Werte der besseren Lesbarkeit halber nur auf eine
+		Nachkommastelle genau angegeben. Dennoch sei hier zu bemerken, dass die
+		Unsicherheit im Nanosekunden-Bereich liegt und in der Auswertung berücksichtigt
+		worden ist. \\
 		\(n \dots\) verzeichnete Anzahl an Counts}\label{tab:zahlstatistik}
 	\begin{center}
 		\input{./tables/messreihe_statistik_truncated.tex}
@@ -431,16 +428,15 @@ realisieren, werden verschieden Dias mit unterschiedlicher Anzahl an
 Aluminiumfolien in die dafür vorgesehene Halterung geschoben. Als radioaktive
 Quelle wird erneut \ch{^{22}_{11}Na}, sowie eine Torzeit von \SI{10}{\second}
 verwendet. Die abgelesenen Werte sind in folgender \autoref{tab:alu}
-festgehalten.
-
-%todo unsicherheit alu
+festgehalten. Dabei wurde die Unsicherheit der Plattendicke vom Betreuer mit
+\SI{1}{\percent} abgeschätzt.
 
 \begin{table}[H]
 	\caption[Erhaltene Zählraten bei $\beta$-Strahlung bei verschiedenen Dicken]
 	{Erhaltene Zählraten bei $\beta$-Strahlung bei verschiedenen Dicken
 		einer Aluminiumplatte bei
 		einer Torzeit von \SI{10}{\second}. Dabei sind die Zählraten exakte Werte. \\
-		\(D \dots\) Dicke der Aluminiumabschirmung in $\mu$m mit einer Unsicherheit von\\
+		\(D \dots\) Dicke der Aluminiumabschirmung in $\mu$m mit einer Unsicherheit von \SI{1}{\percent} \\
 		\(z_{i} \dots\) erhaltene Zählrate bei entsprechendem Abstand}
 	\label{tab:alu}
 	\begin{center}
@@ -465,6 +461,10 @@ gemessen wird, indem die selbe Messung auch einmal ohne eingelegte radioaktive
 Quelle durchgeführt wird, wodurch eine Hintergrundstrahlung von 23 Zerfällen in
 der entsprechenden Torzeit vermerkt wird. Der dabei erhaltenen Wert muss dann
 von den vorherigen Werten abgezogen werden.
+
+Der Radius ist durch den Aufbau bestimmt, was Unterlagen des Geräts zu
+entnehmen ist und einen Wert von \SI{5.00(3)}{\cm}
+hat.\cite{zaehlrohrvorbereitung}
 
 \begin{table}[H]
 	\caption[Verzeichnete Zerfälle bei entsprechendem Magnetfeld]{
@@ -631,9 +631,12 @@ $\beta$-Emittern durch eine Überlagerung mehrerer Exponentialfunktionen, nach
 dem Beer-Lambertschen Gesetzt, siehe \autoref{eq:beerschesgesetzt}, durch einen
 Fit bestimmt werden.
 
-Da jedoch diese Gleichung exponentiell von der Eingangsgröße der Dicke $D$
+Da jedoch diese Gleichung exponentiell von der Eingangsgröße der Dicke $z$
 abhängt bietet es sich an, bei dieser Gleichung den Logarithmus zu verwenden
-und diese Gleichungen zu linearisieren.
+und diese Gleichungen zu linearisieren. Dieser Teil der Auswertung wurde
+bereits während des Experiments vom Betreuer durchgeführt. Die eigene
+Auswertung lieferte keine sich mit den Daten deckende Fitfunktion, weshalb nun
+die Resultate vom Betreuer genommen werden.
 
 \begin{figure}[H]
 	\begin{center}
@@ -641,12 +644,10 @@ und diese Gleichungen zu linearisieren.
 	\end{center}
 	\caption[Absorptionskurve von \ch{Al} bei $\beta$-Strahlung]{Diese Kurve beinhaltet die Absorptionskurve von \ch{Al} bei
 		$\beta$-Strahlung in einfach logarithmischer Darstellung.
-		In diesem Diagramm ist $D$ der Aluminiumplatte und
-		$z$ ist die Zählrate der durchdrungenen Teilchen.
+		In diesem Diagramm ist $z$ die Dicke der Aluminiumplatte und
+		\emph{Intensity} ist die Zählrate der durchdrungenen Teilchen.
 	}\label{fig:alu_absorption}
 \end{figure}
-
-%todo d,z cite?
 
 \begin{figure}[H]
 	\begin{center}
@@ -654,10 +655,31 @@ und diese Gleichungen zu linearisieren.
 	\end{center}
 	\caption[Doppelt-logarithmische Darstellung der Absorptionskurve von \ch{Al}
 		bei $\beta$-Strahlung]{Diese Kurve ist doppelt-logarithmische Darstellung der Absorptionskurve von
-		\ch{Al} bei $\beta$-Strahlung. In diesem Diagramm ist $D$ der
-		Aluminiumplatte und $z$ ist die Zählrate der durchdrungenen Teilchen.
+		\ch{Al} bei $\beta$-Strahlung. In diesem Diagramm ist $z$ die Dicke der
+		Aluminiumplatte und \emph{Intensity} ist die Zählrate der durchdrungenen Teilchen.
 	}\label{fig:alu_doppellog}
 \end{figure}
+
+Die nun durch den Fit ermittelten Absorptionskoeffizienten werden nun hier
+angeführt:
+
+\begin{enumerate}
+	\item $\mu_1 = $ \SI{832.2498}{\per\cm}
+	\item $\mu_2 = $ \SI{76.0487}{\per\cm}
+	\item $\mu_3 = $ \SI{15.3962}{\per\cm}
+\end{enumerate}
+
+Mit diesen Werten lassen sich mit \autoref{eq:Endpunktsenergie} die
+Endpunktsenergien berechnen:
+
+\begin{enumerate}
+	\item $E_1 = $ \SI{0.1273}{\mega\electronvolt}
+	\item $E_2 = $ \SI{0.7128}{\mega\electronvolt}
+	\item $E_3 = $ \SI{2.2512}{\mega\electronvolt}
+\end{enumerate}
+
+Da diese Werte von der Software ohne Unsicherheit ausgegeben wurden, muss diese
+als implizit angenommen werden.
 
 \subsection{Aufnahme des Energiespektrums von \texorpdfstring{$\beta$}{beta}
 	Strahlung mit Magnetspektrometer}
@@ -766,16 +788,19 @@ wie erwartet, normalverteilt sind.
 \autoref{fig:abstandsgesetz} zeigt, dass die erhaltenen Messwerte für das Abstandsgesetz nur leicht über dem gefitteten
 quadratischenVerlauf liegen.
 
-%todo alu werte
+Beim betrachten der \autoref{fig:alu_absorption} wird klar ersichtlich, dass
+eine dickere Abschirmung zu einem exponentiellen Abfall der verzeichneten
+Zählrate macht, was laut dem Lambert-beersches Gesetz, siehe
+\autoref{eq:beerschesgesetzt}, zu erwarten war.
 
 Der theoretische Wert für den Peak des $\beta$-Spektrums beträgt
 \SI{511}{\kilo\electronvolt} \cite[]{leifi}. Der erhaltene Wert des
 Impulsspektrums, von \SI{567(6)}{\kilo\electronvolt}, liegt also in der
-richtigen Größenordnung. Die Verschiebung des Peaks kann dadurch erklärt werden,
-dass die Hallsonde nur auf die entsprechende Halterung gelegt wurde und nicht 
-besser befestigt wurde. Dadurch hatte diese einen leichten Spielraum und konnte so
- während des Versuchs durch eine leichte Erschütterung verschoben werden.
-Dies ist an der verzeichneten Erhöhung des Mittelwerts ersichtlich.
+richtigen Größenordnung. Die Verschiebung des Peaks kann dadurch erklärt
+werden, dass die Hallsonde nur auf die entsprechende Halterung gelegt wurde und
+nicht besser befestigt wurde. Dadurch hatte diese einen leichten Spielraum und
+konnte so während des Versuchs durch eine leichte Erschütterung verschoben
+werden. Dies ist an der verzeichneten Erhöhung des Mittelwerts ersichtlich.
 
 Ein Vergleich in nachfolgender \autoref{tab:vergleich} der erhaltenen Werte des
 $\gamma$ - Spektrums mit den entsprechenden Literaturwerten zeigt, dass die
@@ -785,7 +810,7 @@ werden, was durch die Kalibrierung erklärbar ist.
 
 \begin{table}[H]
 	\caption[Vergleich der erhaltenen Peaks beim \ch{_{88}^{226}Ra}
-	mit den entsprechenden Literaturwerten]{Vergleich der erhaltenen Peaks beim \ch{_{88}^{226}Ra}
+		mit den entsprechenden Literaturwerten]{Vergleich der erhaltenen Peaks beim \ch{_{88}^{226}Ra}
 		mit den entsprechenden Literaturwerten~\cite{Radium}
 		\\
 		$E \dots$ sind die Energien der gemessen Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe
@@ -807,11 +832,75 @@ werden, was durch die Kalibrierung erklärbar ist.
 	\label{tab:vergleich}
 \end{table}
 
-%todo totzeit
+Um die Genauigkeit der erhaltenen Ergebnisse weiter zu verbesser könnte bei
+allen Auswertungen die Totzeit des Zählrohr berücksichtigt werden.
+
+\newpage
 
 \section{Zusammenfassung}
 
-%todo
+Hier werden nochmals alle Ergebnisse dieser Experimentenfolge aufgelistet:
+
+\begin{table}[H]
+	\caption[Erhaltene Zählraten bei verschiedenen Abschirmungsmaterialien]{Erhaltene Zählraten bei
+		verschiedenen Abschirmungsmaterialien bei einer Torzeit von \SI{10}{\second} und einem
+		Abstand der radioaktiven Quelle von \SI{15(2)}{\mm}. Zählraten sind exakt.\\
+		\(z_{Luft} \dots\) erhaltene Zählrate ohne Abschirmung \\
+		\(z_{\mathrm{Papier}} \dots\) erhaltene Zählrate mit einem Blatt Papier als Abschirmung \\
+		\(z_{\mathrm{Lineal}} \dots\) erhaltene Zählrate mit einem Lineal als Abschirmung, Dicke = \SI{2.1(0.05)}{\mm}\\
+		\(z_{\mathrm{CD}} \dots\) erhaltene Zählrate mit einer CD und zugehörigen Soulcase als Abschirmung \\
+		\(z_{\mathrm{Alu \num{0.4}}} \dots\) erhaltene Zählrate mit mit einem Aluminiumblech als Abschirmung, Dicke = \SI{0.4(0.05)}{\mm}\\
+		\(z_{\mathrm{Alu \num{0.8}}} \dots\) erhaltene Zählrate mit mit einem Aluminiumblech als Abschirmung, Dicke = \SI{0.8(0.05)}{\mm}\\
+		\(z_{\mathrm{Alu \num{4}}} \dots\) erhaltene Zählrate mit mit einem Aluminiumblech als Abschirmung, Dicke = \SI{4.0(0.05)}{\mm}\\
+	}
+	\label{tab:abschirmung}
+	\begin{center}
+		\input{./tables/messreihe_absorption_qal_raw.tex}
+	\end{center}
+\end{table}
+
+Die Zählrohrcharakteristik ist in \autoref{fig:zaelrohrchar} ersichtlich.
+
+Gemessene Absorptionskoeffizienten von \ch{Al}:
+\begin{enumerate}
+	\item $\mu_1 = $ \SI{832.2498}{\per\cm}
+	\item $\mu_2 = $ \SI{76.0487}{\per\cm}
+	\item $\mu_3 = $ \SI{15.3962}{\per\cm}
+\end{enumerate}
+
+Gemessene Endpunktsenergien von \ch{Al}:
+\begin{enumerate}
+	\item $E_1 = $ \SI{0.1273}{\mega\electronvolt}
+	\item $E_2 = $ \SI{0.7128}{\mega\electronvolt}
+	\item $E_3 = $ \SI{2.2512}{\mega\electronvolt}
+\end{enumerate}
+
+Der wahrscheinlichste Wert des Impulsspektrums einer \ch{^{22}_{11}Na} Probe
+lag bei \SI{567(6)}{\kilo\electronvolt}.
+
+\begin{table}[H]
+	\caption[Vergleich der erhaltenen Peaks beim \ch{_{88}^{226}Ra}
+		mit den entsprechenden Literaturwerten]{Vergleich der erhaltenen Peaks beim \ch{_{88}^{226}Ra}
+		mit den entsprechenden Literaturwerten~\cite{Radium}
+		\\
+		$E \dots$ sind die Energien der gemessen Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe
+		mit einer Unsicherheit von \SI{5}{\kilo\electronvolt}\\
+		$E_{\mathrm{lit}} \dots$ sind die Literaturwerte der Energien der Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe
+	}
+	\centering
+	\begin{tblr}{colspec = {S[table-format = 3.1]QS}}
+		{{{\(E\) / \si{\kilo\electronvolt}}}} & Substanz                              & {{{\(E_{\mathrm{lit}}\) / \si{\kilo\electronvolt}}}} \\
+		20                                    & \ch{^{212}_{82}Pb}                    & 19.6                                                 \\
+		50                                    & \ch{^{214}_{83}Bi}                    & 53                                                   \\
+		83                                    & \ch{^{214}_{84}Po}|\ch{^{214}_{83}Bi} & \numlist{79.3;77.1}                                  \\
+		191                                   & \ch{^{222}_{86}Rn}                    & 186                                                  \\
+		248                                   & \ch{^{214}_{83}Bi}                    & 242                                                  \\
+		302                                   & \ch{^{214}_{83}Bi}                    & 295                                                  \\
+		360                                   & \ch{^{214}_{83}Bi}                    & 352                                                  \\
+		609                                   & \ch{^{214}_{84}Po}                    & 609                                                  \\
+	\end{tblr}
+	\label{tab:vergleich}
+\end{table}
 
 \newpage
 
