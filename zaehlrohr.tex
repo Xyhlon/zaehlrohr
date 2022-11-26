@@ -14,7 +14,7 @@
 \addbibresource{zaehlrohr.bib}
 
 \begin{document}
-%\includepdf{}
+\includepdf{./deckblatt3.pdf}
 \tableofcontents
 \newpage
 
@@ -133,7 +133,7 @@ werden kann.
 	\begin{center}
 		\includegraphics[width = 0.5\textwidth]{./figures/zahlrohr.png}
 	\end{center}
-	\caption{schematischer Aufbau des Zählrohrs~\cite[]{zaehlrohrvorbereitung}}\label{fig:zahlrohr}
+	\caption{Schematischer Aufbau des Zählrohrs~\cite[]{zaehlrohrvorbereitung}}\label{fig:zahlrohr}
 \end{figure}
 
 Der charakteristische Verlauf der Kurve des Zählrohrs ist in
@@ -157,7 +157,7 @@ unterscheiden~\cite[]{gerthsen}:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width = 0.8\textwidth]{./figures/zcharakteristik.png}
-	\caption{charakteristische Kurve des Zählrohrs
+	\caption{Charakteristische Kurve des Zählrohrs
 		für verschiedene Arten von Strahlung für die
 		Bereits erklärten Spannungsbereiche~\cite[]{zaehlrohrvorbereitung}}\label{fig:zchar}
 \end{figure}
@@ -176,7 +176,7 @@ sichtbar.\cite[]{demex2}
 	\begin{center}
 		\includegraphics[width = 0.8\textwidth]{./figures/fig5.png}
 	\end{center}
-	\caption{schematischer Aufbau des
+	\caption{Schematischer Aufbau des
 		Magnetfeldspektrometers~\cite[]{zaehlrohrvorbereitung}}\label{fig:magnetspektrometer}
 \end{figure}
 
@@ -193,7 +193,7 @@ Anode abgegriffen werden, was das erhaltene Signal darstellt.\cite{gerthsen}
 	\begin{center}
 		\includegraphics[width = 0.8\textwidth]{./figures/szintilationszahler.png}
 	\end{center}
-	\caption{schematischer Aufbau und
+	\caption{Schematischer Aufbau und
 		Strahlengang im Szintillationszähler.~\cite[]{zaehlrohrvorbereitung}}\label{fig:szintilationszahler}
 \end{figure}
 
@@ -282,7 +282,7 @@ Die Geräteliste wurde uns freundlicherweise zur Verfügung gestellt und nur um
 die verwendeten Strahlungsquellen ergänzt.~\cite{zaehlrohrvorbereitung}
 
 \begin{table}[H]
-	\caption{verwendete Geräte}
+	\caption{Verwendete Geräte}
 	\begin{tblr}{colspec={QQQQ}}
 		Gerätetyp              & Hersteller & Typ             & Inventar-Nr \\
 		Digitalzähler          & Leybold    & 57548           & 161462      \\
@@ -381,10 +381,10 @@ erhaltenen Ergebnisse sind in folgender \autoref{tab:zahlstatistik}
 aufgelistet.
 
 \begin{table}[H]
-	\caption{Tabelle in der, der Besseren Übersicht halber, ein Ausschnitt der erhaltenen Counts für die Zählstatistik
+	\caption[Erhaltene Counts für die Zählstatistik]{Tabelle in der, der Besseren Übersicht halber, ein Ausschnitt der erhaltenen Counts für die Zählstatistik
 		für eine Torzeit von \SI{1}{\second} aufgelistet sind. Dabei sind die Counts sind exakt. \\
 		\(t \dots\) entsprechende Zeit, die den Memory Speicher übergeben wird, in s \\
-		\(n \dots\) verzeichnete Anzahl an Counts (einheitenlos)}\label{tab:zahlstatistik}
+		\(n \dots\) verzeichnete Anzahl an Counts}\label{tab:zahlstatistik}
 	\begin{center}
 		\input{./tables/messreihe_statistik_truncated.tex}
 	\end{center}
@@ -426,7 +426,8 @@ verwendet. Die abgelesenen Werte sind in folgender \autoref{tab:alu}
 festgehalten.
 
 \begin{table}[H]
-	\caption{Tabelle der Zählraten bei $\beta$-Strahlung bei verschiedenen Dicken
+	\caption[Erhaltene Zählraten bei $\beta$-Strahlung bei verschiedenen Dicken]
+	{Erhaltene Zählraten bei $\beta$-Strahlung bei verschiedenen Dicken
 		einer Aluminiumplatte bei
 		einer Torzeit von \SI{10}{\second}. Dabei sind die Zählraten exakte Werte. \\
 		\(D \dots\) Dicke der Aluminiumabschirmung in $\mu$m mit einer Unsicherheit von\\
@@ -643,7 +644,7 @@ und diese Gleichungen zu linearisieren.
 		\includegraphics[width = 0.95\textwidth]{figures/aluminiumdoppellog.png}
 	\end{center}
 	\caption[Doppelt-logarithmsche Darstellung der Absorptionskurve von \ch{Al}
-		bei $beta$-Strahlung]{
+		bei $\beta$-Strahlung]{
 		Diese Kurve ist doppelt-logarithmische Darstellung der Absorptionskurve von
 		\ch{Al} bei $\beta$-Strahlung. In diesem Diagramm ist $D$ der
 		Aluminiumplatte und $z$ ist die Zählrate der durchdrungenen Teilchen.
@@ -719,7 +720,8 @@ Die eingezeichneten Spitzenwerte werden nun übersichtlich in
 \autoref{tab:raw_peaks} nochmals angeführt.
 
 \begin{table}[H]
-	\caption{erhaltene Peaks bei \ch{_{88}^{226}Ra} Energiespektrum\\
+	\caption[Erhaltene Peaks bei \ch{_{88}^{226}Ra} Energiespektrum]
+	{Erhaltene Peaks bei \ch{_{88}^{226}Ra} Energiespektrum\\
 		$E \dots$ ist die Energie der Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe
 		mit einer Unsicherheit von \SI{5}{\kilo\electronvolt}
 	}\label{tab:raw_peaks}
@@ -762,7 +764,11 @@ quadratischenVerlauf liegen.
 Der theoretische Wert für den Peak des $\beta$ - Spektrums beträgt
 \SI{511}{\kilo\electronvolt} \cite[]{leifi}. Der erhaltene Wert des
 Impulsspektrums, von \SI{567(6)}{\kilo\electronvolt}, liegt also in der
-richtigen Größenordnung.
+richtigen Größenordnung. Die Verschiebung des Peaks kann dadurch erklärt werden,
+dass die Hallsonde nur auf die entsprechende Halterung gelegt wurde und nicht 
+besser befestigt wurde. Dadurch hatte diese einen leichten Spielraum und konnte so
+ während des Versuchs durch eine leichte Erschütterung verschoben werden.
+Dies ist an der verzeichneten Erhöhung des Mittelwerts ersichtlich.
 
 Ein Vergleich in nachfolgender \autoref{tab:vergleich} der erhaltenen Werte des
 $\gamma$ - Spektrums mit den entsprechenden Literaturwerten zeigt, dass die
@@ -771,7 +777,8 @@ dass die größeren Abweichungen besonders im mittleren Bereich verzeichnet
 werden, was durch die Kalibrierung erklärt werden kann.
 
 \begin{table}[H]
-	\caption{Vergleich der erhaltenen Peaks beim \ch{_{88}^{226}Ra}
+	\caption[Vergleich der erhaltenen Peaks beim \ch{_{88}^{226}Ra}
+	mit den entsprechenden Literaturwerten]{Vergleich der erhaltenen Peaks beim \ch{_{88}^{226}Ra}
 		mit den entsprechenden Literaturwerten~\cite{Radium}
 		\\
 		$E \dots$ sind die Energien der gemessen Peaks im Gammaspektrum einer \ch{^{226}_{88}Ra} Probe \\
