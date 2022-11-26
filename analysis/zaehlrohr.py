@@ -27,7 +27,13 @@ def test_zaehlrohr_protokoll():
         "p": r"p",
         "r": r"r",
         "A": r"A",
+        "A1": r"A_1",
+        "A2": r"A_2",
+        "A3": r"A_3",
         "mu": r"\mu",
+        "mu1": r"\mu_1",
+        "mu2": r"\mu_2",
+        "mu3": r"\mu_3",
         "sig": r"\sigma",
         "k": r"k",
         "m": r"m",
@@ -54,9 +60,15 @@ def test_zaehlrohr_protokoll():
         "D": r"\si{\micro\meter}",
         "n": r"1",
         "p": r"\si{\mega\electronvolt}",
-        "r": r"\si{\m}",
+        "r": r"\si{\meter}",
         "A": r"\si{1}",
         "mu": r"\si{\mega\electronvolt}",
+        "A1": r"1",
+        "A2": r"1",
+        "A3": r"1",
+        "mu1": r"\si{\per\micro\meter}",
+        "mu2": r"\si{\per\micro\meter}",
+        "mu3": r"\si{\per\micro\meter}",
         "sig": r"\si{\mega\electronvolt}",
         "k": r"\si{\cm\squared}",
         "m": r"\si{\per\volt}",
@@ -97,7 +109,7 @@ def test_zaehlrohr_protokoll():
     # A2 Daten besorgen Untersuchung der Zählrohrcharakteristik Na22
     filepath = os.path.join(os.path.dirname(__file__), "../data/charakter.csv")
     P.load_data(filepath, loadnew=True)
-    P.data["dU"] = 0
+    P.data["dU"] = 2
     P.data["dz1"] = 0
     P.data["dz2"] = 0
     P.data["dz3"] = 0
@@ -267,6 +279,7 @@ def test_zaehlrohr_protokoll():
     P.vload()
     n = A * exp(-((p - mu) ** 2) / (2 * sig**2)) / (2 * pi * sig**2) ** 0.5
     P.print_expr(n)
+
     P.plot_fit(
         axes=ax,
         x=p,
@@ -295,12 +308,60 @@ def test_zaehlrohr_protokoll():
     filepath = os.path.join(os.path.dirname(__file__), "../data/aluminium.csv")
     P.vload()
     P.load_data(filepath, loadnew=True)
-    P.data["dD"] = 0
+    dD = D * 0.01
+    P.inject_err(dD)
     P.data["dz1"] = 0
     P.data["dz2"] = 0
     P.data["dz3"] = 0
     P.print_table(D, z1, z2, z3, name="alu_absorbtion", inline_units=True)
+    P.data["z"] = P.data[["z1", "z2", "z3"]].mean(axis=1)
+    P.data["dz"] = P.data[["z1", "z2", "z3"]].sem(axis=1)
+    print(z.data)
 
+    z = A1 * exp(-mu1 * D) + A2 * exp(-mu2 * D) + A3 * exp(-mu3 * D)
+
+    P.plot_data(
+        ax,
+        D,
+        z,
+        label="Gemessene Daten",
+        style="#1cb2f5",
+        errors=True,
+    )
+    P.plot_fit(
+        axes=ax,
+        x=D,
+        y=z,
+        eqn=z,
+        style=r"#ca5f46",
+        label="Abs",
+        offset=[60, -10],
+        use_all_known=False,
+        guess={
+            "A1": 2,
+            "A2": 4,
+            "A3": 2,
+            "mu1": 0.800000,
+            "mu2": 0.15000,
+            "mu3": 0.76000,
+        },
+        bounds=[
+            {"name": "A1", "min": 0, "max": 3255},
+            {"name": "A2", "min": 0, "max": 700000},
+            {"name": "A3", "min": 0, "max": 3997},
+            {"name": "mu1", "min": 0, "max": 85000},
+            {"name": "mu2", "min": 0, "max": 30000},
+            {"name": "mu3", "min": 0, "max": 9000},
+        ],
+        add_fit_params=False,
+        granularity=10000,
+        # gof=True,
+        scale_covar=True,
+    )
+
+    ax.set_title(f"Absorptionfit")
+    P.ax_legend_all(loc=1)
+    ax = P.savefig(f"absorption.pdf")
     # A5 Ra226 C137 und Ra226 Bilder sind schon vorhanden und im figures folder DONE
     # filepath = os.path.join(os.path.dirname(__file__), "../data/aluminium.csv")
     # P.load_data(filepath,loadnew=True)
