@@ -27,6 +27,7 @@ def test_zaehlrohr_protokoll():
         "p": r"p",
         "r": r"r",
         "A": r"A",
+        "A0": r"A_0",
         "A1": r"A_1",
         "A2": r"A_2",
         "A3": r"A_3",
@@ -63,6 +64,7 @@ def test_zaehlrohr_protokoll():
         "r": r"\si{\meter}",
         "A": r"\si{1}",
         "mu": r"\si{\mega\electronvolt}",
+        "A0": r"1",
         "A1": r"1",
         "A2": r"1",
         "A3": r"1",
@@ -318,14 +320,16 @@ def test_zaehlrohr_protokoll():
     P.data["dz"] = P.data[["z1", "z2", "z3"]].sem(axis=1)
     print(z.data)
 
-    z = A1 * exp(-mu1 * D) + A2 * exp(-mu2 * D) + A3 * exp(-mu3 * D)
+    z = A1 * exp(-mu1 * D) + A2 * exp(-mu2 * D) + A3 * exp(-mu3 * D) + A0
 
+    ax.set_xscale("log")
+    ax.set_yscale("log")
     P.plot_data(
         ax,
         D,
         z,
         label="Gemessene Daten",
-        style="#1cb2f5",
+        style="#f782c2",
         errors=True,
     )
     P.plot_fit(
@@ -333,25 +337,27 @@ def test_zaehlrohr_protokoll():
         x=D,
         y=z,
         eqn=z,
-        style=r"#ca5f46",
+        style=r"#f782c2",
         label="Abs",
         offset=[60, -10],
         use_all_known=False,
         guess={
-            "A1": 2,
-            "A2": 4,
-            "A3": 2,
-            "mu1": 0.800000,
-            "mu2": 0.15000,
-            "mu3": 0.76000,
+            "A0": 16,
+            "A1": 200,
+            "A2": 400,
+            "A3": 200,
+            "mu1": 0.0015,
+            "mu2": 0.0089,
+            "mu3": 0.0098,
         },
         bounds=[
-            {"name": "A1", "min": 0, "max": 3255},
-            {"name": "A2", "min": 0, "max": 700000},
-            {"name": "A3", "min": 0, "max": 3997},
-            {"name": "mu1", "min": 0, "max": 85000},
-            {"name": "mu2", "min": 0, "max": 30000},
-            {"name": "mu3", "min": 0, "max": 9000},
+            {"name": "A0", "min": 0, "max": 1255},
+            {"name": "A1", "min": 0, "max": 1255},
+            {"name": "A2", "min": 0, "max": 1000},
+            {"name": "A3", "min": 0, "max": 1997},
+            {"name": "mu1", "min": 0, "max": 0.01},
+            {"name": "mu2", "min": 0, "max": 0.01},
+            {"name": "mu3", "min": 0, "max": 0.01},
         ],
         add_fit_params=False,
         granularity=10000,
