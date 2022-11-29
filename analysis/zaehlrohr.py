@@ -27,10 +27,10 @@ def test_zaehlrohr_protokoll():
         "p": r"p",
         "r": r"r",
         "A": r"A",
-        "A0": r"A_0",
-        "A1": r"A_1",
-        "A2": r"A_2",
-        "A3": r"A_3",
+        "A0": r"I_0",
+        "A1": r"I_1",
+        "A2": r"I_2",
+        "A3": r"I_3",
         "mu": r"\mu",
         "mu1": r"\mu_1",
         "mu2": r"\mu_2",
@@ -191,23 +191,24 @@ def test_zaehlrohr_protokoll():
         l,
         z,
         label="Gemessene Daten",
-        style="#1cb2f5",
+        style="#1df0a0",
         errors=True,
     )
     P.vload()
-    z = k / l**2
+    z = k / l**2 + A0
     P.plot_fit(
         axes=ax,
         x=l,
         y=z,
         eqn=z,
-        style=r"#1cb2f5",
+        style=r"#1df0a0",
         label="Abstandsgesetz",
         offset=[60, 10],
         use_all_known=False,
-        guess={"k": 1500},
+        guess={"k": 1500, "A0": 14},
         bounds=[
             {"name": "k", "min": 1000, "max": 2000},
+            {"name": "A0", "min": 1, "max": 200},
         ],
         add_fit_params=True,
         granularity=10000,
@@ -322,8 +323,6 @@ def test_zaehlrohr_protokoll():
 
     z = A1 * exp(-mu1 * D) + A2 * exp(-mu2 * D) + A3 * exp(-mu3 * D) + A0
 
-    ax.set_xscale("log")
-    ax.set_yscale("log")
     P.plot_data(
         ax,
         D,
@@ -339,7 +338,7 @@ def test_zaehlrohr_protokoll():
         eqn=z,
         style=r"#f782c2",
         label="Abs",
-        offset=[60, -10],
+        offset=[20, 5],
         use_all_known=False,
         guess={
             "A0": 16,
@@ -359,15 +358,21 @@ def test_zaehlrohr_protokoll():
             {"name": "mu2", "min": 0, "max": 0.01},
             {"name": "mu3", "min": 0, "max": 0.01},
         ],
-        add_fit_params=False,
+        add_fit_params=True,
         granularity=10000,
         # gof=True,
         scale_covar=True,
     )
 
-    ax.set_title(f"Absorptionfit")
+    ax.set_yscale("log")
+    ax.set_title(r"Absorbtionskurve von $\beta$-Strahlung in Al")
     P.ax_legend_all(loc=1)
-    ax = P.savefig(f"absorption.pdf")
+    P.savefig(f"absorption.pdf", clear=False)
+    ax.set_xscale("log")
+    ax.set_title(
+        "Absorbtionskurve von $\\beta$-Strahlung in Al \n Doppelt-logarithmische Darstellung"
+    )
+    ax = P.savefig(f"absorption2log.pdf")
     # A5 Ra226 C137 und Ra226 Bilder sind schon vorhanden und im figures folder DONE
     # filepath = os.path.join(os.path.dirname(__file__), "../data/aluminium.csv")
     # P.load_data(filepath,loadnew=True)
