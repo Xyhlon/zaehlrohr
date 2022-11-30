@@ -31,10 +31,18 @@ def test_zaehlrohr_protokoll():
         "A1": r"I_1",
         "A2": r"I_2",
         "A3": r"I_3",
+        "A4": r"I_4",
+        "A5": r"I_5",
+        "A6": r"I_6",
+        "A7": r"I_7",
         "mu": r"\mu",
         "mu1": r"\mu_1",
         "mu2": r"\mu_2",
         "mu3": r"\mu_3",
+        "mu4": r"\mu_4",
+        "mu5": r"\mu_5",
+        "mu6": r"\mu_6",
+        "mu7": r"\mu_7",
         "sig": r"\sigma",
         "k": r"k",
         "m": r"m",
@@ -68,9 +76,17 @@ def test_zaehlrohr_protokoll():
         "A1": r"1",
         "A2": r"1",
         "A3": r"1",
+        "A4": r"1",
+        "A5": r"1",
+        "A6": r"1",
+        "A7": r"1",
         "mu1": r"\si{\per\micro\meter}",
         "mu2": r"\si{\per\micro\meter}",
         "mu3": r"\si{\per\micro\meter}",
+        "mu4": r"\si{\per\micro\meter}",
+        "mu5": r"\si{\per\micro\meter}",
+        "mu6": r"\si{\per\micro\meter}",
+        "mu7": r"\si{\per\micro\meter}",
         "sig": r"\si{\mega\electronvolt}",
         "k": r"\si{\cm\squared}",
         "m": r"\si{\per\volt}",
@@ -311,7 +327,7 @@ def test_zaehlrohr_protokoll():
     filepath = os.path.join(os.path.dirname(__file__), "../data/aluminium.csv")
     P.vload()
     P.load_data(filepath, loadnew=True)
-    dD = D * 0.01
+    dD = D * 0.05
     P.inject_err(dD)
     P.data["dz1"] = 0
     P.data["dz2"] = 0
@@ -322,21 +338,33 @@ def test_zaehlrohr_protokoll():
     print(z.data)
 
     z = A1 * exp(-mu1 * D) + A2 * exp(-mu2 * D) + A3 * exp(-mu3 * D) + A0
+    # z = (
+    #     A0
+    #     + A1 * exp(-mu1 * D)
+    #     + A2 * exp(-mu2 * D)
+    #     + A3 * exp(-mu3 * D)
+    #     + A4 * exp(-mu4 * D)
+    #     + A5 * exp(-mu5 * D)
+    #     + A6 * exp(-mu6 * D)
+    #     + A7 * exp(-mu7 * D)
+    # )
+
+    # z = A1 * exp(-mu1 * D) + A2 * exp(-mu2 * D) + A0
 
     P.plot_data(
         ax,
         D,
         z,
         label="Gemessene Daten",
-        style="#f782c2",
+        style="#a78202",
         errors=True,
     )
-    P.plot_fit(
+    params = P.plot_fit(
         axes=ax,
         x=D,
         y=z,
         eqn=z,
-        style=r"#f782c2",
+        style=r"#a78202",
         label="Abs",
         offset=[20, 5],
         use_all_known=False,
@@ -345,24 +373,41 @@ def test_zaehlrohr_protokoll():
             "A1": 200,
             "A2": 400,
             "A3": 200,
+            # "A4": 200,
+            # "A5": 200,
+            # "A6": 200,
+            # "A7": 200,
             "mu1": 0.0015,
             "mu2": 0.0089,
             "mu3": 0.0098,
+            # "mu4": 0.0098,
+            # "mu5": 0.0098,
+            # "mu6": 0.0098,
+            # "mu7": 0.0098,
         },
         bounds=[
             {"name": "A0", "min": 0, "max": 1255},
             {"name": "A1", "min": 0, "max": 1255},
             {"name": "A2", "min": 0, "max": 1000},
             {"name": "A3", "min": 0, "max": 1997},
-            {"name": "mu1", "min": 0, "max": 0.01},
-            {"name": "mu2", "min": 0, "max": 0.01},
-            {"name": "mu3", "min": 0, "max": 0.01},
+            # {"name": "A4", "min": 0, "max": 1997},
+            # {"name": "A5", "min": 0, "max": 1997},
+            # {"name": "A6", "min": 0, "max": 1997},
+            # {"name": "A7", "min": 0, "max": 1997},
+            {"name": "mu1", "min": 0, "max": 0.03},
+            {"name": "mu2", "min": 0, "max": 0.03},
+            # {"name": "mu3", "min": 0, "max": 0.03},
+            # {"name": "mu4", "min": 0, "max": 0.11},
+            # {"name": "mu5", "min": 0, "max": 0.11},
+            # {"name": "mu6", "min": 0, "max": 0.11},
+            # {"name": "mu7", "min": 0, "max": 0.11},
         ],
         add_fit_params=True,
         granularity=10000,
         # gof=True,
         scale_covar=True,
     )
+    print(params)
 
     ax.set_yscale("log")
     ax.set_title(r"Absorbtionskurve von $\beta$-Strahlung in Al")
