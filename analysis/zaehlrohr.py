@@ -1,7 +1,11 @@
 from labtool_ex2 import Project
 from sympy import exp, pi
 import numpy as np
+import pandas as pd
 import os
+
+# pyright: reportUnboundVariable=false
+# pyright: reportUndefinedVariable=false
 
 
 def test_zaehlrohr_protokoll():
@@ -407,7 +411,27 @@ def test_zaehlrohr_protokoll():
         # gof=True,
         scale_covar=True,
     )
-    print(params)
+    mus = list()
+    dmus = list()
+    for (name, param) in params.items():
+        if "mu" in name:
+            mus.append(param.value)
+            dmus.append(param.stderr)
+    rho = 2.7
+
+    P.data = pd.DataFrame(data=None)
+    P.data["mu"] = mus
+    P.data["dmu"] = dmus
+    print(mu.data * 10000)
+    E = ((rho * 17.6) / (mu * 10000)) ** (1 / 1.39)
+    P.resolve(E)
+    print(P.data)
+    P.print_table(
+        mu,
+        E,
+        name="absorption_al_Enpunktsenergie",
+        inline_units=True,
+    )
 
     ax.set_yscale("log")
     ax.set_title(r"Absorbtionskurve von $\beta$-Strahlung in Al")
