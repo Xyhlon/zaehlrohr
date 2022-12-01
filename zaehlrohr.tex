@@ -791,9 +791,9 @@ Exponentialfunktionen angeführt.
 		Errechneten Endpunktsenergien $E$ und
 		Absorptionskoeffizienten $\mu$ in \ch{Al} der $\beta$-Strahlung einer
 		\ch{_{88}^{226}Ra} Probe. Hier wurden die Werte durch die erhaltenen
-		Fitparameter der 2er Superposition bestimmt.                                                                                 \\
-		$E \dots$ Endpunktsenergie der $\beta$-Strahlung einer \ch{_{88}^{226}Ra} Probe                  \\
-		$p \dots$ Absorptionskoeffizient in \ch{Al} der $\beta$-Strahlung einer \ch{_{88}^{226}Ra} Probe \\
+		Fitparameter der 2er Superposition bestimmt.                                                                                   \\
+		$E \dots$ Endpunktsenergie der $\beta$-Strahlung einer \ch{_{88}^{226}Ra} Probe                    \\
+		$\mu \dots$ Absorptionskoeffizient in \ch{Al} der $\beta$-Strahlung einer \ch{_{88}^{226}Ra} Probe \\
 	}\label{tab:abs_alu_2er}
 	\centering
 	\include{./tables/messreihe_absorption_al_Enpunktsenergie2er.tex}
@@ -805,13 +805,16 @@ Exponentialfunktionen angeführt.
 		Errechneten Endpunktsenergien $E$ und
 		Absorptionskoeffizienten $\mu$ in \ch{Al} der $\beta$-Strahlung einer
 		\ch{_{88}^{226}Ra} Probe. Hier wurden die Werte durch die erhaltenen
-		Fitparameter der 3er Superposition bestimmt.                                                                                  \\
-		$E \dots$ Endpunktsenergie der $\beta$-Strahlung einer \ch{_{88}^{226}Ra} Probe                  \\
-		$p \dots$ Absorptionskoeffizient in \ch{Al} der $\beta$-Strahlung einer \ch{_{88}^{226}Ra} Probe \\
+		Fitparameter der 3er Superposition bestimmt.                                                                                    \\
+		$E \dots$ Endpunktsenergie der $\beta$-Strahlung einer \ch{_{88}^{226}Ra} Probe                    \\
+		$\mu \dots$ Absorptionskoeffizient in \ch{Al} der $\beta$-Strahlung einer \ch{_{88}^{226}Ra} Probe \\
 	}\label{tab:abs_alu_3er}
 	\centering
 	\include{./tables/messreihe_absorption_al_Enpunktsenergie3er.tex}
 \end{table}
+
+Für die Berechnung ist die Dichte von \ch{Al} mit
+\SI{2.7}{\gram\per\cm\cubed}~\cite{kuchling} genommen worden.
 
 \subsection{Aufnahme des Energiespektrums von \texorpdfstring{$\beta$}{beta}
 	Strahlung mit Magnetspektrometer}
@@ -920,8 +923,8 @@ annähernd konstant ist.
 Die Betrachtung der erhaltenen Histogramme der Zählstatistik zeigt, dass diese,
 wie erwartet, normalverteilt sind.
 
-\autoref{fig:abstandsgesetz} zeigt, dass die erhaltenen Messwerte für das Abstandsgesetz nur leicht über dem gefitteten
-quadratischenVerlauf liegen.
+\autoref{fig:abstandsgesetz} zeigt, dass die erhaltenen Messwerte für das Abstandsgesetz
+nur leicht über dem gefitteten quadratischenVerlauf liegen.
 
 Beim betrachten der \autoref{fig:alu_absorption} wird klar ersichtlich, dass
 eine dickere Abschirmung zu einem exponentiellen Abfall der verzeichneten
@@ -933,14 +936,17 @@ man beim Fitten nimmt. Deshalb lässt sich nur um eine rein qualitative Aussage
 handelt. Im konkreten Fall wurden 2 Fitparameter verwendet, wie bereits in
 \autoref{sec:Auswertung_alu} erwähnt, da sich dies nach verschiedenen
 Auswertungsversuchen und einem kurzen Gespräch mit dem Betreuer für das
-verwendete System am effizientesten erwies. Dennoch sind die Fit für drei
-Parameter vom Betreuer und der Experimentatoren angeführt um dem Leser die
-Gegenüberstellung machen lassen zu können.
+verwendete System als beste Beschreibung der Daten erwies. Dennoch sind die Fit
+für drei Parameter vom Betreuer und der Experimentatoren angeführt um dem Leser
+die Gegenüberstellung machen lassen zu können. Die nun erhaltenen Werte stimmen
+qualitativ mit denen des Betreuer überein und beide entsprechen den Energie von
+Übergangen der Zerfallsreihe von \ch{_{88}^{226}Ra} zu erwartenden.
 
-%todo Max ließ bitte nochamol schnell übern neuen Absatz oben drüber obs so passt
+%todo Matthias ließ bitte nochamol schnell übern neuen Absatz oben drüber obs so passt 
+% weisst du vielleicht noch ob es Ra oder Sr war die Probe
 
 Der theoretische Wert für den Peak des $\beta$-Spektrums beträgt
-\SI{511}{\kilo\electronvolt} \cite[]{leifi}. Der erhaltene Wert des
+\SI{511}{\kilo\electronvolt}~\cite[]{leifi}. Der erhaltene Wert des
 Impulsspektrums, von \SI{567(6)}{\kilo\electronvolt}, liegt also in der
 richtigen Größenordnung. Die Verschiebung des Peaks kann dadurch erklärt
 werden, dass die Hallsonde nur auf die entsprechende Halterung gelegt wurde und
@@ -975,14 +981,11 @@ werden, was durch die Kalibrierung erklärbar ist.
 		302                                   & \ch{^{214}_{83}Bi}                    & 295                                                  \\
 		360                                   & \ch{^{214}_{83}Bi}                    & 352                                                  \\
 		609                                   & \ch{^{214}_{84}Po}                    & 609                                                  \\
-	\end{tblr}
-	\label{tab:vergleich}
+	\end{tblr}\label{tab:vergleich}
 \end{table}
 
 Um die Genauigkeit der erhaltenen Ergebnisse weiter zu verbesser könnte bei
 allen Auswertungen die Totzeit des Zählrohr berücksichtigt werden.
-
-\newpage
 
 \section{Zusammenfassung}
 

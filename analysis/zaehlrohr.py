@@ -418,6 +418,7 @@ def test_zaehlrohr_protokoll():
             mus.append(param.value)
             dmus.append(param.stderr)
     rho = 2.7
+    P.gv["mu"] = "\si{\per\um}"
 
     P.data = pd.DataFrame(data=None)
     P.data["mu"] = mus
